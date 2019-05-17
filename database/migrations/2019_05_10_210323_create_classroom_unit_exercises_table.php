@@ -15,8 +15,9 @@ class CreateClassroomUnitExercisesTable extends Migration
     {
         Schema::create('classroom_unit_exercises', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('classroom_unit_id');
-            $table->integer('exercise_id');
+            $table->integer('user_id');
+            $table->integer('unit_id');
+            $table->float('point')->nullable();
             $table->timestamps();
         });
     }

@@ -18,6 +18,7 @@ class CreateExercisesTable extends Migration
             $table->string('name');
             $table->mediumText('content');
             $table->string('answer')->nullable();
+            $table->integer('classroom_unit_id');
             $table->timestamps();
         });
     }
