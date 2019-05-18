@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTheoryGroupsTable extends Migration
+class CreateDocumentsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,12 @@ class CreateTheoryGroupsTable extends Migration
      */
     public function up()
     {
-        Schema::create('theory_groups', function (Blueprint $table) {
+        Schema::create('documents', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('name');
-            $table->string('description')->nullable();
+            $table->string('title');
+            $table->mediumText('description');
+            $table->string('link');
+            $table->integer('course_id')->nullable();
             $table->timestamps();
         });
     }
@@ -28,6 +30,6 @@ class CreateTheoryGroupsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('theory_groups');
+        Schema::dropIfExists('documents');
     }
 }
