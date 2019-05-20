@@ -17,6 +17,7 @@ class CreateTheoryGroupsTable extends Migration
             $table->bigIncrements('id');
             $table->string('name');
             $table->string('description')->nullable();
+            $table->integer('course_id');
             $table->timestamps();
         });
     }
