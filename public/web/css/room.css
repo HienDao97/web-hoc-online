@@ -1,0 +1,89 @@
+.room-nav{
+	background-color: #248ab2;
+}
+
+.room-nav-lesson{
+	padding: 20px;
+	font-weight: 600;
+    text-transform: uppercase;
+    color: #fff;
+    font-size: 13px;
+}
+
+.room-nav-lesson-name{
+    color: #fff;
+    font-size: 13px;
+    overflow: hidden;
+    max-height: 0;
+    padding-left: 10px;
+
+	-webkit-transform: scaleY(0);
+	-o-transform: scaleY(0);
+	-ms-transform: scaleY(0);
+	transform: scaleY(0);
+
+	-webkit-transform-origin: top;
+	-o-transform-origin: top;
+	-ms-transform-origin: top;
+	transform-origin: top;
+
+	-webkit-transition: -webkit-transform 0.25s ease-out;
+	-o-transition: -o-transform 0.25s ease;
+	-ms-transition: -ms-transform 0.25s ease;
+	transition: max-height transform 0.25s ease;
+}
+
+.room-nav-lesson:hover .room-nav-lesson-name{
+	max-height: 900px;
+	-webkit-transform: scaleY(1);
+	-o-transform: scaleY(1);
+	-ms-transform: scaleY(1);
+	transform: scaleY(1);
+}
+
+.border-bottom{
+	border-bottom: solid 1px #fff;
+}
+
+.bg-cl-eee{
+	background-color: #eee;
+}
+
+.bg-cl-fff{
+	background-color: #fff;
+}
+
+.pbt-4{
+    padding-bottom: 1.5rem !important;
+    margin-bottom: 1.5rem;
+}
+
+.lesson-video{
+	width: 100%;
+	text-align: center;
+	padding-top: 15px;
+	padding-bottom: 15px;
+}
+
+.complete-button{
+	text-align: center;
+}
+
+.lesson-exercise{
+	width: 100%;
+	text-align: center;
+	padding-top: 15px;
+	padding-bottom: 15px;
+}
+
+.lesson-exercise img{
+	border: solid 1px #eee;
+	width: 100%;
+	object-fit: cover;
+	padding-bottom: 1.5rem;
+}
+
+.lesson-answer .form-check{
+	display: inline-block;
+	margin-left: 15px;
+}
