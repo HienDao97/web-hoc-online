@@ -83,7 +83,19 @@
 	padding-bottom: 1.5rem;
 }
 
-.lesson-answer .form-check{
+.list-lesson-answer{
+	display: flex;
+	flex-wrap: wrap;
+	flex: 2;
+}
+
+.list-lesson-answer .form-check{
 	display: inline-block;
-	margin-left: 15px;
+	margin-left: 30px;
+}
+
+.lesson-answer{
+	padding-left: 15px;
+	padding-right: 15px;
+	width: calc(50% - 30px);
 }
