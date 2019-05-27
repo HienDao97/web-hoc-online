@@ -1,6 +1,10 @@
 @extends('default')
 @section('title', 'Góc phụ huynh')
 @section('content')
+    <?php
+        preg_match('#https?://(?:www\.)?youtube\.com/watch\?v=#', $classroom->theory[0]->video_link, $matches);
+        $id = str_replace($matches, "", $classroom->theory[0]->video_link);
+    ?>
     <link href="{{ asset('web/css/room.css') }}" type="text/css" rel="stylesheet" media="all">
     <div class="bg-cl-eee">
         <div class="container py-md-5 pt-md-3 pb-sm-5">
@@ -31,7 +35,7 @@
                                 <span class="sub-line">Video</span>
                             </div>
                             <div class="lesson-video">
-                                <iframe width="560" height="315" src="{{ $classroom->theory[0]->video_link }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                <iframe width="560" height="315" src="https://www.youtube.com/embed/{{ $id }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                             </div>
                             <div class="complete-button">
                                 <button class="btn bg-theme mt-4 w3_pvt-link-bnr scroll bg-theme3 text-white">Học xong</button>
