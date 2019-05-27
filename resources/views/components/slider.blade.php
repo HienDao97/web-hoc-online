@@ -4,16 +4,25 @@
             <a href=""><img src="{{ asset('web/images/logo.png') }}" style="height: 130px"></a>
             <div class="hearder-right-w3_pvt d-flex justify-content-sm-end align-items-center  mt-sm-0 mt-4">
                 <ul class="d-flex header-w3_pvt">
-                    <li>
-                        <button type="button" class="btn w3ls-btn d-block" onclick="return register.create()">
-                            <span class="fa fa-sign-in"></span>Đăng ký
-                        </button>
-                    </li>
-                    <li>
-                        <button type="button" class="btn w3ls-btn btn-2  d-block" onclick="return login.create()">
-                            <span class="fa fa-lock"></span>Đăng nhập
-                        </button>
-                    </li>
+                    @if(empty(Auth::user()->id))
+                        <li>
+                            <button type="button" class="btn w3ls-btn d-block" onclick="return register.create()">
+                                <span class="fa fa-sign-in"></span>Đăng ký
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" class="btn w3ls-btn btn-2  d-block" onclick="return login.create()">
+                                <span class="fa fa-lock"></span>Đăng nhập
+                            </button>
+                        </li>
+                    @else
+                        <li>
+                            <button type="button" class="btn w3ls-btn d-block">
+                                <span class="fa fa-sign-in"></span>{{ Auth::user()->name }}
+                            </button>
+                        </li>
+                    @endif
+
                 </ul>
             </div>
         </div>

@@ -17,6 +17,13 @@ Route::group(['middleware' => ['web']], function() {
     Route::any('/register', 'HomeController@register')->name('home.register');
     Route::any('/login', 'HomeController@login')->name('home.login');
     Route::any('/forgot-password', 'HomeController@forgotPassword')->name('home.forgotPassword');
+    Route::post('/register-post', 'HomeController@loginPost')->name('home.register.post');
+
+    //goc phu huynh
+    Route::get('/goc-phu-huynh', 'CommentController@index')->name('home.goc.phu.huynh');
+
+    //tai lieu
+    Route::get('tai-lieu', 'DocumentController@index')->name('home.document.index');
 //    Route::group(['middleware' => ['check_admin_login', 'auth']], function () {
 //        Route::get('/', 'StudentController@index')->name('student.index');
 //        Route::get('/get', 'StudentController@get')->name('student.get');
