@@ -38,18 +38,18 @@ class AppServiceProvider extends ServiceProvider
                 //'param' => ""
             ],
             [
+                'name' => 'Khoá học',
+                'route_name' => '',
+                'sub' => [],
+                'scroll' => 0
+                //'param' => ""
+            ],
+            [
                 'name' => 'Giới thiệu',
                 'route_name' => '',
                 'sub' => [],
                 'scroll' => 1,
                 'id' => 'about'
-                //'param' => ""
-            ],
-            [
-                'name' => 'Khoá học',
-                'route_name' => '',
-                'sub' => [],
-                'scroll' => 0
                 //'param' => ""
             ],
             [

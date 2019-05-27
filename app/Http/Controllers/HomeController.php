@@ -16,26 +16,6 @@ class HomeController extends Controller
 {
     public function index(){
         $courses = Course::whereNull('deleted_at')->get();
-        if(!empty($courses)){
-            if(count($courses) < 3){
-                if(count($courses) == 1){
-                    foreach ($courses as $course){
-                        $course->col = 12;
-                    }
-                }else if(count($courses) == 2){
-                    foreach ($courses as $course){
-                        $course->col = 6;
-                    }
-                }else{
-                    foreach ($courses as $course){
-                        $course->col = 4;
-                    }
-                }
-            }else{
-                
-            }
-        }
-
         return view('home.home', compact('courses'));
     }
 

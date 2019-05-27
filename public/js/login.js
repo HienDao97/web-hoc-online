@@ -32,4 +32,16 @@ var forgotPassword= (function () {
         }
     };
 })();
+var changePassword= (function () {
+    return {
+        create: function () {
+            dialog.close();
+            btn_loading.loading("body");
+            $.get('/student/change-password', null, function (result) {
+                btn_loading.hide("body");
+                dialog.show('Đổi mật khẩu', result);
+            });
+        }
+    };
+})();
 

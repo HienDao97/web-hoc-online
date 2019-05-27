@@ -21,7 +21,7 @@
                             </li>
                         @endforeach
                     </ul>
-                    <a class="btn bg-theme mt-4 w3_pvt-link-bnr scroll bg-theme3 text-white" href="#services" role="button">Xem
+                    <a class="btn bg-theme mt-4 w3_pvt-link-bnr bg-theme3 text-white" href="{{ route('home.classroom.index') }}" role="button">Xem
                         thêm</a>
                 </div>
             </div>
@@ -109,8 +109,8 @@
                 <div class="row">
                     <?php
                         if(count($courses)%3 == 0){
-                            foreach ($courses as $scourse) {                            
-                                echo '<a href="#' . $course->name . '">
+                            foreach ($courses as $scourse) {
+                                echo '<a href="'. route("home.classroom.detail", $courses[$i]->id) .'">
                                     <div class="col-lg-4">
                                         <div class="w3ls-servgrid card">
                                             <div class="card-header">
@@ -130,8 +130,8 @@
                                 </a>';
                             }
                         } elseif (count($courses)%3 == 1) {
-                            for ($i=0; $i < count($courses) - 1; $i++) { 
-                                echo '<a href="#' . $courses[$i]->name . '">
+                            for ($i=0; $i < count($courses) - 1; $i++) {
+                                echo '<a href="'. route("home.classroom.detail", $courses[$i]->id) .'">
                                     <div class="col-lg-4">
                                         <div class="w3ls-servgrid card">
                                             <div class="card-header">
@@ -150,7 +150,7 @@
                                     </div>
                                 </a>';
                             }
-                            echo '<a href="#' . $courses[count($courses)]->name . '">
+                            echo '<a href="'. route("home.classroom.detail", $courses[$i]->id) .'">
                                     <div class="col-lg-12">
                                         <div class="w3ls-servgrid card">
                                             <div class="card-header">
@@ -169,8 +169,8 @@
                                     </div>
                                 </a>';
                         } else{
-                            for ($i=0; $i < count($courses) - 2; $i++) { 
-                                echo '<a href="#' . $courses[$i]->name . '">
+                            for ($i=0; $i < count($courses) - 2; $i++) {
+                                echo '<a href="'. route("home.classroom.detail", $courses[$i]->id) .'">
                                     <div class="col-lg-4">
                                         <div class="w3ls-servgrid card">
                                             <div class="card-header">
@@ -189,8 +189,8 @@
                                     </div>
                                 </a>';
                             }
-                            for ($i = count($courses) - 2; $i < count($courses); $i++) { 
-                                echo '<a href="#' . $courses[$i]->name . '">
+                            for ($i = count($courses) - 2; $i < count($courses); $i++) {
+                                echo '<a href="'. route("home.classroom.detail", $courses[$i]->id) .'">
                                     <div class="col-lg-6">
                                         <div class="w3ls-servgrid card">
                                             <div class="card-header">
@@ -213,46 +213,6 @@
                     ?>
                 </div>
             </div>
-            {{--<div class="container" style="margin-bottom: 20px">--}}
-                {{--<div class="row">--}}
-                    {{--<a href="#lop4">--}}
-                        {{--<div class="col-lg-6">--}}
-                            {{--<div class="w3ls-servgrid card">--}}
-                                {{--<div class="card-header">--}}
-                                    {{--<span class="sub-line">Lớp 4</span>--}}
-                                    {{--<!--                             <h4 class="serv-title">--}}
-                                                                    {{--Lớp--}}
-                                                                {{--</h4> -->--}}
-                                {{--</div>--}}
-                                {{--<div class="card-block">--}}
-                                    {{--<p class="card-title servgrid-title">--}}
-                                        {{--Cung cấp kiến thức về bảng cửu chương, cộng trừ nhân chia trong phạm vi 10.--}}
-                                    {{--</p>--}}
-                                    {{--<a href="#portfolio" class="text-capitalize servgrid_link btn scroll">Vào học</a>--}}
-                                {{--</div>--}}
-                            {{--</div>--}}
-                        {{--</div>--}}
-                    {{--</a>--}}
-                    {{--<a href="#lop5">--}}
-                        {{--<div class="col-lg-6">--}}
-                            {{--<div class="w3ls-servgrid card">--}}
-                                {{--<div class="card-header">--}}
-                                    {{--<span class="sub-line">Lớp 5</span>--}}
-                                    {{--<!--                             <h4 class="serv-title">--}}
-                                                                    {{--Lớp--}}
-                                                                {{--</h4> -->--}}
-                                {{--</div>--}}
-                                {{--<div class="card-block">--}}
-                                    {{--<p class="card-title servgrid-title">--}}
-                                        {{--Cung cấp kiến thức về bảng cửu chương, cộng trừ nhân chia trong phạm vi 10.--}}
-                                    {{--</p>--}}
-                                    {{--<a href="#portfolio" class="text-capitalize servgrid_link btn scroll">Vào học</a>--}}
-                                {{--</div>--}}
-                            {{--</div>--}}
-                        {{--</div>--}}
-                    {{--</a>--}}
-                {{--</div>--}}
-            {{--</div>--}}
         </div>
         <div class="card-body">
             <h5 class="blog-title card-title font-weight-bold">

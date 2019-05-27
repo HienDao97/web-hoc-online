@@ -24,15 +24,14 @@ Route::group(['middleware' => ['web']], function() {
 
     //tai lieu
     Route::get('tai-lieu', 'DocumentController@index')->name('home.document.index');
-//    Route::group(['middleware' => ['check_admin_login', 'auth']], function () {
-//        Route::get('/', 'StudentController@index')->name('student.index');
-//        Route::get('/get', 'StudentController@get')->name('student.get');
-//        Route::get('edit/{id}', 'StudentController@edit')->name('student.edit');
-//        Route::get('delete/{id}', 'StudentController@destroy')->name('student.delete');
-//        Route::get('/create', 'StudentController@create')->name('student.create');
-//        Route::post('/store', 'StudentController@store')->name('student.store');
-//        Route::post('/update/{id}', 'StudentController@update')->name('student.update');
-//
-//
-//    });
+
+    //khoa-hoc
+    Route::get('khoa-hoc', 'ClassroomController@index')->name('home.classroom.index');
+    Route::get('khoa-hoc/{id}', 'ClassroomController@detail')->name('home.classroom.detail');
+    Route::get('logout', 'StudentController@logout')->name('student.logout');
+    Route::group(['middleware' => ['auth'], 'prefix' => 'student'], function () {
+        Route::get('/info/{id}', 'StudentController@index')->name('student.index');
+        Route::any('/change-password', 'StudentController@changePassword')->name('student.change.password');
+        Route::get('/lop-hoc/{id}', 'StudentController@classroom')->name('student.classroom');
+    });
 });
