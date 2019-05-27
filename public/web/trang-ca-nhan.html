@@ -195,8 +195,19 @@
         </div>
         <br>
         <div class="w3-container">
-          <a href=""><button type="button" class="btn btn-primary" style="font-size: 13px;color: rgba(58, 133, 191, 0.75);letter-spacing: 1px;line-height: 15px; border: 2px solid rgba(58, 133, 191, 0.75);  border-radius: 40px;  background: transparent;  transition: all 0.3s ease 0s; margin-right: 5px; margin-bottom: 5px">Đổi ảnh đại diện</button></a>       
-          <a href=""><button type="button" class="btn btn-primary" style="font-size: 13px;color: rgba(58, 133, 191, 0.75);letter-spacing: 1px;line-height: 15px; border: 2px solid rgba(58, 133, 191, 0.75);  border-radius: 40px;  background: transparent;  transition: all 0.3s ease 0s; margin-right: 5px; margin-bottom: 5px">Đổi mật khẩu</button></a>               
+
+          <!--   Upload file -->
+          <input type="file" id="file" style="display:none;" />
+          <button type="button" class="btn btn-primary" style="font-size: 13px;color: rgba(58, 133, 191, 0.75);letter-spacing: 1px;line-height: 15px; border: 2px solid rgba(58, 133, 191, 0.75);  border-radius: 40px;  background: transparent;  transition: all 0.3s ease 0s; margin-right: 5px; margin-bottom: 5px"value="Upload" onclick="thisFileUpload();">Đổi ảnh đại diện</button>
+          <script>
+                function thisFileUpload() {
+                    document.getElementById("file").click();
+                };
+          </script>
+          <!--  End of Upload file -->
+
+
+          <button type="button" class="btn btn-primary" style="font-size: 13px;color: rgba(58, 133, 191, 0.75);letter-spacing: 1px;line-height: 15px; border: 2px solid rgba(58, 133, 191, 0.75);  border-radius: 40px;  background: transparent;  transition: all 0.3s ease 0s; margin-right: 5px; margin-bottom: 5px" data-toggle="modal" aria-pressed="false" data-target="#exampleModal3">Đổi mật khẩu</button>              
           <p><i class="fa fa-envelope fa-fw w3-margin-right w3-large w3-text-teal"></i>khoa1997hn@gmail.com</p>
           <p><i class="fa fa-phone fa-fw w3-margin-right w3-large w3-text-teal"></i>0975 275 297</p>
     
@@ -627,8 +638,40 @@
         </div>
     </div>
     <!-- // register -->
+    <!-- Change pass -->
+    <div class="modal fade" id="exampleModal3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel1"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel1">Quên mật khẩu</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body modal-bg">
+                    <form action="#" method="post" class="p-sm-3">
+                        <div class="form-group">
+                            <label for="password1" class="col-form-label">Mật khẩu mới</label>
+                            <input type="password" class="form-control" placeholder="Mật khẩu" name="Password" id="password1"
+                                required="">
+                        </div>
+                        <div class="form-group">
+                            <label for="password2" class="col-form-label">Nhập lại mật khẩu</label>
+                            <input type="password" class="form-control" placeholder="Nhập lại mật khẩu" name="Confirm Password" id="password2"
+                                required="">
+                        </div>
+                        <div class="right-w3l">
+                            <input type="submit" class="form-control bg-theme1" value="Xác nhận">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End of change pass -->
     <!-- reset password -->
-    <div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel1"
+        <div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel1"
         aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
@@ -654,6 +697,7 @@
         </div>
     </div>
     <!-- // reset password -->
+
         <!-- blog modal1 -->
         <!--     <div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel2"
         aria-hidden="true">
