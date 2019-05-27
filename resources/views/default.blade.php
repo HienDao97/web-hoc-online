@@ -145,7 +145,7 @@
 <script src="{{ asset('web/js/bootstrap.js') }}"></script>
 <script src="{{ asset('js/init.js') }}"></script>
 <script src="{{ asset('waitMe/waitMe.js') }}"></script>
-<script src="{{ asset('js/toastr.js') }}"></script>
+<script src="{{ asset('js/toastr.min.js') }}"></script>
 
 @yield('scripts')
 

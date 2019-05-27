@@ -49,9 +49,9 @@
         btn_loading.loading("button-edit-plan");
         formHelper.postFormJson('form-input', function (result) {
             if (result.result == 1) {
-                toastr.alert(result.message);
                 dialog.close();
-                btn_loading.loading("comment_table");
+                btn_loading.loading("body");
+                toastr.success(result.message);
                 window.location.reload();
             } else {
                 btn_loading.hide("button-edit-plan");

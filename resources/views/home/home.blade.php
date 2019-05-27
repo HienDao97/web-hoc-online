@@ -26,77 +26,79 @@
                 </div>
             </div>
         </div>
-        <div class="abt-pos">
-            <h4>Đăng ký tài khoản</h4>
-            <div class="contcat-form">
-                <form action="{{ route('home.register.post') }}" method="post" class="register-wthree">
-                    <div class="form-group">
-                        <div class="row">
+        @if(empty(Auth::user()->id))
+            <div class="abt-pos">
+                <h4>Đăng ký tài khoản</h4>
+                <div class="contcat-form">
+                    <form action="{{ route('home.register.post') }}" method="post" class="register-wthree">
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <label class="text-white">
+                                        Họ tên con
+                                    </label>
+                                    <input class="form-control" type="text" placeholder="Họ tên con" name="email" required="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <label class="text-white">
+                                        Số điện thoại phụ huynh
+                                    </label>
+                                    <input class="form-control" type="text" placeholder="Số điện thoại phụ huynh" name="email"
+                                           required="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label class="text-white">
+                                        Mật khẩu
+                                    </label>
+                                    <input class="form-control" type="password" placeholder="Mật khẩu" name="email" required="">
+                                </div>
+                                <div class="col-md-6 mt-md-0 mt-4">
+                                    <label class="text-white">
+                                        Nhập lại mật khẩu
+                                    </label>
+                                    <input class="form-control" type="password" placeholder="Nhập lại mật khẩu" name="name"
+                                           required="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <label class="text-white">
+                                        Email của phụ huynh
+                                    </label>
+                                    <input class="form-control" type="email" placeholder="Email của phụ huynh" name="email"
+                                           required="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="sub-w3l">
+                            <div class="sub-w3_pvt">
+                                <input type="checkbox" id="brand2" value="">
+                                <label for="brand2" class="mb-3 text-dark">
+                                    <span></span>Tôi đồng ý với điều khoản của trang web</label>
+                            </div>
+                        </div>
+                        <div class="row mt-3">
                             <div class="col-md-12">
-                                <label class="text-white">
-                                    Họ tên con
-                                </label>
-                                <input class="form-control" type="text" placeholder="Họ tên con" name="email" required="">
+                                <button type="submit"
+                                        class="btn  btn-block w-100 font-weight-bold text-capitalize bg-theme1 text-white">Đăng
+                                    ký
+                                </button>
                             </div>
                         </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <label class="text-white">
-                                    Số điện thoại phụ huynh
-                                </label>
-                                <input class="form-control" type="text" placeholder="Số điện thoại phụ huynh" name="email"
-                                       required="">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <label class="text-white">
-                                    Mật khẩu
-                                </label>
-                                <input class="form-control" type="password" placeholder="Mật khẩu" name="email" required="">
-                            </div>
-                            <div class="col-md-6 mt-md-0 mt-4">
-                                <label class="text-white">
-                                    Nhập lại mật khẩu
-                                </label>
-                                <input class="form-control" type="password" placeholder="Nhập lại mật khẩu" name="name"
-                                       required="">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <label class="text-white">
-                                    Email của phụ huynh
-                                </label>
-                                <input class="form-control" type="email" placeholder="Email của phụ huynh" name="email"
-                                       required="">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="sub-w3l">
-                        <div class="sub-w3_pvt">
-                            <input type="checkbox" id="brand2" value="">
-                            <label for="brand2" class="mb-3 text-dark">
-                                <span></span>Tôi đồng ý với điều khoản của trang web</label>
-                        </div>
-                    </div>
-                    <div class="row mt-3">
-                        <div class="col-md-12">
-                            <button type="submit"
-                                    class="btn  btn-block w-100 font-weight-bold text-capitalize bg-theme1 text-white">Đăng
-                                ký
-                            </button>
-                        </div>
-                    </div>
-                </form>
+                    </form>
+                </div>
             </div>
-        </div>
+        @endif
     </section>
     <!-- //about -->
     <!-- portfolio -->

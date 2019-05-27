@@ -34,6 +34,11 @@
                         @endif
                     @endif
                 @endforeach
+                @if(!empty(Auth::user()->id))
+                    <li class="nav-item  mt-lg-0 mt-3">
+                        <a class="nav-link <?php echo ($currentRouteName == "student.index")? "active" : ""?>" href="{{ route('student.index', Auth::user()->id) }}" >Trang cá nhân</a>
+                    </li>
+                @endif
             </ul>
         </div>
     </nav>

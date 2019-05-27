@@ -34,13 +34,14 @@
     </p>
 </form>
 <script type="text/javascript" src="{{ "js/login.js" }}"></script>
+<script src="{{ asset('js/toastr.min.js') }}"></script>
 <script type="text/javascript">
     function onSubmitProject() {
         $("#message").html("");
         btn_loading.loading("button-edit-plan");
         formHelper.postFormJson('form-input', function (result) {
             if (result.result == 1) {
-                toastr.alert(result.message);
+                toastr.success(result.message);
                 dialog.close();
                 btn_loading.loading("comment_table");
                 window.location.reload();
