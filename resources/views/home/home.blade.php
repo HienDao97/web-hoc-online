@@ -29,7 +29,7 @@
         <div class="abt-pos">
             <h4>Đăng ký tài khoản</h4>
             <div class="contcat-form">
-                <form action="#" method="post" class="register-wthree">
+                <form action="{{ route('home.register.post') }}" method="post" class="register-wthree">
                     <div class="form-group">
                         <div class="row">
                             <div class="col-md-12">
@@ -108,7 +108,7 @@
             <div class="container" style="margin-bottom:  20px">
                 <div class="row">
                     @foreach($courses as $course)
-                        <a href="#{{ $course->name }}">
+                        <a href="#lop{{ $course->id }}">
                             <div class="col-lg-4">
                                 <div class="w3ls-servgrid card">
                                     <div class="card-header">

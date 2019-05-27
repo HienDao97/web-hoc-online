@@ -6,38 +6,34 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav  text-center">
-                <li class="nav-item active  mr-lg-3 mt-lg-0 mt-3">
-                    <a class="nav-link" href="index.html">Trang chủ
-                        <span class="sr-only">(current)</span>
-                    </a>
-                </li>
-                <li class="nav-item  mr-lg-3 mt-lg-0 mt-3">
-                    <a class="nav-link scroll" href="#about">Giới thiệu</a>
-                </li>
-                <li class="nav-item dropdown mr-lg-3 mt-lg-0 mt-3">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                       data-toggle="dropdown"
-                       aria-haspopup="true" aria-expanded="false">
-                        Khóa học
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item scroll" href="#lop1">Lớp 1</a>
-                        <a class="dropdown-item scroll" href="#lop2">Lớp 2</a>
-                        <a class="dropdown-item scroll" href="#lop3">Lớp 3</a>
-                        <!--                            <div class="dropdown-divider"></div>
-                         --> <a class="dropdown-item scroll" href="#lop4">Lớp 4</a>
-                        <a class="dropdown-item scroll" href="#lop5">Lớp 5</a>
-                    </div>
-                </li>
-                <li class="nav-item  mt-lg-0 mt-3">
-                    <a class="nav-link scroll" href="#contact">Tài liệu</a>
-                </li>
-                <li class="nav-item  mt-lg-0 mt-3">
-                    <a class="nav-link scroll" href="#contact">Góc phụ huynh</a>
-                </li>
-                <li class="nav-item  mt-lg-0 mt-3">
-                    <a class="nav-link scroll" href="#contact">Liên hệ</a>
-                </li>
+                @php
+                    $currentRouteName = request()->route()->getName();
+                    //dd($currentRouteName)
+                @endphp
+                @foreach($backend_menus as $menu)
+                    @if($menu['scroll'] == 1)
+                        <li class="nav-item  mr-lg-3 mt-lg-0 mt-3">
+                            <a class="nav-link scroll" href="#{{ $menu['id'] }}">{{ $menu['name'] }}</a>
+                        </li>
+                    @else
+                        @if($menu['name'] == "Khoá học")
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                               data-toggle="dropdown"
+                               aria-haspopup="true" aria-expanded="false">
+                               {{ $menu['name'] }}
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                @foreach($course_menus as $menu)
+                                    <a class="dropdown-item scroll" href="#lop{{ $menu->id }}">{{ $menu->name }}</a>
+                                @endforeach
+                            </div>
+                        @else
+                            <li class="nav-item  mt-lg-0 mt-3">
+                                <a class="nav-link <?php echo ($currentRouteName == $menu['route_name'])? "active" : ""?>" href="{{ route($menu['route_name']) }}" >{{ $menu['name'] }}</a>
+                            </li>
+                        @endif
+                    @endif
+                @endforeach
             </ul>
         </div>
     </nav>
