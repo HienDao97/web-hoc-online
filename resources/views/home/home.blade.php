@@ -107,26 +107,110 @@
             </div>
             <div class="container" style="margin-bottom:  20px">
                 <div class="row">
-                    @foreach($courses as $course)
-                        <a href="#lop{{ $course->id }}">
-                            <div class="col-lg-4">
-                                <div class="w3ls-servgrid card">
-                                    <div class="card-header">
-                                        <span class="sub-line">{{ $course->name }}</span>
-                                        <!--                             <h4 class="serv-title">
-                                                                        Lớp
-                                                                    </h4> -->
+                    <?php
+                        if(count($courses)%3 == 0){
+                            foreach ($courses as $scourse) {                            
+                                echo '<a href="#' . $course->name . '">
+                                    <div class="col-lg-4">
+                                        <div class="w3ls-servgrid card">
+                                            <div class="card-header">
+                                                <span class="sub-line">' . $course->name . '</span>
+                                                <!--                             <h4 class="serv-title">
+                                                                                Lớp
+                                                                            </h4> -->
+                                            </div>
+                                            <div class="card-block">
+                                                <p class="card-title servgrid-title">
+                                                    ' . $course->class_info . '
+                                                </p>
+                                                <a href="#portfolio" class="text-capitalize servgrid_link btn scroll">Vào học</a>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div class="card-block">
-                                        <p class="card-title servgrid-title">
-                                            {{ $course->class_info }}
-                                        </p>
-                                        <a href="#portfolio" class="text-capitalize servgrid_link btn scroll">Vào học</a>
+                                </a>';
+                            }
+                        } elseif (count($courses)%3 == 1) {
+                            for ($i=0; $i < count($courses) - 1; $i++) { 
+                                echo '<a href="#' . $courses[$i]->name . '">
+                                    <div class="col-lg-4">
+                                        <div class="w3ls-servgrid card">
+                                            <div class="card-header">
+                                                <span class="sub-line">' . $courses[$i]->name . '</span>
+                                                <!--                             <h4 class="serv-title">
+                                                                                Lớp
+                                                                            </h4> -->
+                                            </div>
+                                            <div class="card-block">
+                                                <p class="card-title servgrid-title">
+                                                    ' . $courses[$i]->class_info . '
+                                                </p>
+                                                <a href="#portfolio" class="text-capitalize servgrid_link btn scroll">Vào học</a>
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>
-                            </div>
-                        </a>
-                    @endforeach
+                                </a>';
+                            }
+                            echo '<a href="#' . $courses[count($courses)]->name . '">
+                                    <div class="col-lg-12">
+                                        <div class="w3ls-servgrid card">
+                                            <div class="card-header">
+                                                <span class="sub-line">' . $courses[count($courses)]->name . '</span>
+                                                <!--                             <h4 class="serv-title">
+                                                                                Lớp
+                                                                            </h4> -->
+                                            </div>
+                                            <div class="card-block">
+                                                <p class="card-title servgrid-title">
+                                                    ' . $courses[count($courses)]->class_info . '
+                                                </p>
+                                                <a href="#portfolio" class="text-capitalize servgrid_link btn scroll">Vào học</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>';
+                        } else{
+                            for ($i=0; $i < count($courses) - 2; $i++) { 
+                                echo '<a href="#' . $courses[$i]->name . '">
+                                    <div class="col-lg-4">
+                                        <div class="w3ls-servgrid card">
+                                            <div class="card-header">
+                                                <span class="sub-line">' . $courses[$i]->name . '</span>
+                                                <!--                             <h4 class="serv-title">
+                                                                                Lớp
+                                                                            </h4> -->
+                                            </div>
+                                            <div class="card-block">
+                                                <p class="card-title servgrid-title">
+                                                    ' . $courses[$i]->class_info . '
+                                                </p>
+                                                <a href="#portfolio" class="text-capitalize servgrid_link btn scroll">Vào học</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>';
+                            }
+                            for ($i = count($courses) - 2; $i < count($courses); $i++) { 
+                                echo '<a href="#' . $courses[$i]->name . '">
+                                    <div class="col-lg-6">
+                                        <div class="w3ls-servgrid card">
+                                            <div class="card-header">
+                                                <span class="sub-line">' . $courses[$i]->name . '</span>
+                                                <!--                             <h4 class="serv-title">
+                                                                                Lớp
+                                                                            </h4> -->
+                                            </div>
+                                            <div class="card-block">
+                                                <p class="card-title servgrid-title">
+                                                    ' . $courses[$i]->class_info . '
+                                                </p>
+                                                <a href="#portfolio" class="text-capitalize servgrid_link btn scroll">Vào học</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>';
+                            }
+                        }
+                    ?>
                 </div>
             </div>
             {{--<div class="container" style="margin-bottom: 20px">--}}
@@ -357,6 +441,12 @@
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3023.9503398796587!2d-73.9940307!3d40.719109700000004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25a27e2f24131%3A0x64ffc98d24069f02!2sCANADA!5e0!3m2!1sen!2sin!4v1441710758555"
             allowfullscreen></iframe>
     </div>
+
+    <style type="text/css">
+        .w3ls-servgrid{
+            margin-bottom: 2em;
+        }
+    </style>
 @endsection
     <!-- about -->
 
