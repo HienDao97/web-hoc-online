@@ -26,6 +26,8 @@
     <link href="{{ asset('web/css/home.css') }}" type="text/css" rel="stylesheet" media="all">
     <link href="{{ asset('waitMe/waitMe.css') }}" type="text/css" rel="stylesheet" media="all">
 
+    <link href="{{ asset('css/toastr.min.css') }}" type="text/css" rel="stylesheet" media="all">
+
     <!-- font-awesome icons -->
     <link href="{{ asset('web/css/font-awesome.min.css') }}" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
@@ -143,6 +145,7 @@
 <script src="{{ asset('web/js/bootstrap.js') }}"></script>
 <script src="{{ asset('js/init.js') }}"></script>
 <script src="{{ asset('waitMe/waitMe.js') }}"></script>
+<script src="{{ asset('js/toastr.js') }}"></script>
 
 @yield('scripts')
 

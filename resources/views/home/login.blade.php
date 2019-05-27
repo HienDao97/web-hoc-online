@@ -40,7 +40,7 @@
         btn_loading.loading("button-edit-plan");
         formHelper.postFormJson('form-input', function (result) {
             if (result.result == 1) {
-                alert(result.message);
+                toastr.alert(result.message);
                 dialog.close();
                 btn_loading.loading("comment_table");
                 window.location.reload();

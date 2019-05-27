@@ -29,7 +29,12 @@
                                                 <p class="card-title servgrid-title">
                                                     Cung cấp kiến thức về bảng cửu chương, cộng trừ nhân chia trong phạm vi 10.
                                                 </p>
-                                                <a href="{{ route('student.classroom', $class->id) }}" class="text-capitalize servgrid_link btn">Vào học</a>
+                                                @if(!empty(Auth::user()->id))
+                                                    <a href="{{ route('student.classroom', $class->id) }}" class="text-capitalize servgrid_link btn">Vào học</a>
+                                                @else
+                                                    <a href="#" onclick="return login.create()" class="text-capitalize servgrid_link btn">Vào học</a>
+                                                @endif
+
                                             </div>
                                         </div>
                                     </div>
@@ -60,6 +65,7 @@
     </div>
 @endsection
 @section('scripts')
+    <script type="text/javascript" src="{{ "js/login.js" }}"></script>
     <script type="text/javascript">
         <?php if(!empty($id)){ ?>
         $('html,body').animate({
