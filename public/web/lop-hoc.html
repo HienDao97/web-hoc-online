@@ -372,9 +372,47 @@
                                     </div>
                                 </form>
                             </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                             <div class="complete-button">
-                                <button class="btn bg-theme mt-4 w3_pvt-link-bnr scroll bg-theme3 text-white">Nộp bài</button>
+                                <button type="button" class="btn bg-theme mt-4 w3_pvt-link-bnr scroll bg-theme3 text-white" data-toggle="modal" aria-pressed="false" data-target="#exampleModal3">Nộp bài</button>
                             </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                         </div>
                     </div>
                 </div>
@@ -640,11 +678,102 @@
                     </button>
                 </div>
                 <div class="modal-body modal-bg">
-                    <form action="#" method="post" class="p-sm-3">
+                    <form action="#" method=
+                    </form>"post" class="p-sm-3">
                         <div class="form-group">
                             <label for="recipient-email" class="col-form-label">Email của phụ huynh</label>
                             <input type="email" class="form-control" placeholder="Email của phụ huynh" name="Email" id="recipient-email"
                                 required="">
+                        </div>
+                        <div class="right-w3l">
+                            <input type="submit" class="form-control bg-theme1" value="Xác nhận">
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- // reset password -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- show result -->
+    <div class="modal fade" id="exampleModal3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel1"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel1">Kết quả</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body modal-bg">
+                    <p>Số câu đúng: <b style="color: #00bcd4;">5/10</b> câu</p>
+                    <p>Điểm: <b style="color: #00bcd4">5.0</b></p>
+                    <p></p>
+                    <p><b>Đáp án:<b></p>
+                    <p class="room-question-answers">
+                        <span style="color: #80cd33">1. A</span>
+                        <span style="color: #dd4b39">2. A</span>
+                        <span style="color: #dd4b39">3. A</span>
+                        <span style="color: #80cd33">4. A</span>
+                        <span style="color: #dd4b39">5. A</span>
+                        <span style="color: #dd4b39">6. A</span>
+                        <span style="color: #80cd33">7. A</span>
+                        <span style="color: #80cd33">8. A</span>
+                        <span style="color: #80cd33">9. A</span>
+                        <span style="color: #dd4b39">10. A</span>
+                    </p>
+                    <!-- Button colse when this is not the last lesson -->
+                    <div class="complete-button">
+                        <button type="button" class="btn bg-theme mt-4 w3_pvt-link-bnr scroll bg-theme3 text-white" data-dismiss="modal" aria-label="Close">Xong</button>
+                    </div>
+                    <!-- //Button colse when this is not the last lesson -->
+                    <!-- Button colse when this is the last lesson -->
+                    <div class="complete-button">
+                        <button type="button" class="btn bg-theme mt-4 w3_pvt-link-bnr scroll bg-theme3 text-white" data-dismiss="modal"  data-toggle="modal" aria-pressed="false" data-target="#exampleModal4">Kết thúc khóa học</button>
+                    </div>
+                    <!-- //Button colse when this is the last lesson -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- // show result -->
+    <!-- show result -->
+    <div class="modal fade" id="exampleModal4" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel1"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel1">Đánh giá khóa học</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body modal-bg">
+                    <form action="#" method="post" class="p-sm-3">
+                        <div class="form-group">
+                            <label for="recipient-email" class="col-form-label">Đánh giá phụ huynh</label>
+                            <textarea class="form-control" id="exampleTextarea" rows="3"></textarea>
                         </div>
                         <div class="right-w3l">
                             <input type="submit" class="form-control bg-theme1" value="Xác nhận">
@@ -654,7 +783,39 @@
             </div>
         </div>
     </div>
-    <!-- // reset password -->
+    <!-- // show result -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         <!-- blog modal1 -->
         <!--     <div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel2"
         aria-hidden="true">

@@ -104,6 +104,16 @@
 	padding-right: 15px;
 }
 
+.room-question-answers{
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.room-question-answers span{
+	width: 25%;
+	min-width: 30px;
+}
+
 @media screen and (max-width: 600px){
 	.my-tp-5{
 		padding-top: 15px;
