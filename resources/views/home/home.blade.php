@@ -1,5 +1,5 @@
 @extends('default')
-@section('title', 'Quản lý học sinh')
+@section('title', 'Trang chủ')
 @section('content')
     <section class="wthree-row  w3-about position-relative" id="about">
         <div class="container">
@@ -216,19 +216,6 @@
                 </div>
             </div>
         </div>
-        <div class="card-body">
-            <h5 class="blog-title card-title font-weight-bold">
-                <a href="#exampleModal4" data-toggle="modal" aria-pressed="false" data-target="#exampleModal4"
-                   role="button" class="text-theme3">Cras ultricies ligula sed.</a>
-            </h5>
-            <p>At vero eos et accusam et justo duo dolores et ea rebum. Lorem ipsum dolor sit
-                ametLorem ipsum dolor sit amet,sed diam nonumy.</p>
-            <button type="button" class="btn blog-btn wthree-bnr-btn mt-3 w3_pvt-link-bnr" data-toggle="modal"
-                    aria-pressed="false" data-target="#exampleModal4">
-                Read more
-            </button>
-        </div>
-    </div>
     </div>
     <!-- testimonials -->
     <div class="testimonials-wthree py-lg-5 py-4 text-center" id="testimonials">
@@ -248,7 +235,7 @@
                                         <div class="row">
                                             <div class="col-md-2 col-sm-4">
                                                 <div class="testi-img">
-                                                    <img src="images/t1.jpg" alt="" class="rounded-circle img-fluid"/>
+                                                    <img src="{{ asset('web/images/t1.jpg') }}" alt="" class="rounded-circle img-fluid"/>
                                                 </div>
                                             </div>
                                             <div class="col-md-10 col-sm-8 mt-sm-0 mt-4">
@@ -266,7 +253,7 @@
                                         <div class="row">
                                             <div class="col-md-2 col-sm-4">
                                                 <div class="testi-img">
-                                                    <img src="images/t2.jpg" alt="" class="rounded-circle img-fluid">
+                                                    <img src="{{ asset('web/images/t2.jpg') }}" alt="" class="rounded-circle img-fluid">
                                                 </div>
                                             </div>
                                             <div class="col-md-10 col-sm-8 mt-sm-0 mt-4">
@@ -284,7 +271,7 @@
                                         <div class="row">
                                             <div class="col-md-2 col-sm-4">
                                                 <div class="testi-img">
-                                                    <img src="images/t3.jpg" alt="" class="rounded-circle img-fluid">
+                                                    <img src="{{ asset('web/images/t3.jpg') }}" alt="" class="rounded-circle img-fluid">
                                                 </div>
                                             </div>
                                             <div class="col-md-10 col-sm-8 mt-sm-0 mt-4">

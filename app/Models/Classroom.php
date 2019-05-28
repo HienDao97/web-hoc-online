@@ -23,4 +23,5 @@ class Classroom extends Model
     {
         return $this->hasManyThrough('App\Models\Exercise', 'App\Models\Theory', 'classroom_id', 'theory_id', 'id');
     }
+    
 }

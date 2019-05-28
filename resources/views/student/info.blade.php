@@ -1,5 +1,5 @@
 @extends('default')
-@section('title', 'Góc phụ huynh')
+@section('title', 'Thông tin học sinh')
 @section('content')
     <link rel="icon" href="{{ asset('web/images/logo-3.png') }}" type="image/x-icon" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -8,7 +8,7 @@
         <div class="w3-content w3-margin-top" style="max-width:1400px;">
 
             <!-- The Grid -->
-            <div class="w3-row-padding">
+            <div class="w3-row-padding container">
 
                 <!-- Left Column -->
                 <div class="w3-third">

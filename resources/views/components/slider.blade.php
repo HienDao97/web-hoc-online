@@ -18,7 +18,7 @@
                     @else
                         <li>
                             <button type="button" class="btn w3ls-btn btn-2  d-block">
-                                <a href="{{ route('student.logout') }}"><span class="fa fa-sign-in">Đăng xuất</span></a>
+                                <a href="{{ route('student.logout') }}"><span class="fa fa-sign-in"> Đăng xuất</span></a>
                             </button>
                         </li>
                     @endif

@@ -72,7 +72,9 @@
             scrollTop: $("#lop<?php echo $id?>").offset().top
         }, 1000);
         <?php } ?>
-
+        <?php if(session()->has('messages')){?>
+        toastr.error("{{ session('messages') }}");
+        <?php }?>
 
     </script>
 

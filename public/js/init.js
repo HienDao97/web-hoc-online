@@ -33,8 +33,8 @@ var dialog = (function(){
             $('#exampleModal1').modal('show');
         },
         close: function () {
-            $('#detailModal').modal('hide');
-            $('#detailModal').css('display', 'none').attr('aria-hidden', 'true');
+            $('#exampleModal1').modal('hide');
+            $('#exampleModal1').css('display', 'none').attr('aria-hidden', 'true');
             $('#finishModalLabel').html('');
             $('#modal_content').html('');
         },

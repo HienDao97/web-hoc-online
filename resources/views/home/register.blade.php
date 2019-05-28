@@ -46,15 +46,15 @@
 <script type="text/javascript">
     function onSubmitProject() {
         $("#message").html("");
-        btn_loading.loading("button-edit-plan");
+        btn_loading.loading("form-input");
         formHelper.postFormJson('form-input', function (result) {
             if (result.result == 1) {
+                toastr.success(result.message);
                 dialog.close();
                 btn_loading.loading("body");
-                toastr.success(result.message);
                 window.location.reload();
             } else {
-                btn_loading.hide("button-edit-plan");
+                btn_loading.hide("form-input");
                 var str = "<div class=\"alert alert-danger\">";
                 for(var key in result.message){
                     str += result.message[key];

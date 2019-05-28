@@ -1,5 +1,5 @@
 @extends('default')
-@section('title', 'Góc phụ huynh')
+@section('title', 'Tài liệu')
 @section('content')
     <div class="portfolio-wthree py-lg-5" id="portfolio" style="background-color: #eee">
         <section class="team_wthree py-4" id="team">

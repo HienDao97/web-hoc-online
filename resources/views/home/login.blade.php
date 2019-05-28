@@ -38,12 +38,12 @@
 <script type="text/javascript">
     function onSubmitProject() {
         $("#message").html("");
-        btn_loading.loading("button-edit-plan");
+        btn_loading.loading("form-input");
         formHelper.postFormJson('form-input', function (result) {
             if (result.result == 1) {
                 toastr.success(result.message);
                 dialog.close();
-                btn_loading.loading("comment_table");
+                btn_loading.loading("body");
                 window.location.reload();
             } else {
                 btn_loading.hide("button-edit-plan");

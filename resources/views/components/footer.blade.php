@@ -3,7 +3,7 @@
         <div class="col-lg-4 col-md-6 footer-top mt-md-0 mt-sm-5">
             <h2>
                 <a class="navbar-brand" href="index.html">
-                    <img src="images/logo-3.png" style="height: 200px">
+                    <img src="{{ asset('web/images/logo-3.png') }}" style="height: 200px">
                 </a>
             </h2>
         </div>
