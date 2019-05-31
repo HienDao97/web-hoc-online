@@ -1,0 +1,69 @@
+.card {
+  margin: 0 auto;
+}
+
+.card .carousel-item {
+  height: 220px;
+}
+
+.card {
+  background: transparent;
+  border: none;
+}
+
+.card .carousel-caption {
+  padding: 0;
+  right: 0;
+  left: 0;
+  color: #3d3d3d;
+}
+
+.card .carousel-caption h3 {
+  color: #fff;
+  font-size: 1.5em;
+}
+
+.testi-img {
+  border: 5px solid #80cd33;
+  border-radius: 50%;
+  padding: 5px;
+  background: #fff;
+}
+
+.card .carousel-caption p {
+  margin: 0 auto;
+  color: #eee;
+  width: 85%;
+}
+
+.card .carousel-caption .col-sm-3 {
+  display: flex;
+  align-items: center;
+}
+
+.card .carousel-caption .col-sm-9 {
+  text-align: left;
+}
+
+.navi a {
+  text-decoration: none;
+}
+
+a>.ico {
+  padding: 10px;
+
+}
+
+div#testimonials {
+  background: #248ab2;
+}
+
+@media screen and (max-width: 736px) {
+
+  .card .carousel-item {
+    height: 270px;
+  }
+  .card .carousel-caption p {
+    width: 100%;
+}
+}
