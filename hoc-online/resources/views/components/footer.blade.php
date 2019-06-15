@@ -75,20 +75,7 @@
         </div>
         <div class="col-lg-3 col-md-6 mt-lg-0 mt-5">
             <div class="footerv2-w3ls">
-                <h3 class="mb-3 w3f_title">Thông tin liên lạc</h3>
-                <hr>
-                <div class="fv3-contact">
-                    <p>
-                        <a href="mailto:example@email.com">info@example.com</a>
-                    </p>
-                </div>
-                <div class="fv3-contact my-2">
-                    <p>0987654321</p>
-                </div>
-                <div class="fv3-contact">
-                    <p>Số 45/65 ngõ chợ Khâm Thiên
-                        <br>Đống Đa, Hà Nội.</p>
-                </div>
+<iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fvutienthanh912%2F&tabs=timeline&width=340&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=2189958024560160" width="340" height="250" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
             </div>
         </div>
 

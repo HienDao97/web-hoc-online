@@ -124,11 +124,11 @@ a.navbar-brand::first-letter {
 }
 
 a.navbar-brand span {
-    color: #00bcd4;
+    color: #248ab2;
 }
 
 header {
-    background: #248ab2;
+    background: #0f6eaa;
 }
 
 .navbar-light .navbar-nav .nav-link {
@@ -203,7 +203,7 @@ ul.header-w3_pvt li span {
 }
 
 .text-theme1 {
-    color: #00bcd4 !important;
+    color: #248ab2 !important;
 }
 
 .text-theme2 {
@@ -221,7 +221,7 @@ ul.header-w3_pvt li span {
     color: #572227 !important;
 }
 .bg-theme1 {
-    background: #00bcd4 !important;
+    background: #248ab2 !important;
 }
 
 .bg-theme2 {
@@ -593,7 +593,7 @@ span.sub-line {
 }
 
 h3.wthree-title {
-    color: #00bcd4;
+    color: #248ab2;
     text-transform: capitalize;
     font-size: 1.6em;
     font-weight: 800;
@@ -658,7 +658,7 @@ form.register-wthree .form-control {
     width: 32%;
     top: -85px;
     padding: 2em;
-    background: #248ab2;
+    background: #0f6eaa;
 }
 
 textarea.form-control {
@@ -791,7 +791,7 @@ h4.servgrid-title {
 
 /* footer */
 .footer:before {
-    background: #27586b;
+    background: #0f6eaa;
     position: absolute;
     width: 100%;
     height: 100%;
@@ -1129,7 +1129,7 @@ ul.social-iconsv2 li:last-child {
     text-transform: capitalize;
     margin: 0 auto;
     width: 100%;
-    background: #00bcd4;
+    background: #248ab2;
 }
 
 .modal-body {

@@ -4,7 +4,7 @@
             <div class="wthree-social">
                 <ul>
                     <li>
-                        <a href="#">
+                        <a href="https://www.facebook.com/vutienthanh912/">
                             <span class="fa fa-facebook-f icon_facebook"></span>
                         </a>
                     </li>
@@ -19,7 +19,7 @@
                                                     </a>
                                                 </li> -->
                     <li>
-                        <a href="#">
+                        <a href="https://www.youtube.com/channel/UCZiP8UeW2vRUDz7M0JsN0Xg/featured?sub_confirmation=1">
                             <span class="fa fa-youtube icon_youtube"></span>
                         </a>
                     </li>
