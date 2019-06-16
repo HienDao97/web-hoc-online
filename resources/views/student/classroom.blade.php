@@ -67,6 +67,9 @@
                             <div class="card-header">
                                 <span class="sub-line">Bài tập</span>
                             </div>
+                                <div style="background-color: #cccccc7a; padding: 10px; margin-top: 5px; margin-bottom: 5px">
+                                    <h5>Các bạn chuẩn bị giấy, bút để hoàn thành các bài tập sau:</h5>
+                                </div>
                             @if(!empty($exercise))
                                 <div class="lesson-exercise">
                                     <img src="{{ asset('web/images\exercise\0002.jpg') }}">

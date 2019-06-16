@@ -8,11 +8,15 @@
                     <span class="sub-line">Đăng ký khóa học</span>
                 </div>
                 <hr>
-                <h5>Bạn chưa đăng ký khóa học này, làm theo hướng dẫn dưới đây để đăng ký học "Khóa học cơ bản lớp 1" </h5>
+                <h5>Bạn chưa đăng kí khóa học, vui lòng làm theo hướng dẫn dưới đây để đăng kí khóa học "Khóa học cơ bản lớp 1" </h5>
                 <br>
                 <div style="background-color: #cccccc7a; padding: 10px">
-                    <h5>Chuyển khoản tới số tài khoản 0293838391029 - Ngân hàng BIDV chi nhánh Hà Thành, Hà Nội</h5>
+                    <h5>Chuyển khoản tới 1 trong các số tài khoản sau</h5>
                     <br>
+                    <h5>1) Số tài khoản NH Viettinbank: 100877955888(Chi nhánh Nam Thăng Long)– Chủ TK Vũ Tiến Thành</h5>
+                    <br>  
+                    <h5>2) Số tài khoản NH BIDV : 11610000121056 (Chi nhánh Hoài Đức, HN)– Chủ TK Vũ Tiến Thành</h5>
+                    <br>                                        
                     <h5>Số tiền chuyển khoản chuyển khoản: 1 000 000 đồng</h5>
                     <br>
                     <h5>Nội dung chuyển khoản:</h5>
@@ -23,8 +27,8 @@
                 </div>
                 <br>
                 <div style="background-color: #cccccc7a; padding: 10px">
-                    <h5>Khóa học sẽ được kích hoạt sau khi chuyển tiền từ 1 đến 2 giờ (trong giờ hành chỉnh). Bạn sẽ nhận được mail thông báo khi khóa học được kích hoạt.</h5>
-                    <h5>Liên lạc hỗ trợ: 0978654321. Hoặc chat qua ứng dụng Facebook.</h5>
+                    <h5>Vutienthanh.com sẽ tạo và kích hoạt tài khoản, sau đó gửi lại thông tin qua điện thoại (hoặc email) sau muộn nhất là 12 giờ.</h5>
+                    <h5>Sau 12 giờ nếu PHHS chưa nhận được tin nhắn/email trả lời, vui lòng liên hệ số hotline 0976131472!</h5>
                 </div>
             </div>
         </section>
