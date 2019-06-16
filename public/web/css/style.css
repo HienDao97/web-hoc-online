@@ -100,7 +100,7 @@ a.navbar-brand {
     position: absolute;
     width: 100%;
     padding: 0 2em;
-    top: 30px;
+    top: 5px;
     z-index: 11;
 }
 
@@ -481,6 +481,11 @@ ul.callbacks_tabs {
     -o-background-size: cover;
     -ms-background-size: cover;
     background-size: cover;
+}
+
+
+.carousel-item img{
+    object-fit: cover!important;
 }
 
 /*  
@@ -1810,6 +1815,12 @@ span.icon_youtube {
     color: #fff;
 }
 
+.sologan{
+    color: white;
+    margin: auto 0;
+    font-size: 1.25em;
+}
+
 /* -- Responsive code -- */
 
 @media screen and (max-width: 1440px) {
@@ -1856,7 +1867,11 @@ span.icon_youtube {
     }
 }
 
-@media screen and (max-width: 1024px) {}
+@media screen and (max-width: 1024px) {
+    .abt-pos {
+        margin-top: 60px;
+    }
+}
 
 /*Sửa từ 991 thành 1280*/
 @media screen and (max-width: 1280px) {
@@ -2038,6 +2053,16 @@ span.icon_youtube {
 }
 
 @media screen and (max-width: 480px) {
+    .sologan{
+        display: inline-block;
+        width: calc(100% - 110px);
+    }
+    .login-row{
+        position: absolute;
+        width: calc(100% - 110px);
+        top: 45px;
+        left: 110px;
+    }
     .header-main {
         padding: 0 1em;
     }
