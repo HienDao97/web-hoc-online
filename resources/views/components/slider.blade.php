@@ -20,7 +20,7 @@
                     @else
                         <li>
                             <button type="button" class="btn w3ls-btn btn-2  d-block">
-                                <a href="{{ route('student.logout') }}"><span class="fa fa-sign-in"></span>Đăng xuất</a>
+                                <a href="{{ route('student.logout') }}" style="color: #fff; text-decoration: none;" ><span class="fa fa-sign-in"></span>Đăng xuất</a>
                             </button>
                         </li>
                     @endif

@@ -2,7 +2,7 @@
 @section('title', 'Trang chủ')
 @section('content')
     <section class="wthree-row  w3-about position-relative" id="about">
-        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="1000">
           <ol class="carousel-indicators">
             <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active" style="border-radius:50%; height: 10px; width: 10px"></li>
             <li data-target="#carouselExampleIndicators" data-slide-to="1" style="border-radius:50%; height: 10px; width: 10px"></li>
