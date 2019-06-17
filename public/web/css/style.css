@@ -342,7 +342,24 @@ ul.callbacks_tabs {
 .slide-btm-wthree-pos span {
     color: #eee;
 }
-
+.document-list--item{
+    padding-left: 50px;
+}
+.document-list--item:first-child{
+    display: inline-block;
+    padding: 0;
+}
+.document-list--item-title{
+    font-size: 1.75em;
+}
+.document-list-collection{
+    display: flex;
+    flex-wrap: wrap;
+}
+.document-list{
+    width: 33%;
+    margin-bottom: 2em; 
+}
 /*
 .callbacks_nav {
 	position: absolute;
@@ -1991,6 +2008,10 @@ span.icon_youtube {
     ul.list-group.mt-3.why-list li {
         font-size: 1em;
     }
+
+    .document-list{
+        width: 49%;
+    }
 }
 
 @media screen and (max-width: 667px) {
@@ -2053,6 +2074,9 @@ span.icon_youtube {
 }
 
 @media screen and (max-width: 480px) {
+    .document-list{
+        width: 100%;
+    }
     .sologan{
         display: inline-block;
         width: calc(100% - 110px);
