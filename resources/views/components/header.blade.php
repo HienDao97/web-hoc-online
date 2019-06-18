@@ -8,7 +8,7 @@
             <ul class="navbar-nav  text-center">
                 @php
                     $currentRouteName = request()->route()->getName();
-                    //dd($currentRouteName)
+                    //dd($backend_menus)
                 @endphp
                 @foreach($backend_menus as $menu)
                     @if($menu['scroll'] == 1)

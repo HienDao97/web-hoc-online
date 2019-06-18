@@ -60,7 +60,7 @@ class AppServiceProvider extends ServiceProvider
                 //'param' => ""
             ],
             [
-                'name' => 'Góc phụ huynh',
+                'name' => 'Cảm nhận phụ huynh',
                 'route_name' => 'home.goc.phu.huynh',
                 'sub' => [],
                 'scroll' => 0
