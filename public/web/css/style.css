@@ -351,6 +351,7 @@ ul.callbacks_tabs {
 }
 .document-list--item-title{
     font-size: 1.75em;
+    color: white;
 }
 .document-list-collection{
     display: flex;
@@ -359,18 +360,32 @@ ul.callbacks_tabs {
 .document-list{
     width: 49%;
     margin-bottom: 2em;
-    border-color: #bb9b9838;
-    border-width: 2px;
-    border-style: solid;
     padding: 5px;
     margin-right: 5px;
-    background-color: #d0a09c73;
+    background-color: #0f6eaa;
 }
 .document-list--item a{
-    color: #42658a !important;
+    color: white !important;
 }
 .sale{
-    
+    background-color: #ff3c3cc7;
+    padding: 5px;
+    width: 49%;
+    height: 70px;
+}
+.left-sale{
+    float: left;
+}
+.right-sale{
+    float: right;
+}
+.sale p{
+    font-weight: bolder;
+    color: white;
+}
+.sale h1{
+    font-weight: bolder;
+    color: white;
 }
 /*
 .callbacks_nav {
