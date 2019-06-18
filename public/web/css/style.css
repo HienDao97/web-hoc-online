@@ -357,8 +357,20 @@ ul.callbacks_tabs {
     flex-wrap: wrap;
 }
 .document-list{
-    width: 33%;
-    margin-bottom: 2em; 
+    width: 49%;
+    margin-bottom: 2em;
+    border-color: #bb9b9838;
+    border-width: 2px;
+    border-style: solid;
+    padding: 5px;
+    margin-right: 5px;
+    background-color: #d0a09c73;
+}
+.document-list--item a{
+    color: #42658a !important;
+}
+.sale{
+    
 }
 /*
 .callbacks_nav {
