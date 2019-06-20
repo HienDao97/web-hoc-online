@@ -21,9 +21,11 @@ Route::group(['middleware' => ['web']], function() {
 
     //goc phu huynh
     Route::get('/goc-phu-huynh', 'CommentController@index')->name('home.goc.phu.huynh');
-
+    //
+    Route::get('gioi-thieu', 'IntroduceController@index')->name('home.introduce.index');
     //tai lieu
     Route::get('tai-lieu', 'DocumentController@index')->name('home.document.index');
+    Route::get('tai-lieu/lop/{id}', 'DocumentController@detail')->name('home.document.course');
 
     //khoa-hoc
     Route::get('khoa-hoc', 'ClassroomController@index')->name('home.classroom.index');

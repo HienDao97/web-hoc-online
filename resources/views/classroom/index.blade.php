@@ -29,10 +29,40 @@
                                                 <p class="card-title servgrid-title">
                                                     Cung cấp kiến thức về bảng cửu chương, cộng trừ nhân chia trong phạm vi 10.
                                                 </p>
+                                                @php
+                                                    $check = 0;
+                                                @endphp
+                                                @if(!empty($student_class))
+                                                    @foreach($student_class as $cl)
+                                                        @if($class->id == $cl->class_room_id)
+                                                            @php
+                                                                $cl_st = $cl;
+                                                                $check = 1;
+                                                            @endphp
+                                                        @endif
+                                                    @endforeach
+                                                @endif
                                                 @if(!empty(Auth::user()->id))
                                                     <a href="{{ route('student.classroom', $class->id) }}" class="text-capitalize servgrid_link btn">Vào học</a>
                                                 @else
                                                     <a href="#" onclick="return login.create()" class="text-capitalize servgrid_link btn">Vào học</a>
+                                                @endif
+                                                @php
+                                                    $end_date = \Carbon\Carbon::parse($cl->class->end_date);
+                                                    $now = \Carbon\Carbon::now();
+                                                    $start_date = \Carbon\Carbon::parse($cl->class->start_date);
+
+                                                    $diff = $end_date->diffInDays($now);
+                                                @endphp
+                                                @if($check == 0 && $start_date->gt($now))
+
+                                                    <hr>
+                                                    <div class="sale left-sale">
+                                                        <p style="font-size: 16px">GIẢM GIÁ</p><p style="font-size: 20px">{{ round($cl->class->sale/$cl->class->tuition, 3) * 100 }}%</p>
+                                                    </div>
+                                                    <div class="sale right-sale">
+                                                        <p style="font-size: 16px">CÒN</p><p style="font-size: 12px">{{ $diff }} ngày</p>
+                                                    </div>
                                                 @endif
 
                                             </div>

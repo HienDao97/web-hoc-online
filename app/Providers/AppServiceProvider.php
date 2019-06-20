@@ -39,7 +39,7 @@ class AppServiceProvider extends ServiceProvider
             ],
             [
                 'name' => 'Khoá học',
-                'route_name' => '',
+                'route_name' => 'home.classroom.index',
                 'sub' => [],
                 'scroll' => 0
                 //'param' => ""
