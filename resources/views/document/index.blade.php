@@ -32,10 +32,10 @@
                                 <h4 class="text-theme3">Lớp 3</h4>
                                 <span class="my-2 d-block">Sách luyện đề</span>
                                 <p>Sách này cung cấp kiến thức cơ bản dành cho học sinh lớp 3.</p>
-                                <hr>
+                                {{--<hr>
                                 <div class="footerv4-social d-flex align-items-center">
                                     <a href="{{ route('home.document.course', $courses[2]->id) }}"><button type="button" class="btn btn-outline-secondary"> Tải xuống</button></a>
-                                </div>
+                                </div>--}}
                             </div>
                         </a>
                     </div>

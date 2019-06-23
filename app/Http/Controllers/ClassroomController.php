@@ -14,7 +14,12 @@ class ClassroomController extends Controller
      */
     public function index(){
         $courses = Course::with('class')->get();
-        $student_class = StudentClass::with("class")->where('student_id', Auth::user()->id)->get();
+        if(!empty( Auth::user()->id)){
+            $student_class = StudentClass::with("class")->where('student_id', Auth::user()->id)->get();
+        }else{
+            $student_class = "";
+        }
+
         return view('classroom.index', compact('courses', 'student_class'));
     }
 

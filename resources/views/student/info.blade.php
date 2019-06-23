@@ -90,126 +90,23 @@
                         <div class="container-full-width">
                             <div class="col-sm-6" style="background-color: white;">
                                 @foreach($studentClass as $key => $value)
+                                    <h5 class="w3-opacity"><b><span class="glyphicon glyphicon-share-alt"></span>{{ $key }}</b></h5>
                                     @foreach($value as $k => $v)
-                                        <h5 class="w3-opacity"><b><span class="glyphicon glyphicon-share-alt"></span>{{ $key }} - {{ $v->classroom_name }}</b></h5>
+                                        <p>{{ $v->classroom_name }}</p>
+                                        @php
+                                            $studentTheoryCount = \App\Models\ClassroomUnitExercise::where('classroom_id', $v->class_room_id)->count();
+                                            $max = \App\Models\Theory::where('classroom_id', $v->class_room_id)->count();
+                                        @endphp
+                                        <div class="w3-light-grey w3-round-xlarge w3-small">
+                                            <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:{{ ($max == 0) ? 100 :round($studentTheoryCount/$max, 3) * 100 }}%">{{ ($max == 0) ? 100 :round($studentTheoryCount/$max, 3) * 100 }}%</div>
+                                        </div>
                                     @endforeach
                                 @endforeach
-                                <p>Bài 1</p>
-                                <div class="w3-light-grey w3-round-xlarge w3-small">
-                                    <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:70%">70%</div>
-                                </div>
-
-                                <p>Bài 2</p>
-                                <div class="w3-light-grey w3-round-xlarge w3-small">
-                                    <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:60%">60%</div>
-                                </div>
-
-                                <p>Bài 3</p>
-                                <div class="w3-light-grey w3-round-xlarge w3-small">
-                                    <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:70%">70%</div>
-                                </div>
-
-                                <p>Bài 4</p>
-                                <div class="w3-light-grey w3-round-xlarge w3-small">
-                                    <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:40%">40%</div>
-                                </div>
-
-                                <p>Bài 5</p>
-                                <div class="w3-light-grey w3-round-xlarge w3-small">
-                                    <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:40%">40%</div>
-                                </div>
-
-                                <p>Bài 6</p>
-                                <div class="w3-light-grey w3-round-xlarge w3-small">
-                                    <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:50%">50%</div>
-                                </div>
-                                <br>
-                            </div>
-                            <div class="col-sm-6">
-
-                                <h5 class="w3-opacity"><b><span class="glyphicon glyphicon-share-alt"></span> Khóa nâng cao lớp 2</b></h5>
-
-                                <p>Bài 1</p>
-                                <div class="w3-light-grey w3-round-xlarge w3-small">
-                                    <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:65%">65%</div>
-                                </div>
-
-                                <p>Bài 2</p>
-                                <div class="w3-light-grey w3-round-xlarge w3-small">
-                                    <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:75%">75%</div>
-                                </div>
-
-                                <p>Bài 3</p>
-                                <div class="w3-light-grey w3-round-xlarge w3-small">
-                                    <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:60%">60%</div>
-                                </div>
-
-                                <p>Bài 4</p>
-                                <div class="w3-light-grey w3-round-xlarge w3-small">
-                                    <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:65%">65%</div>
-                                </div>
-
-                                <p>Bài 5</p>
-                                <div class="w3-light-grey w3-round-xlarge w3-small">
-                                    <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:60%">60%</div>
-                                </div>
-
-                                <p>Bài 6</p>
-                                <div class="w3-light-grey w3-round-xlarge w3-small">
-                                    <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:90%">90%</div>
-                                </div>
-
-                                <p>Bài 7</p>
-                                <div class="w3-light-grey w3-round-xlarge w3-small">
-                                    <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:65%">65%</div>
-                                </div>
-
                                 <br>
                             </div>
                         </div>
-
-                        <div class="container-full-width">
-                            <div class="col-sm-6">
-                                <h5 class="w3-opacity"><b><span class="glyphicon glyphicon-share-alt"></span> Khóa cơ bản lớp 2</b></h5>
-
-                                <p>Bài 1</p>
-                                <div class="w3-light-grey w3-round-xlarge w3-small">
-                                    <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:70%">70%</div>
-                                </div>
-
-                                <p>Bài 2</p>
-                                <div class="w3-light-grey w3-round-xlarge w3-small">
-                                    <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:50%">50%</div>
-                                </div>
-                                <br>
-
-                            </div>
-                            <div class="col-sm-6">
-                                <h5 class="w3-opacity"><b><span class="glyphicon glyphicon-share-alt"></span> Khóa luyện đề lớp 2</b></h5>
-
-                                <p>Bài 1</p>
-                                <div class="w3-light-grey w3-round-xlarge w3-small">
-                                    <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:60%">60%</div>
-                                </div>
-
-                                <p>Bài 2</p>
-                                <div class="w3-light-grey w3-round-xlarge w3-small">
-                                    <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:50%">50%</div>
-                                </div>
-
-                                <p>Bài 3</p>
-                                <div class="w3-light-grey w3-round-xlarge w3-small">
-                                    <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:30%">30%</div>
-                                </div>
-                                <br>
-                            </div>
-                        </div>
-
                     </div>
-
-                    <!-- End Right Column -->
                 </div>
-
                 <!-- End Grid -->
             </div>
 

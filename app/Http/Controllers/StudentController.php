@@ -142,18 +142,32 @@ class StudentController extends Controller
                     }
                 }
                 //render html
-                $html = view('student.answer', compact('answers','list_answer', 'point', 'params'))->render();
+                $point_of_answer = round($point/count($answers), 2) * 10;
+                if(9 <= $point_of_answer && $point_of_answer <= 10){
+                    $number = random_int(0,3);
+                    $text = Exercise::listText()[$number];
+                }else if(7 <= $point_of_answer && $point_of_answer < 9){
+                    $number = random_int(4, 7);
+                    $text = Exercise::listText()[$number];
+                }else if(5 <= $point_of_answer && $point_of_answer <7){
+                    $number = random_int(8, 11);
+                    $text = Exercise::listText()[$number];
+                }else{
+                    $number = random_int(12, 15);
+                    $text = Exercise::listText()[$number];
+                }
+                $html = view('student.answer', compact('answers','list_answer', 'point', 'params', 'text'))->render();
                 //update point of thery in class
                 $classroomUnitExercise = ClassroomUnitExercise::where('student_id', Auth::user()->id)->where('theory_id',$exercise->theory_id)->first();
                 if(empty($classroomUnitExercise)){
                     ClassroomUnitExercise::insert([
-                        "point" => round($point/count($answers), 3) * 10,
+                        "point" => $point_of_answer,
                         "student_id" => Auth::user()->id,
                         "theory_id" => $exercise->theory_id,
                         "classroom_id" => $exercise->classroom_id
                     ]);
                 }else{
-                    $classroomUnitExercise->point = round($point/count($answers), 3) * 10;
+                    $classroomUnitExercise->point = $point_of_answer;
                     $classroomUnitExercise->save();
                 }
 
