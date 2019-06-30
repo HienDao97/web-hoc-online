@@ -39,7 +39,7 @@
                             </div>
                         </a>
                     </div>
-                    <div class="col-lg-4 col-md-6">
+                    <div class="col-lg-6 col-md-6">
                         <a href="{{ route('home.document.course', $courses[3]->id) }}">
                             <div class="team-text bg-theme4">
                                 <h4 class="text-theme4">Lớp 4</h4>
@@ -48,7 +48,7 @@
                             </div>
                         </a>
                     </div>
-                    <div class="col-lg-4 col-md-6">
+                    <div class="col-lg-6 col-md-6">
                         <a href="{{ route('home.document.course', $courses[4]->id) }}">
                             <div class="team-text bg-theme5">
                                 <h4 class="text-theme5">Lớp 5</h4>
