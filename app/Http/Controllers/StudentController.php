@@ -8,10 +8,11 @@ use App\Models\KMsg;
 use App\Models\StudentClass;
 use App\Models\Theory;
 use App\Student;
+use function foo\func;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Log;
 use Validator;
+use Illuminate\Support\Facades\Auth;
 
 class StudentController extends Controller
 {
@@ -24,12 +25,17 @@ class StudentController extends Controller
     {
         if(Auth::user()->id == $id){
             $student = Student::where('id', $id)->first();
-            $studentClass = StudentClass::where('student_classrooms.student_id', $id)
+            $studentClass = StudentClass::select("student_classrooms.*", "courses.name as course_name", "class_rooms.class_name as classroom_name")
+                ->where('student_classrooms.student_id', $id)
                 ->join('courses', 'courses.id', '=', 'student_classrooms.course_id')
                 ->join('class_rooms', 'class_rooms.id', '=', 'student_classrooms.class_room_id')
                 ->get();
+            $studentClass = $studentClass->groupBy(function($item){
+                return $item->course_name;
+            });
+            $classExercise = ClassroomUnitExercise::where('student_id', $id)->get();
             //dd($studentClass);
-            return view('student.info', compact('student'));
+            return view('student.info', compact('student', 'studentClass', 'classExercise'));
         }else{
             abort(404, "View not found");
         }
@@ -80,12 +86,20 @@ class StudentController extends Controller
      */
     public function classroom(Request $request){
         $studentClassroom = StudentClass::where('student_id', Auth::user()->id)->where('class_room_id', $request->id)->first();
+
         if(!empty($studentClassroom)){
             $theories = Theory::where('classroom_id', $request->id)->whereNull('deleted_at')->get();
 
             if(empty($request->id_baihoc)){
-                $id_baihoc = $theories->min('id');
-                $exercise = Exercise::where('theory_id', $theories[0]->id)->first();
+                //dd($theories);
+                if(count($theories) > 0){
+                    $id_baihoc = $theories->min('id');
+                    $exercise = Exercise::where('theory_id', $theories[0]->id)->first();
+                }else{
+                    $id_baihoc = "";
+                    $exercise = "";
+                }
+
             }else{
                 $id_baihoc = $request->id_baihoc;
                 $exercise = Exercise::where('theory_id', $request->id_baihoc)->first();
@@ -118,6 +132,7 @@ class StudentController extends Controller
                 $result->message = "Bài tập không tồn tại";
                 $result->result = KMsg::RESULT_ERROR;
             } else {
+                //count point
                 $list_answer = Exercise::listAnswer();
                 $answers = json_decode($exercise->answer);
                 $point = 0;
@@ -126,17 +141,46 @@ class StudentController extends Controller
                         $point = $point + 1;
                     }
                 }
-                $html = view('student.answer', compact('answers','list_answer', 'point', 'params'))->render();
+                //render html
+                $point_of_answer = round($point/count($answers), 2) * 10;
+                if(9 <= $point_of_answer && $point_of_answer <= 10){
+                    $number = random_int(0,3);
+                    $text = Exercise::listText()[$number];
+                }else if(7 <= $point_of_answer && $point_of_answer < 9){
+                    $number = random_int(4, 7);
+                    $text = Exercise::listText()[$number];
+                }else if(5 <= $point_of_answer && $point_of_answer <7){
+                    $number = random_int(8, 11);
+                    $text = Exercise::listText()[$number];
+                }else{
+                    $number = random_int(12, 15);
+                    $text = Exercise::listText()[$number];
+                }
+                $html = view('student.answer', compact('answers','list_answer', 'point', 'params', 'text'))->render();
+                //update point of thery in class
                 $classroomUnitExercise = ClassroomUnitExercise::where('student_id', Auth::user()->id)->where('theory_id',$exercise->theory_id)->first();
                 if(empty($classroomUnitExercise)){
                     ClassroomUnitExercise::insert([
-                        "point" => round($point/count($answers)) * 10,
+                        "point" => $point_of_answer,
                         "student_id" => Auth::user()->id,
                         "theory_id" => $exercise->theory_id,
+                        "classroom_id" => $exercise->classroom_id
                     ]);
                 }else{
-                    $classroomUnitExercise->point = $point;
+                    $classroomUnitExercise->point = $point_of_answer;
                     $classroomUnitExercise->save();
+                }
+
+                //update status of student class
+                $maxTheory = Theory::where('classroom_id', $classroomUnitExercise->classroom_id)->count();
+                $currentTheory = ClassroomUnitExercise::where('classroom_id', $classroomUnitExercise->classroom_id)->count();
+
+                if($maxTheory == $currentTheory){
+                    StudentClass::where("student_id",Auth::user()->id)
+                        ->where("class_room_id", $exercise->classroom_id)
+                        ->where("course_id", $exercise->course_id)->update([
+                            "status" => 1
+                        ]);
                 }
                 $result->message = "Chấm bài thành công";
                 $result->result = $html;

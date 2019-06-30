@@ -1,4 +1,4 @@
-
+<p style="color: #80cd33">{{ $text }}</p>
 <p>Số câu đúng: <b style="color: #00bcd4;">{{ $point }}/{{ count($answers) }}</b> câu</p>
 <p>Điểm: <b style="color: #00bcd4">{{ round($point/count($answers), 3) * 10 }}</b></p>
 <p></p>

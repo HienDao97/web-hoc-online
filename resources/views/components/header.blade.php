@@ -16,22 +16,11 @@
                             <a class="nav-link scroll" href="#{{ $menu['id'] }}">{{ $menu['name'] }}</a>
                         </li>
                     @else
-                        @if($menu['name'] == "Khoá học")
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                               data-toggle="dropdown"
-                               aria-haspopup="true" aria-expanded="false">
-                               {{ $menu['name'] }}
-                            </a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                @foreach($course_menus as $menu)
-                                    <a class="dropdown-item scroll" href="#lop{{ $menu->id }}">{{ $menu->name }}</a>
-                                @endforeach
-                            </div>
-                        @else
-                            <li class="nav-item  mt-lg-0 mt-3">
-                                <a class="nav-link <?php echo ($currentRouteName == $menu['route_name'])? "active" : ""?>" href="{{ route($menu['route_name']) }}" >{{ $menu['name'] }}</a>
-                            </li>
-                        @endif
+
+                        <li class="nav-item  mt-lg-0 mt-3">
+                            <a class="nav-link <?php echo ($currentRouteName == $menu['route_name'])? "active" : ""?>" href="{{ route($menu['route_name']) }}" >{{ $menu['name'] }}</a>
+                        </li>
+
                     @endif
                 @endforeach
                 @if(!empty(Auth::user()->id))

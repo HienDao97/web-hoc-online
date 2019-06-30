@@ -42,43 +42,38 @@
 
                             <div style="margin-bottom: 10px">
                                 <p class="w3-large w3-text-theme"><b><i class="fa fa-asterisk fa-fw w3-margin-right w3-text-teal"></i>Khóa học</b></p>
-                                <p>Khóa cơ bản lớp 1</p>
-                                <div class="w3-light-grey w3-round-xlarge">
-                                    <div class="w3-round-xlarge w3-teal" style="height:24px;width:100%"></div>
-                                </div>
-                                <p>Khóa nâng cao lớp 2</p>
-                                <div class="w3-light-grey w3-round-xlarge">
-                                    <div class="w3-round-xlarge w3-teal" style="height:24px;width:55%"></div>
-                                </div>
-                                <p>Khóa cơ bản lớp 2</p>
-                                <div class="w3-light-grey w3-round-xlarge">
-                                    <div class="w3-round-xlarge w3-teal" style="height:24px;width:25%"></div>
-                                </div>
-                                <p>Khóa luyện đề lớp 2</p>
-                                <div class="w3-light-grey w3-round-xlarge">
-                                    <div class="w3-round-xlarge w3-teal" style="height:24px;width:25%"></div>
-                                </div>
+                                @foreach($studentClass as $key => $value)
+                                    @foreach($value as $k => $v)
+                                        <p>{{ $key }} - {{ $v->classroom_name }}</p>
+                                        {{--<div class="w3-light-grey w3-round-xlarge">--}}
+                                            {{--<div class="w3-round-xlarge w3-teal" style="height:24px;width:100%"></div>--}}
+                                        {{--</div>--}}
+                                    @endforeach
+                                @endforeach
                             </div>
                             <hr>
 
                             <div style="margin-bottom: 10px">
                                 <p class="w3-large w3-text-theme"><b><i class="fa fa-asterisk fa-fw w3-margin-right w3-text-teal"></i>Điểm trung bình</b></p>
-                                <p>Khóa cơ bản lớp 1</p>
-                                <div class="w3-light-grey w3-round-xlarge">
-                                    <div class="w3-round-xlarge w3-center w3-teal" style="height:24px;width:100%">10.0</div>
-                                </div>
-                                <p>Khóa nâng cao lớp 2</p>
-                                <div class="w3-light-grey w3-round-xlarge">
-                                    <div class="w3-round-xlarge w3-center w3-teal" style="height:24px;width:55%">5.5</div>
-                                </div>
-                                <p>Khóa cơ bản lớp 2</p>
-                                <div class="w3-light-grey w3-round-xlarge">
-                                    <div class="w3-round-xlarge w3-center w3-teal" style="height:24px;width:25%">2.5</div>
-                                </div>
-                                <p>Khóa luyện đề lớp 2</p>
-                                <div class="w3-light-grey w3-round-xlarge">
-                                    <div class="w3-round-xlarge w3-center w3-teal" style="height:24px;width:25%">2.5</div>
-                                </div>
+                                @foreach($studentClass as $key => $value)
+                                    @foreach($value as $k => $v)
+                                        <p>{{ $key }} - {{ $v->classroom_name }}</p>
+                                        @php
+                                            $exercise = $classExercise->where('classroom_id', $v->class_room_id);
+                                            $sumpoint = 0;
+                                            $count = 0;
+                                            if(!empty($exercise)){
+                                                foreach ($exercise as $ex){
+                                                    $sumpoint += $ex->point;
+                                                    $count++;
+                                                }
+                                            }
+                                        @endphp
+                                        <div class="w3-light-grey w3-round-xlarge">
+                                            <div class="w3-round-xlarge w3-center w3-teal" style="height:24px;width:100%">{{ ($count == 0 ) ? 0 : round($sumpoint/$count, 3) }}</div>
+                                        </div>
+                                    @endforeach
+                                @endforeach
                             </div>
                             <hr>
 
@@ -94,124 +89,24 @@
                         <p class="w3-large"><b><i class="fa fa-asterisk fa-fw w3-margin-right w3-text-teal"></i>Kết quả học</b></p>
                         <div class="container-full-width">
                             <div class="col-sm-6" style="background-color: white;">
-
-                                <h5 class="w3-opacity"><b><span class="glyphicon glyphicon-share-alt"></span> Khóa cơ bản lớp 1</b></h5>
-                                <p>Bài 1</p>
-                                <div class="w3-light-grey w3-round-xlarge w3-small">
-                                    <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:70%">70%</div>
-                                </div>
-
-                                <p>Bài 2</p>
-                                <div class="w3-light-grey w3-round-xlarge w3-small">
-                                    <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:60%">60%</div>
-                                </div>
-
-                                <p>Bài 3</p>
-                                <div class="w3-light-grey w3-round-xlarge w3-small">
-                                    <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:70%">70%</div>
-                                </div>
-
-                                <p>Bài 4</p>
-                                <div class="w3-light-grey w3-round-xlarge w3-small">
-                                    <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:40%">40%</div>
-                                </div>
-
-                                <p>Bài 5</p>
-                                <div class="w3-light-grey w3-round-xlarge w3-small">
-                                    <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:40%">40%</div>
-                                </div>
-
-                                <p>Bài 6</p>
-                                <div class="w3-light-grey w3-round-xlarge w3-small">
-                                    <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:50%">50%</div>
-                                </div>
-                                <br>
-                            </div>
-                            <div class="col-sm-6">
-
-                                <h5 class="w3-opacity"><b><span class="glyphicon glyphicon-share-alt"></span> Khóa nâng cao lớp 2</b></h5>
-
-                                <p>Bài 1</p>
-                                <div class="w3-light-grey w3-round-xlarge w3-small">
-                                    <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:65%">65%</div>
-                                </div>
-
-                                <p>Bài 2</p>
-                                <div class="w3-light-grey w3-round-xlarge w3-small">
-                                    <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:75%">75%</div>
-                                </div>
-
-                                <p>Bài 3</p>
-                                <div class="w3-light-grey w3-round-xlarge w3-small">
-                                    <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:60%">60%</div>
-                                </div>
-
-                                <p>Bài 4</p>
-                                <div class="w3-light-grey w3-round-xlarge w3-small">
-                                    <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:65%">65%</div>
-                                </div>
-
-                                <p>Bài 5</p>
-                                <div class="w3-light-grey w3-round-xlarge w3-small">
-                                    <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:60%">60%</div>
-                                </div>
-
-                                <p>Bài 6</p>
-                                <div class="w3-light-grey w3-round-xlarge w3-small">
-                                    <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:90%">90%</div>
-                                </div>
-
-                                <p>Bài 7</p>
-                                <div class="w3-light-grey w3-round-xlarge w3-small">
-                                    <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:65%">65%</div>
-                                </div>
-
+                                @foreach($studentClass as $key => $value)
+                                    <h5 class="w3-opacity"><b><span class="glyphicon glyphicon-share-alt"></span>{{ $key }}</b></h5>
+                                    @foreach($value as $k => $v)
+                                        <p>{{ $v->classroom_name }}</p>
+                                        @php
+                                            $studentTheoryCount = \App\Models\ClassroomUnitExercise::where('classroom_id', $v->class_room_id)->count();
+                                            $max = \App\Models\Theory::where('classroom_id', $v->class_room_id)->count();
+                                        @endphp
+                                        <div class="w3-light-grey w3-round-xlarge w3-small">
+                                            <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:{{ ($max == 0) ? 100 :round($studentTheoryCount/$max, 3) * 100 }}%">{{ ($max == 0) ? 100 :round($studentTheoryCount/$max, 3) * 100 }}%</div>
+                                        </div>
+                                    @endforeach
+                                @endforeach
                                 <br>
                             </div>
                         </div>
-
-                        <div class="container-full-width">
-                            <div class="col-sm-6">
-                                <h5 class="w3-opacity"><b><span class="glyphicon glyphicon-share-alt"></span> Khóa cơ bản lớp 2</b></h5>
-
-                                <p>Bài 1</p>
-                                <div class="w3-light-grey w3-round-xlarge w3-small">
-                                    <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:70%">70%</div>
-                                </div>
-
-                                <p>Bài 2</p>
-                                <div class="w3-light-grey w3-round-xlarge w3-small">
-                                    <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:50%">50%</div>
-                                </div>
-                                <br>
-
-                            </div>
-                            <div class="col-sm-6">
-                                <h5 class="w3-opacity"><b><span class="glyphicon glyphicon-share-alt"></span> Khóa luyện đề lớp 2</b></h5>
-
-                                <p>Bài 1</p>
-                                <div class="w3-light-grey w3-round-xlarge w3-small">
-                                    <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:60%">60%</div>
-                                </div>
-
-                                <p>Bài 2</p>
-                                <div class="w3-light-grey w3-round-xlarge w3-small">
-                                    <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:50%">50%</div>
-                                </div>
-
-                                <p>Bài 3</p>
-                                <div class="w3-light-grey w3-round-xlarge w3-small">
-                                    <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:30%">30%</div>
-                                </div>
-                                <br>
-                            </div>
-                        </div>
-
                     </div>
-
-                    <!-- End Right Column -->
                 </div>
-
                 <!-- End Grid -->
             </div>
 
