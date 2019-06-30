@@ -74,7 +74,6 @@
                                 </div>
                             </div>
                         </div>
-
                         <div class="bg-cl-fff">
                             <div class="container-fluid pt-4 pbt-4">
                                 <div class="card-header">
