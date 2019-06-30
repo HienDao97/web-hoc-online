@@ -30,14 +30,16 @@
             <div class="abt-pos" style="top: -74px;">
                 <h4>Đăng ký tài khoản</h4>
                 <div class="contcat-form">
-                    <form action="{{ route('home.register.post') }}" method="post" class="register-wthree">
+                    <form action="{{route('home.register')}}" method="post" id="form-register" class="register-wthree">
+                        {{ csrf_field() }}
+                        <div class="box-header" id="register-message"></div>
                         <div class="form-group">
                             <div class="row">
                                 <div class="col-md-12">
                                     <label class="text-white">
                                         Họ tên con
                                     </label>
-                                    <input class="form-control" type="text" placeholder="Họ tên con" name="email" required="">
+                                    <input class="form-control" type="text" placeholder="Họ tên con" name="name" required="">
                                 </div>
                             </div>
                         </div>
@@ -47,24 +49,24 @@
                                     <label class="text-white">
                                         Số điện thoại phụ huynh
                                     </label>
-                                    <input class="form-control" type="text" placeholder="Số điện thoại phụ huynh" name="email"
+                                    <input class="form-control" type="text" placeholder="Số điện thoại phụ huynh" name="mobile"
                                            required="">
                                 </div>
                             </div>
                         </div>
-                        <div class="form-group"> 
+                        <div class="form-group">
                             <div class="row">
                                 <div class="col-md-6">
                                     <label class="text-white">
                                         Mật khẩu
                                     </label>
-                                    <input class="form-control" type="password" placeholder="Mật khẩu" name="email" required="">
+                                    <input class="form-control" type="password" placeholder="Mật khẩu" name="password" required="">
                                 </div>
                                 <div class="col-md-6 mt-md-0 mt-4">
                                     <label class="text-white">
                                         Nhập lại mật khẩu
                                     </label>
-                                    <input class="form-control" type="password" placeholder="Nhập lại mật khẩu" name="name"
+                                    <input class="form-control" type="password" placeholder="Nhập lại mật khẩu" name="password_confirmation"
                                            required="">
                                 </div>
                             </div>
@@ -82,14 +84,14 @@
                         </div>
                         <div class="sub-w3l">
                             <div class="sub-w3_pvt">
-                                <input type="checkbox" id="brand2" value="">
+                                <input type="checkbox" id="checkbox" value="">
                                 <label for="brand2" class="mb-3 text-dark">
                                     <span></span>Tôi đồng ý với điều khoản của trang web</label>
                             </div>
                         </div>
                         <div class="row mt-3">
                             <div class="col-md-12">
-                                <button type="submit"
+                                <button type="button" onclick="return onSubmitProject()"
                                         class="btn  btn-block w-100 font-weight-bold text-capitalize bg-theme1 text-white">Đăng
                                     ký
                                 </button>
@@ -337,7 +339,7 @@
                         <a href=""><button type="button" class="btn btn-large btn-block btn-primary" > Tham gia ngay!</button></a>
                     </div>
                 </div>
-            </div>                        
+            </div>
         </div>
     </div>
     <!-- //contact -->
@@ -353,6 +355,37 @@
             margin-bottom: 2em;
         }
     </style>
+@endsection
+@section('scripts')
+    <script type="text/javascript">
+        function onSubmitProject() {
+            if($('#checkbox').is(":checked")){
+                $("#message").html("");
+                btn_loading.loading("form-register");
+                formHelper.postFormJson('form-register', function (result) {
+                    if (result.result == 1) {
+                        toastr.success(result.message, {timeOut: 5000});
+                        dialog.close();
+                        btn_loading.loading("body");
+                        window.location.reload();
+                    } else {
+                        btn_loading.hide("form-register");
+                        var str = "<div class=\"alert alert-danger\">";
+                        for(var key in result.message){
+                            str += result.message[key];
+                            str += "<br/>";
+                        };
+
+                        str += "</div>";
+                        $("#register-message").append(str);
+                    }
+                });
+            }else{
+                toastr.warning("Hãy đồng ý điều khoản trước khi đăng kí", {timeOut: 5000});
+            }
+
+        }
+    </script>
 @endsection
     <!-- about -->
 

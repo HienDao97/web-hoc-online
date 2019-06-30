@@ -92,6 +92,17 @@
                     </div>
 
                 @else
+                    <div class="col-md-6">
+                        <div class="team-text bg-theme{{ $course->id }}">
+                            <h4 class="text-theme{{ $course->id }}">{{ $course->name }}</h4>
+                            <span class="my-2 d-block">Không có tài liệu</span>
+                            <p>Không có tài liệu</p>
+                            <hr>
+                            <div class="footerv4-social d-flex align-items-center">
+                                <a href="#"><button type="button" class="btn btn-outline-secondary"> Tải xuống</button></a>
+                            </div>
+                        </div>
+                    </div>
                 @endif
                 {{ $items->links() }}
             </div>
