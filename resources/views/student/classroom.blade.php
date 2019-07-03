@@ -90,18 +90,42 @@
                                         <input type="hidden" name="exercise" value="{{ $exercise->id }}">
                                         {{ csrf_field() }}
                                         <div class="list-lesson-answer" id="list-answer">
+                                            @php
+                                            $left = 0;
+                                            $right = (int) ($answer_count/2);
+                                            @endphp
                                             @for($i = 0; $i < $answer_count; $i++)
-                                                <div id="question-{{ $i +1 }}" class="lesson-answer">
-                                                    <span>Câu {{ $i +1 }}: </span>
-                                                    @foreach($list_answer as $key => $value)
-                                                        <div class="form-check">
-                                                            <input class="form-check-input" type="radio" name="answer[{{ $i }}][]"
-                                                                   id="exampleRadios{{ $i }}{{ $key }}" value="{{ $key }}">
-                                                            <label class="form-check-label"
-                                                                   for="exampleRadios{{ $i }}{{ $key }}">{{ $value }}</label>
-                                                        </div>
-                                                    @endforeach
-                                                </div>
+                                                @if($i % 2 == 0)
+                                                    <div id="question-{{ $left +1 }}" class="lesson-answer">
+                                                        <span>Câu {{ $left +1 }}: </span>
+                                                        @foreach($list_answer as $key => $value)
+                                                            <div class="form-check">
+                                                                <input class="form-check-input" type="radio" name="answer[{{ $left }}][]"
+                                                                       id="exampleRadios{{ $left }}{{ $key }}" value="{{ $key }}">
+                                                                <label class="form-check-label"
+                                                                       for="exampleRadios{{ $left }}{{ $key }}">{{ $value }}</label>
+                                                            </div>
+                                                        @endforeach
+                                                    </div>
+                                                    @php
+                                                        $left = $left + 1;
+                                                    @endphp
+                                                @else
+                                                    <div id="question-{{ $right +1 }}" class="lesson-answer">
+                                                        <span>Câu {{ $right +1 }}: </span>
+                                                        @foreach($list_answer as $key => $value)
+                                                            <div class="form-check">
+                                                                <input class="form-check-input" type="radio" name="answer[{{ $right }}][]"
+                                                                       id="exampleRadios{{ $right }}{{ $key }}" value="{{ $key }}">
+                                                                <label class="form-check-label"
+                                                                       for="exampleRadios{{ $right }}{{ $key }}">{{ $value }}</label>
+                                                            </div>
+                                                        @endforeach
+                                                    </div>
+                                                    @php
+                                                        $right = $right + 1;
+                                                    @endphp
+                                                @endif
                                             @endfor
                                         </div>
                                         <div class="complete-button" id="button-submmit">
