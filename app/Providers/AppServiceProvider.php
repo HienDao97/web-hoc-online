@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use App\Models\Course;
+use App\Models\Slide;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\View;
 use Illuminate\Routing\Route;
@@ -75,7 +76,9 @@ class AppServiceProvider extends ServiceProvider
                 //'param' => (!empty(Auth::guard('apartners')->user()->id)) ? Auth::guard('apartners')->user()->id : ""
             ]
         ];
+        $slides = Slide::all();
         View::share('course_menus', $courses);
         View::share('backend_menus', $menus);
+        View::share('slides', $slides);
     }
 }

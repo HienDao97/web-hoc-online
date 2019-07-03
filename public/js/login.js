@@ -44,4 +44,16 @@ var changePassword= (function () {
         }
     };
 })();
+var comment= (function () {
+    return {
+        create: function () {
+            dialog.close();
+            btn_loading.loading("body");
+            $.get('/student/comment', null, function (result) {
+                btn_loading.hide("body");
+                dialog.show('Để lại cảm nghĩ về trang web', result);
+            });
+        }
+    };
+})();
 

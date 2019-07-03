@@ -36,7 +36,7 @@
 
                             <button type="button" class="btn btn-primary" style="font-size: 13px;color: rgba(58, 133, 191, 0.75);letter-spacing: 1px;line-height: 15px; border: 2px solid rgba(58, 133, 191, 0.75);  border-radius: 40px;  background: transparent;  transition: all 0.3s ease 0s; margin-right: 5px; margin-bottom: 5px" onclick="return changePassword.create()">Đổi mật khẩu</button>
 
-                            <button type="button" class="btn btn-primary" style="font-size: 13px;color: rgba(58, 133, 191, 0.75);letter-spacing: 1px;line-height: 15px; border: 2px solid rgba(58, 133, 191, 0.75);  border-radius: 40px;  background: transparent;  transition: all 0.3s ease 0s; margin-right: 5px; margin-bottom: 5px" onclick="return changePassword.create()">Để lại cảm nghĩ về trang web</button>
+                            <button type="button" class="btn btn-primary" style="font-size: 13px;color: rgba(58, 133, 191, 0.75);letter-spacing: 1px;line-height: 15px; border: 2px solid rgba(58, 133, 191, 0.75);  border-radius: 40px;  background: transparent;  transition: all 0.3s ease 0s; margin-right: 5px; margin-bottom: 5px" onclick="return comment.create()">Để lại cảm nghĩ về trang web</button>
 
                             <hr>
                             <p><i class="fa fa-envelope fa-fw w3-margin-right w3-large w3-text-teal"></i>{{ $student->email }}</p>

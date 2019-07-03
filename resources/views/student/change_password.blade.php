@@ -14,10 +14,10 @@
                required="">
     </div>
     <div class="right-w3l">
-        <input type="submit" id="button-edit-plan" onclick="return onSubmitProject()" class="form-control bg-theme1" value="Đăng nhập">
+        <input type="button" style="color:white" id="button-edit-plan" onclick="return onSubmitProject()" class="form-control bg-theme1" value="Đổi mật khẩu">
     </div>
 </form>
-<script type="text/javascript" src="{{ "js/login.js" }}"></script>
+<script type="text/javascript" src="{{ asset("js/login.js") }}"></script>
 <script type="text/javascript">
     function onSubmitProject() {
         $("#message").html("");
@@ -26,7 +26,7 @@
             if (result.result == 1) {
                 toastr.alert(result.message);
                 dialog.close();
-                btn_loading.loading("comment_table");
+                btn_loading.loading("body");
                 window.location.reload();
             } else {
                 btn_loading.hide("button-edit-plan");
