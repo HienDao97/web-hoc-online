@@ -367,11 +367,39 @@ ul.callbacks_tabs {
 .document-list--item a{
     color: white !important;
 }
+.cost{
+    background-color: #ff3c3cc7;
+    padding: 2px;
+    width: 100%;
+    height: 30px;
+    cursor: default;   
+    margin-bottom: 5px;
+}
+.cost p{
+    text-align: center;
+    font-weight: bolder;
+    color: white;
+}
+.cost-sale{
+    background-color: #ff3c3cc7;
+    padding: 2px;
+    width: 100%;
+    height: 30px;
+    cursor: default;   
+    margin-bottom: 5px;
+}
+.cost-sale p{
+    text-align: center;
+    font-weight: bolder;
+    color: white;
+    text-decoration: line-through;
+}
 .sale{
     background-color: #ff3c3cc7;
     padding: 5px;
     width: 49%;
     height: 70px;
+    cursor: default;    
 }
 .left-sale{
     float: left;
@@ -755,10 +783,11 @@ ul.list-group.mt-3.why-list li {
     -webkit-box-shadow: 0 3px 0px 0 rgba(0, 0, 0, .08);
     box-shadow: 0 3px 0px 0 rgba(0, 0, 0, .08);
     transition: all .3s ease-in-out;
-    padding: 2rem;
+    padding: 1.5rem;
     position: relative;
     background: rgba(255, 255, 255, 0.9);
     margin-left: 2em;
+    margin-bottom: 1em;
 }
 
 a.servgrid_link {

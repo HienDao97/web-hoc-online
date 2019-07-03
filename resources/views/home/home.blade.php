@@ -187,7 +187,7 @@
                                                 <p class="card-title servgrid-title">
                                                     ' . $courses[$i]->class_info . '
                                                 </p>
-                                                <a href="#portfolio" class="text-capitalize servgrid_link btn scroll">Vào học</a>
+                                                <a href="" class="text-capitalize servgrid_link btn scroll"></a>
                                             </div>
                                         </div>
                                     </div>
@@ -207,7 +207,7 @@
                                                 <p class="card-title servgrid-title">
                                                     ' . $courses[$i]->class_info . '
                                                 </p>
-                                                <a href="#portfolio" class="text-capitalize servgrid_link btn scroll">Vào học</a>
+                                                <a href="" class="text-capitalize servgrid_link btn scroll"></a>
                                             </div>
                                         </div>
                                     </div>
