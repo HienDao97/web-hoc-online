@@ -27,8 +27,9 @@
                                             </div>
                                             <div class="card-block">
                                                 <p class="card-title servgrid-title">
-                                                    Cung cấp kiến thức về bảng cửu chương, cộng trừ nhân chia trong phạm vi 10.
+                                                    {{ $course->class_info }}
                                                 </p>
+
                                                 @php
                                                     $now = \Carbon\Carbon::now();
                                                 @endphp
@@ -79,13 +80,23 @@
                                                         @if($check == 0 && $now->gt($start_date) && $end_date->gt($now))
 
                                                             <hr>
-                                                            <div class="sale left-sale">
-                                                                <p style="font-size: 16px">GIẢM GIÁ</p><p style="font-size: 20px">{{ round($cl->class->sale/$cl->class->tuition, 3) * 100 }}%</p>
-                                                            </div>
-                                                            <div class="sale right-sale">
-                                                                <p style="font-size: 16px">CÒN</p><p style="font-size: 20px">{{ $diff }} ngày</p>
-                                                            </div>
+                                                            @if(empty($class->sale))
+                                                                <div class="cost">
+                                                                    <p style="font-size: 16px">{{ number_format($class->tuition) }}Đ</p>
+                                                                </div>
+                                                            @else
+                                                                <div class="cost-sale">
+                                                                    <p style="font-size: 16px">{{ number_format($class->tuition) }}Đ</p>
+                                                                </div>
+                                                                <div class="sale left-sale">
+                                                                    <p style="font-size: 16px">GIẢM GIÁ</p><p style="font-size: 20px">{{ round($cl->class->sale/$cl->class->tuition, 3) * 100 }}%</p>
+                                                                </div>
+                                                                <div class="sale right-sale">
+                                                                    <p style="font-size: 16px">CÒN</p><p style="font-size: 20px">{{ $diff }} ngày</p>
+                                                                </div>
+                                                            @endif
                                                         @endif
+
                                                     @endif
                                                 @else
                                                     <a href="#" onclick="return login.create()" class="text-capitalize servgrid_link btn">Vào học</a>
@@ -105,12 +116,21 @@
                                                         @if($now->gt($start_date) && $end_date->gt($now))
 
                                                             <hr>
-                                                            <div class="sale left-sale">
-                                                                <p style="font-size: 16px">GIẢM GIÁ</p><p style="font-size: 20px">{{ round($class->sale/$class->tuition, 3) * 100 }}%</p>
-                                                            </div>
-                                                            <div class="sale right-sale">
-                                                                <p style="font-size: 16px">CÒN</p><p style="font-size: 12px">{{ $diff }} ngày</p>
-                                                            </div>
+                                                            @if(empty($class->sale))
+                                                                <div class="cost">
+                                                                    <p style="font-size: 16px">{{ number_format($class->tuition) }}Đ</p>
+                                                                </div>
+                                                            @else
+                                                                <div class="cost-sale">
+                                                                    <p style="font-size: 16px">{{ number_format($class->tuition) }}Đ</p>
+                                                                </div>
+                                                                <div class="sale left-sale">
+                                                                    <p style="font-size: 16px">GIẢM GIÁ</p><p style="font-size: 20px">{{ round($cl->class->sale/$cl->class->tuition, 3) * 100 }}%</p>
+                                                                </div>
+                                                                <div class="sale right-sale">
+                                                                    <p style="font-size: 16px">CÒN</p><p style="font-size: 20px">{{ $diff }} ngày</p>
+                                                                </div>
+                                                            @endif
                                                         @endif
                                                     @endif
                                                 @endif
