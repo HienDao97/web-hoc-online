@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\ClassroomUnitExercise;
+use App\Models\Comment;
 use App\Models\Exercise;
 use App\Models\KMsg;
 use App\Models\StudentClass;
@@ -191,6 +192,47 @@ class StudentController extends Controller
             $result->message = "Xảy ra lỗi trong quá trình chấm điểm";
             $result->result = KMsg::RESULT_ERROR;
             return \response()->json($result);
+        }
+    }
+
+    /**
+     * @param Request $request
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\Http\JsonResponse|\Illuminate\View\View
+     */
+    public function comment(Request $request){
+        if ($request->isMethod('post')) {
+            $params = $request->only("content", "parent_name");
+
+            $validatorArray = [
+                'content'=>'required|max:200',
+                'parent_name' => 'required'
+            ];
+            $result = new KMsg();
+
+
+            $validator = Validator::make($params, $validatorArray);
+            if ($validator->fails()) {
+                $result->message = $validator->messages();
+                $result->result = KMsg::RESULT_ERROR;
+                return \response()->json($result);
+            }
+
+            try {
+                $params["public"] = 0;
+                $params["student_id"] = Auth::user()->id;
+                $params["student_name"] = Auth::user()->name;
+                Comment::create($params);
+                $result->message = "Để lại bình luận thành công";
+                $result->result = KMsg::RESULT_SUCCESS;
+                return \response()->json($result);
+            } catch (\Exception $ex) {
+                $result->message = $ex->getMessage();
+                $result->result = KMsg::RESULT_ERROR;
+                return \response()->json($result);
+            }
+
+        } else {
+            return view('student.comment');
         }
     }
 

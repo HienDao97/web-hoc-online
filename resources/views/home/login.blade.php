@@ -1,4 +1,4 @@
-<form method="post" class="p-sm-3" action="{{route('home.login')}}" id="form-input">
+a<form method="post" class="p-sm-3" action="{{route('home.login')}}" id="form-input">
     {{ csrf_field() }}
     <div class="box-header" id="message"></div>
     <div class="form-group">
@@ -33,7 +33,7 @@
 
     </p>
 </form>
-<script type="text/javascript" src="{{ "js/login.js" }}"></script>
+<script type="text/javascript" src="{{ asset("js/login.js") }}"></script>
 <script src="{{ asset('js/toastr.min.js') }}"></script>
 <script type="text/javascript">
     function onSubmitProject() {
