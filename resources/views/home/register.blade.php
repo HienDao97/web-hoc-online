@@ -45,25 +45,30 @@
 </form>
 <script type="text/javascript">
     function onSubmitProject() {
-        $("#message").html("");
-        btn_loading.loading("form-input");
-        formHelper.postFormJson('form-input', function (result) {
-            if (result.result == 1) {
-                toastr.success(result.message);
-                dialog.close();
-                btn_loading.loading("body");
-                window.location.reload();
-            } else {
-                btn_loading.hide("form-input");
-                var str = "<div class=\"alert alert-danger\">";
-                for(var key in result.message){
-                    str += result.message[key];
-                    str += "<br/>";
-                };
+        if($('#brand2').is(":checked")){
+            $("#message").html("");
+            btn_loading.loading("form-input");
+            formHelper.postFormJson('form-input', function (result) {
+                if (result.result == 1) {
+                    toastr.success(result.message, {timeOut: 5000});
+                    dialog.close();
+                    btn_loading.loading("body");
+                    window.location.reload();
+                } else {
+                    btn_loading.hide("form-input");
+                    var str = "<div class=\"alert alert-danger\">";
+                    for(var key in result.message){
+                        str += result.message[key];
+                        str += "<br/>";
+                    };
 
-                str += "</div>";
-                $("#message").append(str);
-            }
-        });
+                    str += "</div>";
+                    $("#message").append(str);
+                }
+            });
+        }else{
+            toastr.warning("Hãy đồng ý điều khoản trước khi đăng kí", {timeOut: 5000})
+        }
+
     }
 </script>

@@ -41,7 +41,7 @@
         btn_loading.loading("form-input");
         formHelper.postFormJson('form-input', function (result) {
             if (result.result == 1) {
-                toastr.success(result.message);
+                toastr.success(result.message, {timeOut: 5000});
                 dialog.close();
                 btn_loading.loading("body");
                 window.location.reload();
