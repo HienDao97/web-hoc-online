@@ -14,17 +14,19 @@
                required="">
     </div>
     <div class="right-w3l">
-        <input type="button" style="color:white" id="button-edit-plan" onclick="return onSubmitProject()" class="form-control bg-theme1" value="Đổi mật khẩu">
+        <button type="button" style="color:white" id="button-edit-plan" onclick="return onSubmitProject()" class="form-control bg-theme1" value="">Đổi mật khẩu</button>
     </div>
 </form>
 <script type="text/javascript" src="{{ asset("js/login.js") }}"></script>
+<script src="{{ asset('js/toastr.min.js') }}"></script>
 <script type="text/javascript">
     function onSubmitProject() {
         $("#message").html("");
         btn_loading.loading("button-edit-plan");
         formHelper.postFormJson('form-input', function (result) {
             if (result.result == 1) {
-                toastr.alert(result.message);
+                btn_loading.hide("button-edit-plan",  {timeOut: 5000});
+                toastr.success(result.message);
                 dialog.close();
                 btn_loading.loading("body");
                 window.location.reload();

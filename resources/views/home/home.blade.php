@@ -4,10 +4,10 @@
     <section class="wthree-row  w3-about position-relative" id="about">
         <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="1000">
           <ol class="carousel-indicators">
-              @foreach($slides as $slide)
-                  @php
+              @php
                   $index = 0;
-                  @endphp
+              @endphp
+              @foreach($slides as $slide)
                   <li data-target="#carouselExampleIndicators" data-slide-to="{{ $index }}" class="{{ ($index == 0) ? "active" : "" }}" style="border-radius:50%; height: 10px; width: 10px"></li>
                   @php
                       $index = $index + 1;
@@ -15,10 +15,17 @@
               @endforeach
           </ol>
           <div class="carousel-inner">
+              @php
+                  $index = 0;
+              @endphp
               @foreach($slides as $slide)
-                  <div class="carousel-item active">
+
+                  <div class="carousel-item {{ ($index == 0) ? "active" : "" }}">
                       <img class="d-block w-100" src="http://127.0.0.1:8000/img/slide/{{ $slide->images }}" alt="First slide" style="height: 498px; ">
                   </div>
+                  @php
+                      $index = $index + 1;
+                  @endphp
               @endforeach
           </div>
           <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
