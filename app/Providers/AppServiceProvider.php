@@ -47,9 +47,9 @@ class AppServiceProvider extends ServiceProvider
             ],
             [
                 'name' => 'Giới thiệu',
-                'route_name' => '',
+                'route_name' => 'home.introduce.index',
                 'sub' => [],
-                'scroll' => 1,
+                'scroll' => 0,
                 'id' => 'about'
                 //'param' => ""
             ],
