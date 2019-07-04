@@ -40,7 +40,7 @@
         </div>
     </div>
     <div class="right-w3l">
-        <input type="submit" id="button-edit-plan" onclick="return onSubmitProject()" class="form-control bg-theme1" value="Đăng ký">
+        <button type="button" id="button-edit-plan" style="color: white; font-weight: bold" onclick="return onSubmitProject()" class="form-control bg-theme1" >ĐĂNG KÍ</button>
     </div>
 </form>
 <script type="text/javascript">
