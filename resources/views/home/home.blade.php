@@ -329,7 +329,7 @@
                             </li>
                             <li class="my-3">
                                 <span class="fa fa-envelope-open" style="font-size: 25px;"></span>
-                                <a href="mailto:example@email.com" class="text-secondary" style="color: #1b1e21">vutienthanh248@gmail.com</a>
+                                <a href="mailto:vutienthanh248@gmail.com" class="text-secondary" style="color: #1b1e21">vutienthanh248@gmail.com</a>
                             </li>
                             <li>
                                 <span class="fa fa-phone" style="font-size: 25px;"></span>
