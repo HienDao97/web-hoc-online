@@ -328,7 +328,7 @@
                                 <p class="d-inline" style="color: #1b1e21">Tòa CT1B - Khu đô thị Tân Tây Đô, Đan Phượng, Hà Nội.</p>
                             </li>
                             <li class="my-3">
-                                <span class="fa fa-envelope-open" style="font-size: 25px;"></span>
+                                <span class="fa fa-envelope-open" style="font-size: 23px;"></span>
                                 <a href="mailto:vutienthanh248@gmail.com" class="text-secondary" style="color: #1b1e21">vutienthanh248@gmail.com</a>
                             </li>
                             <li>
