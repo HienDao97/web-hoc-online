@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Classroom;
 use App\Models\ClassroomUnitExercise;
 use App\Models\Comment;
 use App\Models\Exercise;
@@ -87,8 +88,12 @@ class StudentController extends Controller
      */
     public function classroom(Request $request){
         $studentClassroom = StudentClass::where('student_id', Auth::user()->id)->where('class_room_id', $request->id)->first();
+        $classroom = Classroom::where('id', $request->id)->first();
+        if(empty($classroom)){
+            return redirect()->back()->with("messages", "Không tồn tại khoá học này");
+        }
 
-        if(!empty($studentClassroom)){
+        if(!empty($studentClassroom) || $classroom->type == 0){
             $theories = Theory::where('classroom_id', $request->id)->whereNull('deleted_at')->get();
 
             if(empty($request->id_baihoc)){
