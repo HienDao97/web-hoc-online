@@ -73,8 +73,8 @@
                                                     @endphp
                                                     @if($class->type == 0)
                                                         <hr>
-                                                        <div class="sale left-sale">
-                                                            <p style="font-size: 20px">Miễn phí</p>
+                                                        <div class="cost">
+                                                            <p style="font-size: 16px">Miễn phí</p>
                                                         </div>
                                                     @else
                                                         @if($check == 0 && $now->gt($start_date) && $end_date->gt($now))
@@ -102,8 +102,8 @@
                                                     <a href="#" onclick="return login.create()" class="text-capitalize servgrid_link btn">Vào học</a>
                                                     @if($class->type == 0)
                                                         <hr>
-                                                        <div class="sale left-sale">
-                                                            <p style="font-size: 20px">Miễn phí</p>
+                                                        <div class="cost">
+                                                            <p style="font-size: 16px">Miễn phí</p>
                                                         </div>
                                                     @else
                                                         @php
