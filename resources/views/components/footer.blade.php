@@ -29,7 +29,7 @@
                     </li>
                     <li class="mb-2">
                         <a href="#services" class="scroll">
-                            Góc phụ huynh
+                            Cảm nhận phụ huynh
                         </a>
                     </li>
                     <li>

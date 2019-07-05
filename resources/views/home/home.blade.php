@@ -232,7 +232,7 @@
     <div class="testimonials-wthree py-lg-5 py-4 text-center" id="testimonials">
         <div class="container">
             <div class="sec-main text-left">
-                <span class="sub-line text-white">Cảm nhận của phụ huynh và học sinh</span>
+                <span class="sub-line text-white">Cảm nhận phụ huynh</span>
             </div>
             <div class="row">
                 <div class="col-lg-12 mx-auto slide-left-wthree">
