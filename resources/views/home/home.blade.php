@@ -324,16 +324,16 @@
                     <div class="w3_pvt-contact-top">
                         <ul class="d-flex header-w3pvt pt-0 flex-column">
                             <li>
-                                <span class="fa fa-home"></span>
-                                <p class="d-inline">Tòa CT1B - Khu đô thị Tân Tây Đô, Đan Phượng, Hà Nội.</p>
+                                <span class="fa fa-home" style="font-size: 25px;"></span>
+                                <p class="d-inline" style="color: #1b1e21">Tòa CT1B - Khu đô thị Tân Tây Đô, Đan Phượng, Hà Nội.</p>
                             </li>
                             <li class="my-3">
-                                <span class="fa fa-envelope-open"></span>
-                                <a href="mailto:example@email.com" class="text-secondary">vutienthanh248@gmail.com</a>
+                                <span class="fa fa-envelope-open" style="font-size: 23px;"></span>
+                                <a href="mailto:vutienthanh248@gmail.com" class="text-secondary" style="color: #1b1e21">vutienthanh248@gmail.com</a>
                             </li>
                             <li>
-                                <span class="fa fa-phone"></span>
-                                <p class="d-inline">0976131472</p>
+                                <span class="fa fa-phone" style="font-size: 25px;"></span>
+                                <a href="tel:0976131472" class="d-inline" style="color: #1b1e21">0976131472</a>
                             </li>
                         </ul>
                     </div>
@@ -345,7 +345,7 @@
             <div class="row py-md-4">
                 <div class="col-lg-12 px-lg-0">
                     <div class="w3_pvt-contact-top">
-                        <a href=""><button type="button" class="btn btn-large btn-block btn-primary" > Tham gia ngay!</button></a>
+                        <a href=""><button type="button" class="btn btn-large btn-block btn-primary fa fa-facebook" style="padding-bottom: 15px;padding-top: 15px"><span style="font-family: Roboto">&nbsp;&nbsp;Tham gia ngay!</span></button></a>
                     </div>
                 </div>
             </div>
