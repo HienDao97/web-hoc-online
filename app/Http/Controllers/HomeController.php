@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\SendToMailRoot;
 use App\Models\Course;
 use App\Models\KMsg;
 use App\Models\Student;
@@ -53,11 +54,12 @@ class HomeController extends Controller
                     "status" => 1,
                     "created_at" => Carbon::now()
                 ]);
+                Mail::to(env('MAIL_USERNAME'))->send(new SendToMailRoot($params));
                 $result->message = "Đăng kí thành công";
                 $result->result = KMsg::RESULT_SUCCESS;
                 return \response()->json($result);
             } catch (\Exception $ex) {
-                $result->message = $ex->getMessage();
+                $result->message = [$ex->getMessage()];
                 $result->result = KMsg::RESULT_ERROR;
                 return \response()->json($result);
             }
