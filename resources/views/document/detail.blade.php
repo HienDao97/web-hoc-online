@@ -8,16 +8,16 @@
                     <span class="sub-line">Tài liệu {{ $course->name }}</span>
                 </div>
                 <div class="mw-container">
-                    <table style="border-radius: 10px">
+                    <table style="margin-bottom: 10px">
                         <thead>
                         <tr>
-                            <th style="text-align: center; border-radius: 10px">Danh sách tài liệu</th>
+                            <th style="text-align: center; ">Danh sách tài liệu</th>
                         </tr>
                         </thead>
                         <tbody>
                         @foreach($items as $key => $value)
                             <tr>
-                                <td><a href="{{ $value->link }}" style="color: white" onclick="redirect($(this), event)">{{ $value->description }}</a></td>
+                                <td><a href="{{ $value->link }}" style="color: white;margin-left: 20px" onclick="redirect($(this), event)">{{ $value->description }}</a></td>
                             </tr>
                         @endforeach
 

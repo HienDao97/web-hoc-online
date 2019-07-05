@@ -1,35 +1,35 @@
 <div class="container-fluid">
     <div class="row p-sm-4 px-3 py-5">
-        <div class="col-lg-4 col-md-6 footer-top mt-md-0 mt-sm-5">
+        <div class="col-lg-3 col-md-6 footer-top mt-md-0 mt-sm-5">
             <h2>
                 <a class="navbar-brand" href="index.html">
                     <img src="{{ asset('web/images/logo-3.png') }}" style="height: 200px">
                 </a>
             </h2>
         </div>
-        <div class="col-lg-2  col-md-6 mt-md-0 mt-5">
+        <div class="col-lg-3  col-md-6 mt-md-0 mt-5">
             <div class=".footerv2-w3ls">
                 <h3 class="mb-3 w3f_title">Menu</h3>
                 <hr>
                 <ul class="list-w3pvtits">
                     <li>
-                        <a href="index.html">
+                        <a href="{{ route('home.index') }}">
                             Trang chủ
                         </a>
                     </li>
                     <li class="my-2">
-                        <a href="#about" class="scroll">
+                        <a href="{{ route('home.introduce.index') }}">
                             Giới thiệu
                         </a>
                     </li>
                     <li class="my-2">
-                        <a href="#portfolio" class="scroll">
+                        <a href="{{ route('home.document.index') }}">
                             Tài liệu
                         </a>
                     </li>
                     <li class="mb-2">
-                        <a href="#services" class="scroll">
-                            Góc phụ huynh
+                        <a href="{{ route('home.goc.phu.huynh') }}">
+                            Cảm nhận phụ huynh
                         </a>
                     </li>
                     <li>
@@ -46,27 +46,27 @@
                 <hr>
                 <ul class="list-w3pvtits">
                     <li>
-                        <a href="index.html">
+                        <a href="{{ route('home.classroom.index') }}">
                             Lớp 1
                         </a>
                     </li>
                     <li class="my-2">
-                        <a href="#posts" class="scroll">
+                        <a href="{{ route('home.classroom.index') }}">
                             Lớp 2
                         </a>
                     </li>
                     <li class="my-2">
-                        <a href="#stat" class="scroll">
+                        <a href="{{ route('home.classroom.index') }}">
                             Lớp 3
                         </a>
                     </li>
                     <li class="mb-2">
-                        <a href="#contact" class="scroll">
+                        <a href="{{ route('home.classroom.index') }}">
                             Lớp 4
                         </a>
                     </li>
                     <li>
-                        <a href="index.html">
+                        <a href="{{ route('home.classroom.index') }}">
                             Lớp 5
                         </a>
                     </li>
