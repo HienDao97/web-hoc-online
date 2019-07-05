@@ -167,14 +167,14 @@
                                     <div class="col-lg-12">
                                         <div class="w3ls-servgrid card">
                                             <div class="card-header">
-                                                <span class="sub-line">' . $courses[count($courses)]->name . '</span>
+                                                <span class="sub-line">' . $courses[$i]->name . '</span>
                                                 <!--                             <h4 class="serv-title">
                                                                                 Lớp
                                                                             </h4> -->
                                             </div>
                                             <div class="card-block">
                                                 <p class="card-title servgrid-title">
-                                                    ' . $courses[count($courses)]->class_info . '
+                                                    ' . $courses[$iw]->class_info . '
                                                 </p>
                                                 <a href="#portfolio" class="text-capitalize servgrid_link btn scroll">Vào học</a>
                                             </div>
