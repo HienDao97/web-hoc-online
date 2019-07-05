@@ -236,6 +236,44 @@ class StudentController extends Controller
         }
     }
 
+    public function changeAvatar(Request $request, $id)
+    {
+        if ($request->isMethod('post')) {
+            $params = $request->all();
+            // Save project
+            try {
+                $result = new KMsg();
+                $item = Student::where('id', $id)->first();
+                if(!empty($request->hasFile('file'))){
+                    $validatorArray = [
+                        'file' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+                    ];
+                    $validator = Validator::make($params, $validatorArray);
+                    if ($validator->fails()) {
+                        $result->message = $validator->messages();
+                        $result->result = KMsg::RESULT_ERROR;
+                        return \response()->json($result);
+                    }
+                    $img = $request->file('file')->getClientOriginalName();
+                    $request->file('file')->move('img/',$img);
+                    $item->avatar = $img;
+                    $item->save();
+                }
+                $result->message = "Cập nhật avatar";
+                $result->result = KMsg::RESULT_SUCCESS;
+                return \response()->json($result);
+            } catch (Exception $ex) {
+                $result->message = [$ex->getMessage()];
+                $result->result = KMsg::RESULT_ERROR;
+                return \response()->json(["Some thing was wrong"]);
+            }
+
+        } else {
+            $item = Student::where('id', $id)->first();
+            return view('student.change-avatar', compact('item'));
+        }
+    }
+
     /**
      * @return \Illuminate\Http\RedirectResponse
      */

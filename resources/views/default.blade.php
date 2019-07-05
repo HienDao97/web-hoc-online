@@ -38,12 +38,15 @@
 
 <body id="body">
 
+<!-- Load Facebook SDK for JavaScript -->
 <div id="fb-root"></div>
 <script>
     window.fbAsyncInit = function() {
         FB.init({
-            xfbml            : true,
+            appId: '1693554737437218',
+            autoLogAppEvents : true,
             version          : 'v3.3'
+
         });
     };
 

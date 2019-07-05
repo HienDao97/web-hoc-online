@@ -34,6 +34,7 @@ Route::group(['middleware' => ['web']], function() {
     Route::group(['middleware' => ['auth'], 'prefix' => 'student'], function () {
         Route::get('/info/{id}', 'StudentController@index')->name('student.index');
         Route::any('/change-password', 'StudentController@changePassword')->name('student.change.password');
+        Route::any('/change-avatar/{id}', 'StudentController@changeAvatar')->name('student.change.avatar');
         Route::any('/comment', 'StudentController@comment')->name('student.comment');
         Route::get('/lop-hoc/{id}', 'StudentController@classroom')->name('student.classroom');
         Route::post('/exercise/answer', 'StudentController@answer')->name('student.exercise.answer');

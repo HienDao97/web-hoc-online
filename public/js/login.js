@@ -56,4 +56,15 @@ var comment= (function () {
         }
     };
 })();
+var avatarHelper = (function () {
+    return {
+        editAvatar: function (id) {
+            btn_loading.loading("body");
+            $.get('/student/change-avatar/'+id, null, function (result) {
+                btn_loading.hide("body");
+                dialog.show('Đổi ảnh đại diện', result);
+            });
+        },
+    };
+})();
 
