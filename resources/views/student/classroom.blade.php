@@ -63,10 +63,16 @@
                                     <span class="sub-line">Video</span>
                                 </div>
                                 <div class="lesson-video">
+                                    @if(!empty($id))
                                     <iframe width="560" height="315" src="https://www.youtube.com/embed/{{ $id }}"
                                             frameborder="0"
                                             allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                                             allowfullscreen></iframe>
+                                    @else
+                                        <div style="background-color: #cccccc7a; padding: 10px; margin-top: 5px; margin-bottom: 5px">
+                                            <h5>Video đang cập nhật</h5>
+                                        </div>
+                                    @endif
                                 </div>
                                 <div class="complete-button">
                                     <button class="btn bg-theme mt-4 w3_pvt-link-bnr scroll bg-theme3 text-white">Học xong

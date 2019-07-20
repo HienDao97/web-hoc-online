@@ -15,11 +15,13 @@
                         </tr>
                         </thead>
                         <tbody>
-                        @foreach($items as $key => $value)
-                            <tr>
-                                <td><a href="{{ $value->link }}" style="color: white;margin-left: 20px" onclick="redirect($(this), event)">{{ $value->description }}</a></td>
-                            </tr>
-                        @endforeach
+                            @if(count($items) > 0)
+                            @foreach($items as $key => $value)
+                                <tr>
+                                    <td><a href="{{ $value->link }}" data-id="{{ route('home.document.download', $value->id)  }}" style="color: white;margin-left: 20px" target="_blank" onclick="redirect($(this))">{{ $value->title }}</a></td>
+                                </tr>
+                            @endforeach
+                            @endif
 
                         </tbody>
                     </table>
@@ -31,10 +33,17 @@
     </div>
 @endsection
 <script type="text/javascript">
-    function redirect(_this, e) {
-        e.preventDefault();
-        var link  = $(_this).attr("href");
-        window.open(link);
+    function redirect(_this) {
+        var href = $(_this).data("id");
+        $.ajax({
+            type: "GET",
+            data: {},
+            url: href,
+            success: function (result) {
+                
+            }
+
+        })
     }
 </script>
 

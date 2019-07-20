@@ -100,7 +100,7 @@ class StudentController extends Controller
                 //dd($theories);
                 if(count($theories) > 0){
                     $id_baihoc = $theories->min('id');
-                    $exercise = Exercise::where('theory_id', $theories[0]->id)->first();
+                    $exercise = Exercise::where('theory_id', $theories[0]->id)->whereNull('deleted_at')->first();
                 }else{
                     $id_baihoc = "";
                     $exercise = "";
@@ -108,7 +108,7 @@ class StudentController extends Controller
 
             }else{
                 $id_baihoc = $request->id_baihoc;
-                $exercise = Exercise::where('theory_id', $request->id_baihoc)->first();
+                $exercise = Exercise::where('theory_id', $request->id_baihoc)->whereNull('deleted_at')->first();
             }
             $answer_count = 0;
             if(!empty($exercise)){
@@ -118,7 +118,7 @@ class StudentController extends Controller
             $list_answer = Exercise::listAnswer();
             return view('student.classroom',  compact('theories','exercise', 'answer_count', 'list_answer', 'id_baihoc'));
         }else{
-            return view('classroom.register-classroom')->with("messages", "Bạn chưa đăng kí tham gia vào khoá học này");
+            return view('classroom.register-classroom', compact('classroom'))->with("messages", "Bạn chưa đăng kí tham gia vào khoá học này");
         }
 
     }

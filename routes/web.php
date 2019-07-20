@@ -26,6 +26,7 @@ Route::group(['middleware' => ['web']], function() {
     //tai lieu
     Route::get('tai-lieu', 'DocumentController@index')->name('home.document.index');
     Route::get('tai-lieu/lop/{id}', 'DocumentController@detail')->name('home.document.course');
+    Route::get('tai-lieu/lop/download/{id}', 'DocumentController@download')->name('home.document.download');
 
     //khoa-hoc
     Route::get('khoa-hoc', 'ClassroomController@index')->name('home.classroom.index');
