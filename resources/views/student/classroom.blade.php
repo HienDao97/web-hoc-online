@@ -32,19 +32,19 @@
                                 @if($value->id != $id_baihoc)
                                     <a href="{{ route('student.classroom.exercise', ['id'=> $theory->classroom_id, 'id_baihoc' => $value->id]) }}">
                                         <li class="room-nav-lesson border-bottom">{{ $value->name }}
-                                            <div class="room-nav-lesson-name">{{ $value->content }}</div>
+                                            {{--<div class="room-nav-lesson-name">{{ $value->content }}</div>--}}
                                         </li>
                                     </a>
                                 @else
                                     <li class="room-nav-lesson border-bottom">{{ $value->name }}
-                                        <div class="room-nav-lesson-name">{{ $value->content }}</div>
+                                        {{--<div class="room-nav-lesson-name">{{ $value->content }}</div>--}}
                                     </li>
                                 @endif
 
                             @endforeach
                         @else
-                            <li class="room-nav-lesson border-bottom">Không có tiêu đề
-                                <div class="room-nav-lesson-name">Lớp chưa mở</div>
+                            <li class="room-nav-lesson border-bottom">Lớp chưa mở
+                                {{--<div class="room-nav-lesson-name">Lớp chưa mở</div>--}}
                             </li>
                         @endif
 
