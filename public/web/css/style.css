@@ -1945,6 +1945,9 @@ span.icon_youtube {
     .abt-pos{
         width: 25%;
     }
+    .special-form{
+        display: none;
+    }
 }
 
 @media screen and (max-width: 1080px) {

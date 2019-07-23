@@ -1,7 +1,7 @@
 @extends('default')
 @section('title', 'Trang chủ')
 @section('content')
-    <section class="wthree-row  w3-about position-relative" id="about">
+    <section class="container wthree-row  w3-about position-relative" id="about">
         <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="1000">
           <ol class="carousel-indicators">
               @php
@@ -21,7 +21,7 @@
               @foreach($slides as $slide)
 
                   <div class="carousel-item {{ ($index == 0) ? "active" : "" }}">
-                      <img class="d-block w-100" src="http://127.0.0.1:8000/img/slide/{{ $slide->images }}" alt="First slide" style="height: 498px; ">
+                      <img class="d-block s-500-750" src="http://127.0.0.1:8000/img/slide/{{ $slide->images }}" alt="First slide">
                   </div>
                   @php
                       $index = $index + 1;
@@ -36,7 +36,7 @@
           </a>
         </div>
         @if(empty(Auth::user()->id))
-            <div class="abt-pos" style="top: -74px;">
+            <div class="abt-pos register-form" style="top: -74px;">
                 <h4>Đăng ký tài khoản</h4>
                 <div class="contcat-form">
                     <form action="{{route('home.register')}}" method="post" id="form-register" class="register-wthree">
@@ -94,7 +94,7 @@
                         <div class="sub-w3l">
                             <div class="sub-w3_pvt">
                                 <input type="checkbox" id="checkbox" value="">
-                                <label for="brand2" class="mb-3 text-dark">
+                                <label for="brand2" class="mb-3 text-dark" style="font-size: 14px;">
                                     <span></span>Tôi đồng ý với điều khoản của trang web</label>
                             </div>
                         </div>
@@ -107,6 +107,28 @@
                             </div>
                         </div>
                     </form>
+                </div>
+            </div>
+        @else
+            <div class="abt-pos register-form special-form" style="top: 0; height: 500px">
+                <div class="">
+                    <div class="w3_pvt-contact-top">
+                        <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fvutienthanh912%2F&tabs=timeline&width=340&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=2189958024560160" width="100%" height="250" style="border:none;overflow:hidden; margin-bottom: 20px;" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+                        <ul class="d-flex header-w3pvt pt-0 flex-column">
+                            <li>
+                                <span class="fa fa-home" style="font-size: 25px; color: #fff"></span>
+                                <p class="d-inline" style="color: #fff">Tòa CT1B - Khu đô thị Tân Tây Đô, Đan Phượng, Hà Nội.</p>
+                            </li>
+                            <li class="my-3">
+                                <span class="fa fa-envelope-open" style="font-size: 23px; color: #fff"></span>
+                                <a href="mailto:vutienthanh248@gmail.com" class="text-secondary" style="color: #fff!important">vutienthanh248@gmail.com</a>
+                            </li>
+                            <li>
+                                <span class="fa fa-phone" style="font-size: 25px; color: #fff"></span>
+                                <a href="tel:0976131472" class="d-inline" style="color: #fff">0976131472</a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         @endif
