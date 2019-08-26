@@ -35,7 +35,7 @@ class SendToMailRoot extends Mailable
      */
     public function build()
     {
-        return $this->view('mail.send_mail_to_root')->with('user',$this->user);
+        return $this->view('mail.send_mail_to_root')->subject("Học sinh đăng kí tài khoản")->with('user',$this->user);
     }
 
 }

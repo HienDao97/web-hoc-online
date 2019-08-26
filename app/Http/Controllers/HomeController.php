@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
 use Validator;
 use App\Mail\ResetPassword;
+use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
 {
@@ -33,7 +34,7 @@ class HomeController extends Controller
                 'email' => 'required|email|unique:students',
                 'password' => 'required|min:6|confirmed',
                 'password_confirmation' => 'required|min:6',
-                'mobile' => 'required',
+                'mobile' => 'required|min:10|max:10|unique:students',
             ];
             $result = new KMsg();
 
@@ -44,8 +45,9 @@ class HomeController extends Controller
                 $result->result = KMsg::RESULT_ERROR;
                 return \response()->json($result);
             }
-
+            DB::beginTransaction();
             try {
+
                 Student::create([
                     "name" => $params["name"],
                     "email" => $params["email"],
@@ -54,9 +56,12 @@ class HomeController extends Controller
                     "status" => 1,
                     "created_at" => Carbon::now()
                 ]);
-                Mail::to(env('MAIL_USERNAME'))->send(new SendToMailRoot($params));
+                //$params["title"] = "Đăng kí học sinh thành công";
+                Mail::to("pahoang1512@gmail.com")->send(new SendToMailRoot($params));
+                DB::commit();
                 $result->message = "Đăng kí thành công";
                 $result->result = KMsg::RESULT_SUCCESS;
+                //dd(2);
                 return \response()->json($result);
             } catch (\Exception $ex) {
                 $result->message = [$ex->getMessage()];
