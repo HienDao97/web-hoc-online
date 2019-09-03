@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Mail\SendToMailRoot;
+use App\Mail\SugestMail;
 use App\Models\Course;
 use App\Models\KMsg;
 use App\Models\Student;
@@ -162,6 +163,24 @@ class HomeController extends Controller
 
         } else {
             return view('home.forgotPassword');
+        }
+    }
+
+    public function gopY(Request $request){
+        $params = $request->all();
+
+        $validatorArray = [
+            'name' => 'required',
+            'age'  => 'numeric',
+            'type' => 'required',
+            'mobile' => 'required'
+        ];
+        $validator = Validator::make($params, $validatorArray);
+        if ($validator->fails()) {
+            return redirect()->back()->withErrors($validator->messages())->withInput();
+        }else{
+            Mail::to("pahoang1512@gmail.com")->send(new SugestMail($params));
+            return redirect()->back()->with('messages','Gửi thông tin thành công');
         }
     }
 }

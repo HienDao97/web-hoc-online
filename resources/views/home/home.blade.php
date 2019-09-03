@@ -359,6 +359,56 @@
                             </li>
                         </ul>
                     </div>
+                    <div class="col-lg-12 mt-4 px-0">
+                        <!-- register form grid -->
+                        <div class="contact-form">
+                            <h4>Góp ý với chúng tôi</h4>
+                            <form action="{{ route('gop.y') }}" method="post" class="register-wthree">
+                                {{ csrf_field() }}
+                                <div class="form-group">
+                                    <div class="row">
+                                        <div class="col-lg-4">
+                                            <label>
+                                                Họ tên phụ huynh
+                                            </label>
+                                            <input class="form-control" type="text" placeholder="Họ tên phụ huynh" name="name"
+                                                   required="">
+                                        </div>
+                                        <div class="col-lg-4 my-lg-0 my-4">
+                                            <label>
+                                                Năm sinh của con
+                                            </label>
+                                            <input class="form-control" type="text" placeholder="Năm sinh của con"
+                                                   name="age" required="">
+                                        </div>
+                                        <div class="col-lg-4 my-lg-0 my-4">
+                                            <label>
+                                                Học lực của con
+                                            </label>
+                                            <input class="form-control" type="text" placeholder="Học lực của con"
+                                                   name="type" required="">
+                                        </div>
+                                    </div>
+                                    <div class="row mt-4">
+                                        <div class="col-lg-6">
+                                            <label>
+                                                Số điện thoại
+                                            </label>
+                                            <input class="form-control" type="text" placeholder="Số điện thoại"
+                                                   name="mobile"
+                                                   required="">
+                                        </div>
+                                        <div class="col-md-6 d-flex mt-4">
+                                            <button type="submit"
+                                                    class="btn btn-w3_pvt btn-block w-100 text-white font-weight-bold text-uppercase bg-theme1">
+                                                Gửi thông tin
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="sec-main">
@@ -416,6 +466,13 @@
             }
 
         }
+        //document.ready(function () {
+            @if(session()->has('messages'))
+                console.log("{{session('messages')}}");
+            toastr.success("{{session('messages')}}", {timeOut: 5000});
+            @endif
+        //});
+
     </script>
 @endsection
     <!-- about -->
