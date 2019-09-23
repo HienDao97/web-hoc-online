@@ -7,7 +7,7 @@
 body {
     margin: 0;
     font-family: 'Roboto', sans-serif;
-    background: #fff;
+    background: #eee;
 }
 
 body a {
@@ -105,7 +105,7 @@ a.navbar-brand {
 }
 
 .navbar-light {
-    padding: 1.4em 0;
+    padding: 0.7em 0;
 }
 
 a.navbar-brand {
@@ -370,10 +370,12 @@ ul.callbacks_tabs {
 .cost{
     background-color: #ff3c3cc7;
     padding: 2px;
-    width: 100%;
+    width: 49%;
     height: 30px;
     cursor: default;   
     margin-bottom: 5px;
+    float: left;
+    margin-right: 2%;
 }
 .cost p{
     text-align: center;
@@ -383,10 +385,11 @@ ul.callbacks_tabs {
 .cost-sale{
     background-color: #ff3c3cc7;
     padding: 2px;
-    width: 100%;
+    width: 49%;
     height: 30px;
     cursor: default;   
     margin-bottom: 5px;
+    float: left;
 }
 .cost-sale p{
     text-align: center;
@@ -734,7 +737,8 @@ form.register-wthree .form-control {
     right: 0;
     width: 32%;
     top: -85px;
-    padding: 2em;
+    padding: 2.14em;
+    padding-bottom: 0;
     background: #0f6eaa;
 }
 
@@ -747,7 +751,9 @@ textarea.form-control {
     text-transform: capitalize;
     font-size: 1.5em;
     color: #fff;
-    margin-bottom: 17px;
+    margin-bottom: 15px;
+    text-align: left;
+    margin-top: 16px;
 }
 
 /* //about */
@@ -870,7 +876,7 @@ h4.servgrid-title {
 table { 
   width: 100%; 
   border-collapse: collapse; 
-  background: #34495e; 
+  background: #ffffff; 
   color: #f3f3f3;
 }
 
@@ -881,7 +887,7 @@ td, th {
 
 /* Zebra striping */
 tr:nth-of-type(odd) { 
-  background: #0f6eaa; 
+  background: #ffffff; 
 }
 
 th { 
@@ -1916,11 +1922,56 @@ span.icon_youtube {
 }
 
 .sologan{
-    color: white;
     margin: auto 0;
-    font-size: 1.6em;
+    max-width: 915px;
+    height: 60px;
+    object-fit: cover;    
+}
+.popup-box{
+   position: fixed; margin: 0px; right: 0; z-index: 1000; 
 }
 
+.latest-posts {
+    margin: 0px;
+    padding: 0;
+}
+.latest-posts li {
+    list-style: none;
+    clear: both;
+    margin-bottom: 18px;
+}
+.visible {
+    visibility: visible;
+}
+.fadeInLeft {
+    -webkit-animation-name: fadeInLeft;
+    animation-name: fadeInLeft;
+}
+.animated {
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+.latest-posts .post-thumb {
+    float: left;
+    margin-top: 5px;
+}
+.latest-posts li img {
+    margin-right: 10px;
+    vertical-align: middle;
+    border: 0;
+    object-fit: cover;
+}
+.img-rounded {
+    border-radius: 6px;
+}
+.description a{
+    color: white;
+}
+.card-block hr{
+    border-top: 0px solid rgba(245, 245, 245, 0.55);
+}
 /* -- Responsive code -- */
 
 @media screen and (max-width: 1440px) {
@@ -1939,15 +1990,27 @@ span.icon_youtube {
 @media screen and (max-width: 1366px) {}
 
 @media screen and (max-width: 1280px) {
+    .sologan{
+    margin: auto 0;
+    max-width: 680px;
+    height: 60px;
+    object-fit: cover;    
+    }
     .slider-info h3 {
         font-size: 3.5em;
     }
     .abt-pos{
         width: 25%;
     }
+    .special-form{
+        display: none;
+    }
 }
 
 @media screen and (max-width: 1080px) {
+    .sologan{
+        display: none;
+    }
     h5.blog-title a {
         font-size: 1em;
     }
@@ -2033,9 +2096,16 @@ span.icon_youtube {
 
 }
 
-@media screen and (max-width: 900px) {}
+@media screen and (max-width: 900px) {
+    .sologan{
+        display: none;
+    }
+}
 
 @media screen and (max-width: 800px) {
+    .sologan{
+        display: none;
+    }
     .slider-info h3 {
         font-size: 2.5em;
     }
@@ -2047,6 +2117,9 @@ span.icon_youtube {
 }
 
 @media screen and (max-width: 768px) {
+    .sologan{
+        display: none;
+    }
     h3.wthree-title {
         font-size: 1.4em;
     }
@@ -2081,6 +2154,15 @@ span.icon_youtube {
     .w3ls-servgrid.card.service-active {
         transform: scale(1);
     }
+    .popup-box{
+       display: none
+    }
+    .latest-posts {
+    padding-bottom: 35px;
+    }
+    .abt-pos h4 {
+        margin-top: 0px;
+    }    
 }
 
 @media screen and (max-width: 736px) {
@@ -2117,6 +2199,9 @@ span.icon_youtube {
 
     .services-w3sec {
         padding-bottom: 1em;
+    }
+    .d-flex{
+        float: right;
     }
 
 }
@@ -2160,15 +2245,11 @@ span.icon_youtube {
     .document-list{
         width: 100%;
     }
-    .sologan{
-        display: inline-block;
-        width: calc(100% - 110px);
-    }
     .login-row{
         position: absolute;
         width: calc(100% - 110px);
-        top: 45px;
-        left: 110px;
+        top: 5px;
+        left: 85px;
     }
     .header-main {
         padding: 0 1em;
@@ -2185,6 +2266,9 @@ span.icon_youtube {
     h4.serv-title {
         font-size: 1em;
     }
+    .latest-posts {
+    padding-bottom: 0px;
+    }    
 }
 
 @media screen and (max-width: 414px) {

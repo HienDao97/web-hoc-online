@@ -13,7 +13,6 @@ class Student extends Model implements AuthenticatableContract
     use Authenticatable, Cacheable;
 
     protected $table = 'students';
-    protected $cacheTime = 60;
 
     /**
      * The attributes that are mass assignable.

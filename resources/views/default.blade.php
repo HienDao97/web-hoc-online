@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="utf-8"/>
     <meta name="keywords" content="Alphabet Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template,
-	SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony Ericsson, Motorola web design"/>
+  SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony Ericsson, Motorola web design"/>
     <script>
         addEventListener("load", function () {
             setTimeout(hideURLbar, 0);
@@ -38,30 +38,30 @@
 
 <body id="body">
 
+<!-- Load Facebook SDK for JavaScript -->
 <div id="fb-root"></div>
 <script>
-    window.fbAsyncInit = function() {
-        FB.init({
-            xfbml            : true,
-            version          : 'v3.3'
-        });
-    };
+  window.fbAsyncInit = function() {
+    FB.init({
+      xfbml            : true,
+      version          : 'v4.0'
+    });
+  };
 
-    (function(d, s, id) {
-        var js, fjs = d.getElementsByTagName(s)[0];
-        if (d.getElementById(id)) return;
-        js = d.createElement(s); js.id = id;
-        js.src = 'https://connect.facebook.net/vi_VN/sdk/xfbml.customerchat.js';
-        fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));</script>
+  (function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = 'https://connect.facebook.net/vi_VN/sdk/xfbml.customerchat.js';
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
 
 <!-- Your customer chat code -->
 <div class="fb-customerchat"
-     attribution=setup_tool
-     page_id="366964827423981"
-     theme_color="#6699cc"
-     logged_in_greeting="Xin chào! Tôi có thể giúp gì cho bạn"
-     logged_out_greeting="Xin chào! Tôi có thể giúp gì cho bạn">
+  attribution=setup_tool
+  page_id="201624597072889"
+  logged_in_greeting="Chào anh/chị. Anh/chị đang quan tâm đến chương trình lớp mấy?"
+  logged_out_greeting="Chào anh/chị. Anh/chị đang quan tâm đến chương trình lớp mấy?">
 </div>
 
 <!-- banner -->
@@ -88,7 +88,7 @@
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel1">Đăng ký tài khoản</h5>
+                <h5 class="modal-title" id="exampleModalLabel1">ÄÄƒng kÃ½ tÃ i khoáº£n</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>

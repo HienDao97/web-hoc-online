@@ -33,21 +33,24 @@ class AppServiceProvider extends ServiceProvider
         $menus = [
             [
                 'name' => 'TRANG CHỦ',
-                'route_name' =>  'home.index',
+                'root_route' => 'home.index',
+                'route_name' =>  ['home.index'],
                 'sub' => [],
                 'scroll' => 0
                 //'param' => ""
             ],
             [
                 'name' => 'Khoá học',
-                'route_name' => 'home.classroom.index',
+                'root_route' => 'home.classroom.index',
+                'route_name' => ['home.classroom.index', 'home.classroom.detail', 'student.classroom.exercise', 'student.classroom'],
                 'sub' => [],
                 'scroll' => 0
                 //'param' => ""
             ],
             [
                 'name' => 'Giới thiệu',
-                'route_name' => 'home.introduce.index',
+                'root_route' => 'home.introduce.index',
+                'route_name' => ['home.introduce.index'],
                 'sub' => [],
                 'scroll' => 0,
                 'id' => 'about'
@@ -55,14 +58,8 @@ class AppServiceProvider extends ServiceProvider
             ],
             [
                 'name' => 'Tài liệu',
-                'route_name' => 'home.document.index',
-                'sub' => [],
-                'scroll' => 0
-                //'param' => ""
-            ],
-            [
-                'name' => 'Cảm nhận phụ huynh',
-                'route_name' => 'home.goc.phu.huynh',
+                'root_route' => 'home.document.index',
+                'route_name' => ['home.document.index', 'home.document.course'],
                 'sub' => [],
                 'scroll' => 0
                 //'param' => ""
@@ -76,7 +73,7 @@ class AppServiceProvider extends ServiceProvider
                 //'param' => (!empty(Auth::guard('apartners')->user()->id)) ? Auth::guard('apartners')->user()->id : ""
             ]
         ];
-        $slides = Slide::all();
+        $slides = Slide::whereNull('deleted_at')->get();
         View::share('course_menus', $courses);
         View::share('backend_menus', $menus);
         View::share('slides', $slides);

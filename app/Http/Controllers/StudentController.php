@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Classroom;
 use App\Models\ClassroomUnitExercise;
 use App\Models\Comment;
 use App\Models\Exercise;
@@ -87,15 +88,19 @@ class StudentController extends Controller
      */
     public function classroom(Request $request){
         $studentClassroom = StudentClass::where('student_id', Auth::user()->id)->where('class_room_id', $request->id)->first();
+        $classroom = Classroom::where('id', $request->id)->first();
+        if(empty($classroom)){
+            return redirect()->back()->with("messages", "Không tồn tại khoá học này");
+        }
 
-        if(!empty($studentClassroom)){
+        if(!empty($studentClassroom) || $classroom->type == 0){
             $theories = Theory::where('classroom_id', $request->id)->whereNull('deleted_at')->get();
 
             if(empty($request->id_baihoc)){
                 //dd($theories);
                 if(count($theories) > 0){
                     $id_baihoc = $theories->min('id');
-                    $exercise = Exercise::where('theory_id', $theories[0]->id)->first();
+                    $exercise = Exercise::where('theory_id', $theories[0]->id)->whereNull('deleted_at')->first();
                 }else{
                     $id_baihoc = "";
                     $exercise = "";
@@ -103,7 +108,7 @@ class StudentController extends Controller
 
             }else{
                 $id_baihoc = $request->id_baihoc;
-                $exercise = Exercise::where('theory_id', $request->id_baihoc)->first();
+                $exercise = Exercise::where('theory_id', $request->id_baihoc)->whereNull('deleted_at')->first();
             }
             $answer_count = 0;
             if(!empty($exercise)){
@@ -113,7 +118,7 @@ class StudentController extends Controller
             $list_answer = Exercise::listAnswer();
             return view('student.classroom',  compact('theories','exercise', 'answer_count', 'list_answer', 'id_baihoc'));
         }else{
-            return view('classroom.register-classroom')->with("messages", "Bạn chưa đăng kí tham gia vào khoá học này");
+            return view('classroom.register-classroom', compact('classroom'))->with("messages", "Bạn chưa đăng kí tham gia vào khoá học này");
         }
 
     }
@@ -204,7 +209,7 @@ class StudentController extends Controller
             $params = $request->only("content", "parent_name");
 
             $validatorArray = [
-                'content'=>'required|max:200',
+                'content'=>'required|max:4000',
                 'parent_name' => 'required'
             ];
             $result = new KMsg();
@@ -233,6 +238,44 @@ class StudentController extends Controller
 
         } else {
             return view('student.comment');
+        }
+    }
+
+    public function changeAvatar(Request $request, $id)
+    {
+        if ($request->isMethod('post')) {
+            $params = $request->all();
+            // Save project
+            try {
+                $result = new KMsg();
+                $item = Student::where('id', $id)->first();
+                if(!empty($request->hasFile('file'))){
+                    $validatorArray = [
+                        'file' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+                    ];
+                    $validator = Validator::make($params, $validatorArray);
+                    if ($validator->fails()) {
+                        $result->message = $validator->messages();
+                        $result->result = KMsg::RESULT_ERROR;
+                        return \response()->json($result);
+                    }
+                    $img = $request->file('file')->getClientOriginalName();
+                    $request->file('file')->move('img/',$img);
+                    $item->avatar = $img;
+                    $item->save();
+                }
+                $result->message = "Cập nhật avatar";
+                $result->result = KMsg::RESULT_SUCCESS;
+                return \response()->json($result);
+            } catch (Exception $ex) {
+                $result->message = [$ex->getMessage()];
+                $result->result = KMsg::RESULT_ERROR;
+                return \response()->json(["Some thing was wrong"]);
+            }
+
+        } else {
+            $item = Student::where('id', $id)->first();
+            return view('student.change-avatar', compact('item'));
         }
     }
 

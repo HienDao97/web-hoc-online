@@ -17,6 +17,6 @@ class Course extends Model
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function class(){
-        return $this->hasMany('App\Models\Classroom', 'course_id')->orderBy("class_rooms.type", "ASC");
+        return $this->hasMany('App\Models\Classroom', 'course_id')->orderBy("class_rooms.type", "ASC")->whereNull('class_rooms.deleted_at');
     }
 }

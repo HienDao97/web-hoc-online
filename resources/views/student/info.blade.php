@@ -15,9 +15,12 @@
 
                     <div class="w3-white w3-text-grey w3-card-4">
                         <div class="w3-display-container">
-                            <img src="https://scontent-hkg3-1.xx.fbcdn.net/v/t31.0-8/28516773_1329146550518162_4611222763409806500_o.jpg?_nc_cat=105&_nc_oc=AQkKisPKJlwS6ONPUOp1pjKvFOCgyUtyNhRa0bWfxIACm9Lqqn_RZVPZQJtopVxH1wC0RQnFgM3CgkGjZKGfveez&_nc_ht=scontent-hkg3-1.xx&oh=20895158d43156a6438f26c84ea42806&oe=5D558C4B" style="width:100%" alt="Vishnu">
+                            @php
+                                $avatar = !empty($student->avatar) ? $student->avatar : "logo-3.png"
+                            @endphp
+                            <img src="{{ asset("img/".$avatar) }}" style="width:100%" alt="Vishnu">
                             <div class="w3-display-bottomleft w3-container w3-text-white">
-                                <h2>{{ $student->name }}</h2>
+                                <h2 style="text-shadow: 2px 0 0 #248ab2, -2px 0 0 #248ab2, 0 2px 0 #248ab2, 0 -2px 0 #248ab2, 1px 1px #248ab2, -1px -1px 0 #248ab2, 1px -1px 0 #248ab2, -1px 1px 0 #248ab2; font-size: 26px">{{ $student->name }}</h2>
                             </div>
                         </div>
                         <br>
@@ -25,7 +28,7 @@
 
                             <!--   Upload file -->
                             <input type="file" id="file" style="display:none;" />
-                            <button type="button" class="btn btn-primary" style="font-size: 13px;color: rgba(58, 133, 191, 0.75);letter-spacing: 1px;line-height: 15px; border: 2px solid rgba(58, 133, 191, 0.75);  border-radius: 40px;  background: transparent;  transition: all 0.3s ease 0s; margin-right: 5px; margin-bottom: 5px" value="Upload" onclick="thisFileUpload();">Đổi ảnh đại diện</button>
+                            <button type="button" class="btn btn-primary" style="font-size: 13px;color: rgba(58, 133, 191, 0.75);letter-spacing: 1px;line-height: 15px; border: 2px solid rgba(58, 133, 191, 0.75);  border-radius: 40px;  background: transparent;  transition: all 0.3s ease 0s; margin-right: 5px; margin-bottom: 5px" value="Upload" onclick="return avatarHelper.editAvatar({{ $student->id }})">Đổi ảnh đại diện</button>
                             <script>
                                 function thisFileUpload() {
                                     document.getElementById("file").click();

@@ -18,7 +18,7 @@
                     @else
 
                         <li class="nav-item  mt-lg-0 mt-3">
-                            <a class="nav-link <?php echo ($currentRouteName == $menu['route_name'])? "active" : ""?>" href="{{ route($menu['route_name']) }}" >{{ $menu['name'] }}</a>
+                            <a class="nav-link <?php echo (in_array($currentRouteName, $menu['route_name']))? "active" : ""?>" href="{{ route($menu['root_route']) }}" >{{ $menu['name'] }}</a>
                         </li>
 
                     @endif

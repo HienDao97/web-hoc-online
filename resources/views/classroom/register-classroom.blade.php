@@ -8,20 +8,20 @@
                     <span class="sub-line">Đăng ký khóa học</span>
                 </div>
                 <hr>
-                <h5>Bạn chưa đăng kí khóa học, vui lòng làm theo hướng dẫn dưới đây để đăng kí khóa học "Khóa học cơ bản lớp 1" </h5>
+                <h5>Bạn chưa đăng kí khóa học, vui lòng làm theo hướng dẫn dưới đây để đăng kí khóa học "{{ $classroom->class_name }}" </h5>
                 <br>
                 <div style="background-color: #cccccc7a; padding: 10px">
                     <h5>Chuyển khoản tới 1 trong các số tài khoản sau</h5>
                     <br>
                     <h5>1) Số tài khoản NH Viettinbank: 100877955888(Chi nhánh Nam Thăng Long)– Chủ TK Vũ Tiến Thành</h5>
-                    <br>  
+                    <br>
                     <h5>2) Số tài khoản NH BIDV : 11610000121056 (Chi nhánh Hoài Đức, HN)– Chủ TK Vũ Tiến Thành</h5>
-                    <br>                                        
-                    <h5>Số tiền chuyển khoản chuyển khoản: 1 000 000 đồng</h5>
+                    <br>
+                    <h5>Số tiền chuyển khoản chuyển khoản: {{ number_format($classroom->tuition - $classroom->sale) }} đồng</h5>
                     <br>
                     <h5>Nội dung chuyển khoản:</h5>
                     <br>
-                    <h5 style="font-style: italic;">[Dang ky khoa 1001 So dien thoai 0987654321]</h5>
+                    <h5 style="font-style: italic;">[Dang ky khoa {{ $classroom->code }} So dien thoai {{ Auth::user()->mobile }}]</h5>
                     <br>
                     <h5>Để kích hoạt khóa học cho tài khoản của bạn</h5>
                 </div>

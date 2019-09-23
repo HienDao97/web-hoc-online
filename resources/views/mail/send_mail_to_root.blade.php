@@ -1,6 +1,4 @@
-<h4>User Register</h4>,
-<br>
-Name: <b> {{ $user['name'] }}</b>
-Email: <b> {{ $user['email'] }}</b>
-Mobile: <b> {{ $user['mobile'] }}</b>
-
+<h4>đăng kí thành công</h4>
+Họ tên học sinh: <b> {{ $user['name'] }}</b><br>
+Email: <b> {{ $user['email'] }}</b><br/>
+Số điện thoại: <b> {{ $user['mobile'] }}</b><br>

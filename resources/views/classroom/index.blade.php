@@ -46,81 +46,96 @@
                                                                     $check = 1;
                                                                 @endphp
                                                             @endif
-                                                            @if(!empty($cl->start_date) && !empty($cl->end_date))
-                                                                @if($now->gt($cl->start_date) && $cl->end_date->gt($now))
-                                                                    @php
-                                                                        $check_date = 1;
-                                                                    @endphp
-                                                                @endif
-                                                            @else
+
+                                                        @endforeach
+                                                        @if(!empty($cl_st->start_date) && !empty($cl_st->end_date))
+                                                            @if($now->gt($cl_st->start_date) && $cl_st->end_date->gt($now))
                                                                 @php
                                                                     $check_date = 1;
                                                                 @endphp
                                                             @endif
-                                                        @endforeach
+                                                        @else
+                                                            @php
+                                                                $check_date = 1;
+                                                            @endphp
+                                                        @endif
                                                     @endif
-                                                    @if(!empty(Auth::user()->id) && $check_date)
+                                                    @if(!empty(Auth::user()->id) && ($check_date || $class->type == 0))
                                                         <a href="{{ route('student.classroom', $class->id) }}" class="text-capitalize servgrid_link btn">Vào học</a>
                                                     @else
                                                         <a href="#" onclick="return login.create()" class="text-capitalize servgrid_link btn">Vào học</a>
                                                     @endif
-                                                    @php
-                                                        $end_date = \Carbon\Carbon::parse($cl->class->end_date);
+                                                    <hr>
 
-                                                        $start_date = \Carbon\Carbon::parse($cl->class->begin_date);
-
-                                                        $diff = $end_date->diffInDays($now);
-                                                    @endphp
                                                     @if($class->type == 0)
-                                                        <hr>
-                                                        <div class="sale left-sale">
-                                                            <p style="font-size: 20px">Miễn phí</p>
+
+                                                        <div class="cost">
+                                                            <p style="font-size: 16px">Miễn phí</p>
                                                         </div>
                                                     @else
-                                                        @if($check == 0 && $now->gt($start_date) && $end_date->gt($now))
+                                                        @if($check == 0)
 
-                                                            <hr>
                                                             @if(empty($class->sale))
                                                                 <div class="cost">
                                                                     <p style="font-size: 16px">{{ number_format($class->tuition) }}Đ</p>
                                                                 </div>
-                                                            @else
-                                                                <div class="cost-sale">
-                                                                    <p style="font-size: 16px">{{ number_format($class->tuition) }}Đ</p>
-                                                                </div>
-                                                                <div class="sale left-sale">
-                                                                    <p style="font-size: 16px">GIẢM GIÁ</p><p style="font-size: 20px">{{ round($cl->class->sale/$cl->class->tuition, 3) * 100 }}%</p>
-                                                                </div>
-                                                                <div class="sale right-sale">
-                                                                    <p style="font-size: 16px">CÒN</p><p style="font-size: 20px">{{ $diff }} ngày</p>
-                                                                </div>
-                                                            @endif
-                                                        @endif
 
+                                                            @else
+                                                                @php
+                                                                    $end_date = \Carbon\Carbon::parse($class->end_date);
+                                                                    $start_date = \Carbon\Carbon::parse($class->begin_date);
+                                                                    $diff = $end_date->diffInDays($now);
+                                                                @endphp
+                                                                @if($now->gt($start_date) && $end_date->gt($now))
+                                                                    <div class="cost">
+                                                                        <p style="font-size: 16px">{{ number_format($class->tuition - $class->sale) }}Đ</p>
+                                                                    </div>
+                                                                    <div class="cost-sale">
+                                                                        <p style="font-size: 16px">{{ number_format($class->tuition) }}Đ</p>
+                                                                    </div>
+                                                                    <div class="sale left-sale">
+                                                                        <p style="font-size: 16px">GIẢM GIÁ</p><p style="font-size: 20px">{{ round($class->sale/$class->tuition, 3) * 100 }}%</p>
+                                                                    </div>
+                                                                    <div class="sale right-sale">
+                                                                        <p style="font-size: 16px">CÒN</p><p style="font-size: 20px">{{ $diff }} ngày</p>
+                                                                    </div>
+                                                                @else
+                                                                    <div class="cost">
+                                                                        <p style="font-size: 16px">{{ number_format($class->tuition) }}Đ</p>
+                                                                    </div>
+
+
+                                                                @endif
+
+                                                            @endif
+                                                        @else
+
+                                                        @endif
                                                     @endif
                                                 @else
                                                     <a href="#" onclick="return login.create()" class="text-capitalize servgrid_link btn">Vào học</a>
                                                     @if($class->type == 0)
                                                         <hr>
-                                                        <div class="sale left-sale">
-                                                            <p style="font-size: 20px">Miễn phí</p>
+                                                        <div class="cost">
+                                                            <p style="font-size: 16px">Miễn phí</p>
                                                         </div>
                                                     @else
+                                                        <hr>
                                                         @php
                                                             $end_date = \Carbon\Carbon::parse($class->end_date);
-
                                                             $start_date = \Carbon\Carbon::parse($class->begin_date);
-
                                                             $diff = $end_date->diffInDays($now);
                                                         @endphp
-                                                        @if($now->gt($start_date) && $end_date->gt($now))
 
-                                                            <hr>
-                                                            @if(empty($class->sale))
+                                                        @if(empty($class->sale))
+                                                            <div class="cost">
+                                                                <p style="font-size: 16px">{{ number_format($class->tuition) }}Đ</p>
+                                                            </div>
+                                                        @else
+                                                            @if($now->gt($start_date) && $end_date->gt($now))
                                                                 <div class="cost">
-                                                                    <p style="font-size: 16px">{{ number_format($class->tuition) }}Đ</p>
+                                                                    <p style="font-size: 16px">{{ number_format($class->tuition - $class->sale) }}Đ</p>
                                                                 </div>
-                                                            @else
                                                                 <div class="cost-sale">
                                                                     <p style="font-size: 16px">{{ number_format($class->tuition) }}Đ</p>
                                                                 </div>
@@ -130,7 +145,14 @@
                                                                 <div class="sale right-sale">
                                                                     <p style="font-size: 16px">CÒN</p><p style="font-size: 20px">{{ $diff }} ngày</p>
                                                                 </div>
+                                                            @else
+                                                                <div class="cost">
+                                                                    <p style="font-size: 16px">{{ number_format($class->tuition) }}Đ</p>
+                                                                </div>
+
+
                                                             @endif
+
                                                         @endif
                                                     @endif
                                                 @endif
@@ -174,7 +196,6 @@
         <?php if(session()->has('messages')){?>
         toastr.error("{{ session('messages') }}");
         <?php }?>
-
     </script>
 
 @endsection

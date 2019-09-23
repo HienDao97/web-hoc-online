@@ -32,19 +32,19 @@
                                 @if($value->id != $id_baihoc)
                                     <a href="{{ route('student.classroom.exercise', ['id'=> $theory->classroom_id, 'id_baihoc' => $value->id]) }}">
                                         <li class="room-nav-lesson border-bottom">{{ $value->name }}
-                                            <div class="room-nav-lesson-name">{{ $value->content }}</div>
+                                            {{--<div class="room-nav-lesson-name">{{ $value->content }}</div>--}}
                                         </li>
                                     </a>
                                 @else
                                     <li class="room-nav-lesson border-bottom">{{ $value->name }}
-                                        <div class="room-nav-lesson-name">{{ $value->content }}</div>
+                                        {{--<div class="room-nav-lesson-name">{{ $value->content }}</div>--}}
                                     </li>
                                 @endif
 
                             @endforeach
                         @else
-                            <li class="room-nav-lesson border-bottom">Không có tiêu đề
-                                <div class="room-nav-lesson-name">Lớp chưa mở</div>
+                            <li class="room-nav-lesson border-bottom">Lớp chưa mở
+                                {{--<div class="room-nav-lesson-name">Lớp chưa mở</div>--}}
                             </li>
                         @endif
 
@@ -63,14 +63,16 @@
                                     <span class="sub-line">Video</span>
                                 </div>
                                 <div class="lesson-video">
+                                    @if(!empty($id))
                                     <iframe width="560" height="315" src="https://www.youtube.com/embed/{{ $id }}"
                                             frameborder="0"
                                             allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                                             allowfullscreen></iframe>
-                                </div>
-                                <div class="complete-button">
-                                    <button class="btn bg-theme mt-4 w3_pvt-link-bnr scroll bg-theme3 text-white">Học xong
-                                    </button>
+                                    @else
+                                        <div style="background-color: #cccccc7a; padding: 10px; margin-top: 5px; margin-bottom: 5px">
+                                            <h5>Video đang cập nhật</h5>
+                                        </div>
+                                    @endif
                                 </div>
                             </div>
                         </div>
@@ -84,7 +86,7 @@
                                 </div>
                                 @if(!empty($exercise))
                                     <div class="lesson-exercise">
-                                        <img src="{{ asset('web/images\exercise\0002.jpg') }}">
+                                        <img src="http://admin.vutienthanh.com/img/exercise/{{ $exercise->content }}">
                                     </div>
                                     <form method="post" action="{{route('student.exercise.answer')}}" id="form-input">
                                         <input type="hidden" name="exercise" value="{{ $exercise->id }}">
@@ -92,7 +94,7 @@
                                         <div class="list-lesson-answer" id="list-answer">
                                             @php
                                             $left = 0;
-                                            $right = (int) ($answer_count/2);
+                                            $right = ceil(($answer_count/2)) ;
                                             @endphp
                                             @for($i = 0; $i < $answer_count; $i++)
                                                 @if($i % 2 == 0)
@@ -129,7 +131,8 @@
                                             @endfor
                                         </div>
                                         <div class="complete-button" id="button-submmit">
-                                            <button class="btn bg-theme mt-4 w3_pvt-link-bnr scroll bg-theme3 text-white" id="button-submit" onclick="return onSubmitProject()">Nộp
+<audio id="sound1" src="{{ asset("bell.mp3") }}" preload="auto"></audio>
+                                            <button class="btn bg-theme mt-4 w3_pvt-link-bnr scroll bg-theme3 text-white" id="button-submit" onclick="document.getElementById('sound1').play();return onSubmitProject()">Nộp
                                                 bài
                                             </button>
                                         </div>

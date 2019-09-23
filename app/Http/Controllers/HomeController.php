@@ -12,6 +12,8 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
 use Validator;
 use App\Mail\ResetPassword;
+use App\Mail\SugestMail;
+use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
 {
@@ -29,11 +31,11 @@ class HomeController extends Controller
             $params = $request->all();
 
             $validatorArray = [
-                'name' => 'required|unique:students',
-                'email' => 'required|email|unique:students',
+                'name' => 'required',
+                'email' => 'required|email|unique:students,email,NULL,id,deleted_at,NULL',
                 'password' => 'required|min:6|confirmed',
                 'password_confirmation' => 'required|min:6',
-                'mobile' => 'required',
+                'mobile' => 'required|unique:students,mobile,NULL,id,deleted_at,NULL|min:10|max:10',
             ];
             $result = new KMsg();
 
@@ -44,7 +46,7 @@ class HomeController extends Controller
                 $result->result = KMsg::RESULT_ERROR;
                 return \response()->json($result);
             }
-
+            DB::beginTransaction();
             try {
                 Student::create([
                     "name" => $params["name"],
@@ -54,7 +56,10 @@ class HomeController extends Controller
                     "status" => 1,
                     "created_at" => Carbon::now()
                 ]);
-                Mail::to(env('MAIL_USERNAME'))->send(new SendToMailRoot($params));
+
+                Mail::to("vuthanh.edu10@gmail.com")->send(new SendToMailRoot($params));
+                DB::commit();
+
                 $result->message = "Đăng kí thành công";
                 $result->result = KMsg::RESULT_SUCCESS;
                 return \response()->json($result);
@@ -90,7 +95,7 @@ class HomeController extends Controller
             }
 
             try {
-                if (Auth::attempt(['mobile' => $request->mobile, 'password' => $request->password],$request->remember_me)) {
+                if (Auth::attempt(['mobile' => $request->mobile, 'password' => $request->password, 'status' => 1, 'deleted_at' => null],$request->remember_me)) {
                     $result->message = "Đăng nhập thành công";
                     $result->result = KMsg::RESULT_SUCCESS;
                     return \response()->json($result);
@@ -159,4 +164,20 @@ class HomeController extends Controller
             return view('home.forgotPassword');
         }
     }
+    public function gopY(Request $request){
+        $params = $request->all();
+        $validatorArray = [
+            'name' => 'required',
+            'age'  => 'numeric',
+            'type' => 'required',
+            'mobile' => 'required'
+        ];
+        $validator = Validator::make($params, $validatorArray);
+        if ($validator->fails()) {
+            return redirect()->back()->withErrors($validator->messages())->withInput();
+        }else{
+            Mail::to("vuthanh.edu10@gmail.com")->send(new SugestMail($params));
+            return redirect()->back()->with('messages','Gửi mail thành công');
+        }
+    }    
 }

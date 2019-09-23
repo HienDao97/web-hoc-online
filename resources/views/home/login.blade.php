@@ -1,4 +1,4 @@
-a<form method="post" class="p-sm-3" action="{{route('home.login')}}" id="form-input">
+<form method="post" class="p-sm-3" action="{{route('home.login')}}" id="form-input">
     {{ csrf_field() }}
     <div class="box-header" id="message"></div>
     <div class="form-group">
@@ -14,7 +14,7 @@ a<form method="post" class="p-sm-3" action="{{route('home.login')}}" id="form-in
                required="">
     </div>
     <div class="right-w3l">
-        <input type="submit" id="button-edit-plan" onclick="return onSubmitProject()" class="form-control bg-theme1" value="Đăng nhập">
+        <button type="button" id="button-edit-plan" onclick="return onSubmitProject()" class="form-control bg-theme1" style="font-weight: bold; color: white">ĐĂNG NHẬP</button>
     </div>
     <div class="row sub-w3l my-3">
         <div class="col-sm-6 sub-w3_pvt">
@@ -27,8 +27,7 @@ a<form method="post" class="p-sm-3" action="{{route('home.login')}}" id="form-in
         </div>
     </div>
     <p class="text-center">Bạn chưa có tài khoản?
-        <a href="#" data-toggle="modal" data-target="#exampleModal1" class="text-secondary"
-           data-dismiss="modal">
+        <a href="#" onclick="return register.create()">
             Đăng ký ngay</a>
 
     </p>
