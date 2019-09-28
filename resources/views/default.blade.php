@@ -5,6 +5,7 @@
     <title>@yield('title') | {{env('APP_NAME')}}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="utf-8"/>
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
     <meta name="keywords" content="Alphabet Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template,
 	SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony Ericsson, Motorola web design"/>
     <script>
@@ -27,6 +28,8 @@
     <link href="{{ asset('waitMe/waitMe.css') }}" type="text/css" rel="stylesheet" media="all">
 
     <link href="{{ asset('css/toastr.min.css') }}" type="text/css" rel="stylesheet" media="all">
+    <link href="{{ asset('select2/select2.css?v=1') }}" rel="stylesheet" />
+    <link rel="stylesheet" href="{{ asset('web/css/bootstrap-datetimepicker.min.css') }}" />
 
     <!-- font-awesome icons -->
     <link href="{{ asset('web/css/font-awesome.min.css') }}" rel="stylesheet">
@@ -157,11 +160,16 @@
         });
 
     });
+
 </script>
 <script src="{{ asset('web/js/bootstrap.js') }}"></script>
 <script src="{{ asset('js/init.js') }}"></script>
 <script src="{{ asset('waitMe/waitMe.js') }}"></script>
 <script src="{{ asset('js/toastr.min.js') }}"></script>
+<script src="{{ asset('js/moment-with-locales.min.js') }}"></script>
+<script src="{{ asset('js/bootstrap-datetimepicker.min.js') }}"></script>
+<script src="{{ asset('select2/select2.js') }}"></script>
+
 
 @yield('scripts')
 

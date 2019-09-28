@@ -18,19 +18,14 @@ class DocumentController extends Controller
         $items = Document::where('course_id', $id)
             ->whereNull('deleted_at')
             ->paginate(6);
-        if(empty($course) <= 0){
-            return redirect()->back();
-        }else{
-            $course = Course::where('id', $id)->first();
-        }
+        $course = Course::where('id', $id)->first();
         return view('document.detail', compact('items', 'course'));
     }
-
     public function download($id){
         $document = Document::where('id', $id)->first();
         $result = new KMsg();
         if(empty($document)){
-            $result->message = "Không tồn tại tài liệu này";
+            $result->message = "Kh�ng t&#7891;n t&#7841;i t�i li&#7879;u n�y";
             $result->result = KMsg::RESULT_ERROR;
             return response()->json();
         }else{
@@ -40,4 +35,5 @@ class DocumentController extends Controller
             return response()->json();
         }
     }
+
 }

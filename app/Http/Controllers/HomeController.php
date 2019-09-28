@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Mail\SendToMailRoot;
-use App\Mail\SugestMail;
 use App\Models\Course;
 use App\Models\KMsg;
+use App\Models\NewsPost;
 use App\Models\Student;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -13,13 +13,18 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
 use Validator;
 use App\Mail\ResetPassword;
+use App\Mail\SugestMail;
 use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
 {
     public function index(){
         $courses = Course::whereNull('deleted_at')->get();
-        return view('home.home', compact('courses'));
+        $news = NewsPost::where("post_status", 1)
+            ->whereDate("published_at", "<=", Carbon::now())
+            ->orderBy('id', "DESC")
+            ->paginate(4);
+        return view('home.home', compact('courses', 'news'));
     }
 
     /**
@@ -31,11 +36,16 @@ class HomeController extends Controller
             $params = $request->all();
 
             $validatorArray = [
-                'name' => 'required|unique:students',
-                'email' => 'required|email|unique:students',
+                'name' => 'required',
+                'district' => 'required',
+                'school' => 'required',
+                'commune' => 'required',
+                'province' => 'required',
+                'birthday' => 'required',
+                'email' => 'required|email|unique:students,email,NULL,id,deleted_at,NULL',
                 'password' => 'required|min:6|confirmed',
                 'password_confirmation' => 'required|min:6',
-                'mobile' => 'required|min:10|max:10|unique:students',
+                'mobile' => 'required|unique:students,mobile,NULL,id,deleted_at,NULL|min:10|max:10',
             ];
             $result = new KMsg();
 
@@ -48,21 +58,25 @@ class HomeController extends Controller
             }
             DB::beginTransaction();
             try {
-
                 Student::create([
                     "name" => $params["name"],
                     "email" => $params["email"],
                     "password" => bcrypt($params["password"]),
                     "mobile" => $params["mobile"],
+                    "birthday" => date("Y-m-d H:i:s", strtotime($params["birthday"])),
+                    "school" => $params["school"],
+                    "province_id" => $params["province"],
+                    "district_id" => $params["district"],
+                    "commune_id" => $params["commune"],
                     "status" => 1,
                     "created_at" => Carbon::now()
                 ]);
-                //$params["title"] = "Đăng kí học sinh thành công";
-                Mail::to("pahoang1512@gmail.com")->send(new SendToMailRoot($params));
+
+//                Mail::to("vuthanh.edu10@gmail.com")->send(new SendToMailRoot($params));
                 DB::commit();
+
                 $result->message = "Đăng kí thành công";
                 $result->result = KMsg::RESULT_SUCCESS;
-                //dd(2);
                 return \response()->json($result);
             } catch (\Exception $ex) {
                 $result->message = [$ex->getMessage()];
@@ -71,7 +85,8 @@ class HomeController extends Controller
             }
 
         } else {
-            return view('home.register');
+            $provinces = DB::table("provine")->get();
+            return view('home.register', compact('provinces'));
         }
     }
 
@@ -96,7 +111,7 @@ class HomeController extends Controller
             }
 
             try {
-                if (Auth::attempt(['mobile' => $request->mobile, 'password' => $request->password],$request->remember_me)) {
+                if (Auth::attempt(['mobile' => $request->mobile, 'password' => $request->password, 'status' => 1, 'deleted_at' => null],$request->remember_me)) {
                     $result->message = "Đăng nhập thành công";
                     $result->result = KMsg::RESULT_SUCCESS;
                     return \response()->json($result);
@@ -166,9 +181,12 @@ class HomeController extends Controller
         }
     }
 
+    /**
+     * @param Request $request
+     * @return \Illuminate\Http\RedirectResponse
+     */
     public function gopY(Request $request){
         $params = $request->all();
-
         $validatorArray = [
             'name' => 'required',
             'age'  => 'numeric',
@@ -179,8 +197,47 @@ class HomeController extends Controller
         if ($validator->fails()) {
             return redirect()->back()->withErrors($validator->messages())->withInput();
         }else{
-            Mail::to("pahoang1512@gmail.com")->send(new SugestMail($params));
-            return redirect()->back()->with('messages','Gửi thông tin thành công');
+            Mail::to("vuthanh.edu10@gmail.com")->send(new SugestMail($params));
+            return redirect()->back()->with('messages','Gửi mail thành công');
+        }
+    }
+
+    public function filter(Request $request){
+        $result = new KMsg();
+        if(empty($request->id) || empty($request->type)){
+            $result->message = "Something was wrong";
+            $result->result = KMsg::RESULT_ERROR;
+            return \response()->json($result);
+        }else{
+            if($request->type == "district"){
+                $html = "";
+                $districts = DB::table("district")->select('id', 'name')->where('province_id', $request->id)->get();
+                $html .= "<option value='' selected>-- Tất cả --</option>";
+                foreach ($districts as $district){
+                    if(!empty($request->value) && $request->value == $district->id){
+                        $html .= "<option value=". $district->id ." selected>". $district->name ."</option>";
+                    }else{
+                        $html .= "<option value=". $district->id .">". $district->name ."</option>";
+                    }
+                }
+                $result->message = $html;
+                $result->result = KMsg::RESULT_SUCCESS;
+            }
+            else if($request->type == "commune"){
+                $html = "";
+                $communes = DB::table("commune")->select('id', 'name')->where('district_id', $request->id)->get();
+                $html .= "<option value='' selected>-- Tất cả --</option>";
+                foreach ($communes as $commune){
+                    if(!empty($request->value) && $request->value == $commune->id){
+                        $html .= "<option value=". $commune->id ." selected>". $commune->name ."</option>";
+                    }else{
+                        $html .= "<option value=". $commune->id .">". $commune->name ."</option>";
+                    }
+                }
+                $result->message = $html;
+                $result->result = KMsg::RESULT_SUCCESS;
+            }
+            return \response()->json($result);
         }
     }
 }

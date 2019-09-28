@@ -4,11 +4,11 @@
 <head>
     <title>Học toán online</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta charset="utf-8"/>
+    <meta charset="utf-8" />
     <meta name="keywords" content="Alphabet Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template,
-	SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony Ericsson, Motorola web design"/>
+    SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony Ericsson, Motorola web design" />
     <script>
-        addEventListener("load", function () {
+        addEventListener("load", function() {
             setTimeout(hideURLbar, 0);
         }, false);
 
@@ -32,838 +32,679 @@
     <!--     <link href="//fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,700,700i,900,900i" rel="stylesheet"> -->
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
     <!-- //online-fonts -->
-    <link rel="icon" href="images/logo-3.png" type="image/x-icon"/>
+    <link rel="icon" href="images/logo-3.png" type="image/x-icon" />
 
 </head>
 
-<body>
-<!-- banner -->
-<div id="home" class="position-relative">
-    <div class="header-main">
-        <div class="d-sm-flex justify-content-between">
-            <a href=""><img src="images/logo.png" style="height: 130px"></a>
-            <div class="hearder-right-w3_pvt d-flex justify-content-sm-end align-items-center  mt-sm-0 mt-4">
-                <ul class="d-flex header-w3_pvt">
+<body id="body">
+
+    <!-- Load Facebook SDK for JavaScript -->
+    <div id="fb-root"></div>
+    <script>
+        window.fbAsyncInit = function() {
+            FB.init({
+                xfbml: true,
+                version: 'v4.0'
+            });
+        };
+
+        (function(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s);
+            js.id = id;
+            js.src = 'https://connect.facebook.net/vi_VN/sdk/xfbml.customerchat.js';
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    </script>
+
+    <!-- Your customer chat code -->
+    <div class="fb-customerchat" attribution=setup_tool page_id="201624597072889" logged_in_greeting="Chào anh/chị. Anh/chị đang quan tâm đến chương trình lớp mấy?" logged_out_greeting="Chào anh/chị. Anh/chị đang quan tâm đến chương trình lớp mấy?">
+    </div>
+
+    <!-- banner -->
+    <div id="home" class="position-relative">
+        <div class="header-main">
+            <div class="d-sm-flex justify-content-between">
+                <a href="http://vutienthanh.com"><img src="http://vutienthanh.com/web/images/logo.png" style="height: 80px">
+                </a>
+                <img class="sologan" src="https://amazingmath.vn/upload/images/banners/banner-sale-homepage.jpg">
+                <div class="hearder-right-w3_pvt d-flex justify-content-sm-end align-items-center  mt-sm-0 mt-4 login-row">
+                    <ul class="d-flex header-w3_pvt">
+                        <li>
+                            <button type="button" class="btn w3ls-btn d-block" data-toggle="modal" aria-pressed="false" data-target="#exampleModal1">
+                                <span class="fa fa-sign-in"></span>Đăng ký
+                            </button>
+                        </li>
+                        <li>
+                            <button type="button" class="btn w3ls-btn btn-2  d-block" data-toggle="modal" aria-pressed="false" data-target="#exampleModal">
+                                <span class="fa fa-lock"></span>Đăng nhập
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="callbacks_container">
+        <div style="background-color: #248ab2; padding: 45px"></div>
+    </div>
+    <script type="text/javascript" src="http://vutienthanh.com/js/login.js"></script>
+    <!-- //banner -->
+    <!-- header -->
+
+    <header>
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav  text-center" style="z-index: 99">
+
+                        <li class="nav-item  mt-lg-0 mt-3">
+                            <a class="nav-link active" href="http://vutienthanh.com">TRANG CHỦ</a>
+                        </li>
+
+
+                        <li class="nav-item  mt-lg-0 mt-3">
+                            <a class="nav-link " href="http://vutienthanh.com/khoa-hoc">Khoá học</a>
+                        </li>
+
+
+                        <li class="nav-item  mt-lg-0 mt-3">
+                            <a class="nav-link " href="http://vutienthanh.com/gioi-thieu">Giới thiệu</a>
+                        </li>
+
+
+                        <li class="nav-item  mt-lg-0 mt-3">
+                            <a class="nav-link " href="http://vutienthanh.com/tai-lieu">Tài liệu</a>
+                        </li>
+
+                        <li class="nav-item  mr-lg-3 mt-lg-0 mt-3">
+                            <a class="nav-link scroll" href="#contact">Liên hệ</a>
+                        </li>
+                        <li class="nav-item  mr-lg-3 mt-lg-0 mt-3">
+                            <a class="nav-link scroll" href="#contact">Tin tức</a>
+                        </li>
+                        <li class="nav-item  mr-lg-3 mt-lg-0 mt-3">
+                            <a class="nav-link scroll" href="#contact">Trang cá nhân</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+    <!-- //header -->
+    <!-- about -->
+    <div class="popup-box w3ls-servgrid card" style="position: fixed;">
+        <button id="closeButton" style="width: 30px;border-radius: 50%;background-color: white;position: fixed;margin: -20px; border: 2px solid #4CAF50;">x</button>
+        <script language="javascript">
+            document.getElementById('closeButton').addEventListener('click', function(e) {
+                e.preventDefault();
+                this.parentNode.style.display = 'none';
+            }, false);
+        </script>
+        <span class="sub-line" style="font-size: 0.9em; margin-top: 5px">
+         Like fanpage
+      </span>
+        <iframe src="https://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.facebook.com%2Fvutienthanh912%2F&width=138&layout=button_count&action=like&size=small&show_faces=false&share=true&height=46&appId=2189958024560160" width="138" height="46" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+        <span class="sub-line" style="font-size: 0.9em;">
+         Subscribe youtube
+      </span>
+        <script src="https://apis.google.com/js/platform.js"></script>
+
+        <div class="g-ytsubscribe" data-channelid="UCZiP8UeW2vRUDz7M0JsN0Xg" data-layout="default" data-count="default"></div>
+    </div>
+    <section class="container wthree-row  w3-about position-relative" id="about">
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="3000">
+            <ol class="carousel-indicators">
+                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active" style="border-radius:50%; height: 10px; width: 10px"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="1" class="" style="border-radius:50%; height: 10px; width: 10px"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="2" class="" style="border-radius:50%; height: 10px; width: 10px"></li>
+            </ol>
+            <div class="carousel-inner">
+
+                <div class="carousel-item active">
+                    <img class="d-block s-500-750" src="http://admin.vutienthanh.com/img/slide/Anh website.jpg" alt="First slide">
+                </div>
+
+                <div class="carousel-item ">
+                    <img class="d-block s-500-750" src="http://admin.vutienthanh.com/img/slide/Anh dang website 3.jpg" alt="First slide">
+                </div>
+
+                <div class="carousel-item ">
+                    <img class="d-block s-500-750" src="http://admin.vutienthanh.com/img/slide/Anh dang website 2.jpg" alt="First slide">
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+        <div class="abt-pos register-form" style="top: -50px;">
+            <h4 style="font-weight: bold;">Tin tức mới nhất</h4>
+            <div class="contcat-form">
+                <form action="http://vutienthanh.com/register" method="post" id="form-register" class="register-wthree">
+                    <ul class="latest-posts">
+                        <li data-animation="fadeInLeft" class="animated fadeInLeft visible">
+                            <div class="post-thumb">
+                                <img class="img-rounded" src="http://admin.vutienthanh.com/img/slide/Anh dang website 2.jpg" alt="" title="" width="84" height="84">
+                            </div>
+                            <div class="post-details">
+                                <div class="description">
+                                    <a href="#">
+                                        <!-- Text -->
+                                        The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those intereste.
+                                    </a>
+                                </div>
+                            </div>
+                        </li>
+                        <li data-animation="fadeInUp" class="animated fadeInUp visible">
+                            <div class="post-thumb">
+                                <img class="img-rounded" src="http://admin.vutienthanh.com/img/slide/Anh dang website 2.jpg" alt="" title="" width="84" height="84">
+                            </div>
+                            <div class="post-details">
+                                <div class="description">
+                                    <a href="#">
+                                        <!-- Text -->
+                                        The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those intereste.
+                                    </a>
+                                </div>
+                            </div>
+                        </li>
+                        <li data-animation="fadeInDown" class="animated fadeInDown visible">
+                            <div class="post-thumb">
+                                <img class="img-rounded" src="http://admin.vutienthanh.com/img/slide/Anh dang website 2.jpg" alt="" title="" width="84" height="84">
+                            </div>
+                            <div class="post-details">
+                                <div class="description">
+                                    <a href="#">
+                                        <!-- Text -->
+                                        The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those intereste.
+                                    </a>
+                                </div>
+                            </div>
+                        </li>
+                        <li data-animation="fadeInDown" class="animated fadeInDown visible">
+                            <div class="post-thumb">
+                                <img class="img-rounded" src="http://admin.vutienthanh.com/img/slide/Anh dang website 2.jpg" alt="" title="" width="84" height="84">
+                            </div>
+                            <div class="post-details">
+                                <div class="description">
+                                    <a href="#">
+                                        <!-- Text -->
+                                        The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those intereste.
+                                    </a>
+                                </div>
+                            </div>
+                        </li>                        
+                    </ul>
+                </form>
+            </div>
+        </div>
+    </section>
+    <!-- //about -->
+    <div class="testimonials-wthree py-lg-5 py-4 text-center" id="testimonials">
+        <div class="container">
+            <div class="sec-main text-left">
+                <span class="sub-line text-white">Hướng dẫn đăng ký học</span>
+            </div>
+            <div class="" style="padding-bottom: 20px; text-align: left;">
+                <ul>
                     <li>
-                        <button type="button" class="btn w3ls-btn d-block" data-toggle="modal" aria-pressed="false"
-                                data-target="#exampleModal1">
-                            <span class="fa fa-sign-in"></span>Đăng ký
-                        </button>
+                        <label style="color: #f5f6f7; font-size: 20px;">Bước 1:</label> <a onclick="return register.create()" style="color: #f5f6f7;font-size: 20px;cursor: pointer;">&nbsp;Đăng ký tài khoản</a>
                     </li>
                     <li>
-                        <button type="button" class="btn w3ls-btn btn-2  d-block" data-toggle="modal"
-                                aria-pressed="false"
-                                data-target="#exampleModal">
-                            <span class="fa fa-lock"></span>Đăng nhập
-                        </button>
+                        <label style="color: #f5f6f7; font-size: 20px;">Bước 2:</label> <a onclick="return login.create()" style="color: #f5f6f7;  font-size: 20px;cursor: pointer;">&nbsp;Đăng nhập</a>
+                    </li>
+                    <li>
+                        <label style="color: #f5f6f7; font-size: 20px;">Bước 3:</label> <a href="http://vutienthanh.com/khoa-hoc" style="color: #f5f6f7; font-size: 20px;cursor: pointer;">&nbsp;Chọn khóa học trong trang Khóa học</a>
+                    </li>
+                    <li>
+                        <label style="color: #f5f6f7; font-size: 20px;">Bước 4:</label> <a style="color: #f5f6f7; font-size: 20px;cursor: pointer;">&nbsp;Đăng ký khóa học theo hướng dẫn</a>
                     </li>
                 </ul>
             </div>
         </div>
     </div>
-</div>
-<div class="callbacks_container">
-    <ul class="rslides" id="slider3">
-        <li class="slider-img">
-            <div class="container-fluid px-0" style="height: 500px">
-                <div class="row">
-                    <div class="col-3 col-sm-6 px-0 bg-theme1 banner-left-grid">
-                        <div class="banner-text h-100">
-                        </div>
-                    </div>
-                    <div class="col-9 col-sm-6 banner banner1 banner-text">
-                    </div>
-                </div>
-            </div>
-        </li>
-        <li class="slider-img">
-            <div class="container-fluid px-0" style="height: 500px">
-                <div class="row">
-                    <div class="col-3 col-sm-6 px-0 bg-theme2 banner-left-grid">
-                        <div class="banner-text h-100">
-                        </div>
-                    </div>
-                    <div class="col-9 col-sm-6 banner banner2 banner-text">
-                    </div>
-                </div>
-            </div>
-        </li>
-        <li class="slider-img">
-            <div class="container-fluid px-0" style="height: 500px">
-                <div class="row">
-                    <div class="col-3 col-sm-6 px-0 bg-theme3 banner-left-grid">
-                        <div class="banner-text h-100">
-                        </div>
-                    </div>
-                    <div class="col-9 col-sm-6 banner banner3 banner-text">
-                    </div>
-                </div>
-            </div>
-        </li>
-    </ul>
-</div>
-<!-- //banner -->
-<!-- header -->
-<header>
-    <div class="container">
-        <nav class="navbar navbar-expand-lg navbar-light">
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav  text-center">
-                    <li class="nav-item active  mr-lg-3 mt-lg-0 mt-3">
-                        <a class="nav-link" href="index.html">Trang chủ
-                            <span class="sr-only">(current)</span>
-                        </a>
-                    </li>
-                    <li class="nav-item  mr-lg-3 mt-lg-0 mt-3">
-                        <a class="nav-link scroll" href="#about">Giới thiệu</a>
-                    </li>
-                    <li class="nav-item dropdown mr-lg-3 mt-lg-0 mt-3">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                           data-toggle="dropdown"
-                           aria-haspopup="true" aria-expanded="false">
-                            Khóa học
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item scroll" href="#lop1">Lớp 1</a>
-                            <a class="dropdown-item scroll" href="#lop2">Lớp 2</a>
-                            <a class="dropdown-item scroll" href="#lop3">Lớp 3</a>
-                            <!--                            <div class="dropdown-divider"></div>
-                             --> <a class="dropdown-item scroll" href="#lop4">Lớp 4</a>
-                            <a class="dropdown-item scroll" href="#lop5">Lớp 5</a>
-                        </div>
-                    </li>
-                    <li class="nav-item  mt-lg-0 mt-3">
-                        <a class="nav-link scroll" href="#contact">Tài liệu</a>
-                    </li>
-                    <li class="nav-item  mt-lg-0 mt-3">
-                        <a class="nav-link scroll" href="#contact">Góc phụ huynh</a>
-                    </li>
-                    <li class="nav-item  mt-lg-0 mt-3">
-                        <a class="nav-link scroll" href="#contact">Liên hệ</a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-    </div>
-</header>
-<!-- //header -->
-<!-- about -->
-<section class="wthree-row  w3-about position-relative" id="about">
-    <div class="container">
-        <div class="about-head">
+    <!-- portfolio -->
+    <div class="portfolio-wthree py-lg-5" id="portfolio" style="background-color: #eee">
+        <div class="container pt-md-5 pt-4" style="padding-top: 0.5rem !important;">
             <div class="sec-main">
-                <span class="sub-line">Giới thiệu về chúng tôi</span>
-                <h3 class="wthree-title">Chào mừng tới website của chúng tôi</h3>
+                <span class="sub-line">Khóa học</span>
             </div>
-            <p>Chúng tôi cung cấp dịch vụ học toán chất lương cao cho học sinh tiểu học, chỉ cần ngồi tại nhà cũng có
-                thể học.</p>
-            <p>Học sinh được hưởng chương trình đào tạo tốt nhất.</p>
-
-            <div class="ab-btm">
-                <h4>Cung cấp kiến thức toán học cho</h4>
-                <ul class="list-about d-flex">
-                    <li>
-                        Lớp 1
-                    </li>
-                    <li>
-                        Lớp 2
-                    </li>
-                    <li>
-                        Lớp 3
-                    </li>
-                    <li>
-                        Lớp 4
-                    </li>
-                    <li>
-                        Lớp 5
-                    </li>
-                </ul>
-                <a class="btn bg-theme mt-4 w3_pvt-link-bnr scroll bg-theme3 text-white" href="#services" role="button">Xem
-                    thêm</a>
-            </div>
-        </div>
-    </div>
-    <div class="abt-pos">
-        <h4>Đăng ký tài khoản</h4>
-        <div class="contcat-form">
-            <form action="#" method="post" class="register-wthree">
-                <div class="form-group">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <label class="text-white">
-                                Họ tên con
-                            </label>
-                            <input class="form-control" type="text" placeholder="Họ tên con" name="email" required="">
-                        </div>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <label class="text-white">
-                                Số điện thoại phụ huynh
-                            </label>
-                            <input class="form-control" type="text" placeholder="Số điện thoại phụ huynh" name="email"
-                                   required="">
-                        </div>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <label class="text-white">
-                                Mật khẩu
-                            </label>
-                            <input class="form-control" type="password" placeholder="Mật khẩu" name="email" required="">
-                        </div>
-                        <div class="col-md-6 mt-md-0 mt-4">
-                            <label class="text-white">
-                                Nhập lại mật khẩu
-                            </label>
-                            <input class="form-control" type="password" placeholder="Nhập lại mật khẩu" name="name"
-                                   required="">
-                        </div>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <label class="text-white">
-                                Email của phụ huynh
-                            </label>
-                            <input class="form-control" type="email" placeholder="Email của phụ huynh" name="email"
-                                   required="">
-                        </div>
-                    </div>
-                </div>
-                <div class="sub-w3l">
-                    <div class="sub-w3_pvt">
-                        <input type="checkbox" id="brand2" value="">
-                        <label for="brand2" class="mb-3 text-dark">
-                            <span></span>Tôi đồng ý với điều khoản của trang web</label>
-                    </div>
-                </div>
-                <div class="row mt-3">
-                    <div class="col-md-12">
-                        <button type="submit"
-                                class="btn  btn-block w-100 font-weight-bold text-capitalize bg-theme1 text-white">Đăng
-                            ký
-                        </button>
-                    </div>
-                </div>
-            </form>
-        </div>
-    </div>
-</section>
-<!-- //about -->
-<!-- portfolio -->
-<div class="portfolio-wthree py-lg-5" id="portfolio" style="background-color: #eee">
-    <div class="container pt-md-5 pt-4" style="padding-top: 0.5rem !important;">
-        <div class="sec-main">
-            <span class="sub-line">Khóa học</span>
-        </div>
-        <div class="container" style="margin-bottom:  20px">
-            <div class="row">
-                <a href="#lop1">
-                    <div class="col-lg-4">
-                        <div class="w3ls-servgrid card">
-                            <div class="card-header">
-                                <span class="sub-line">Lớp 1</span>
-                                <!--                             <h4 class="serv-title">
-                                                                Lớp
-                                                            </h4> -->
-                            </div>
-                            <div class="card-block">
-                                <p class="card-title servgrid-title">
-                                    Cung cấp kiến thức về bảng cửu chương, cộng trừ nhân chia trong phạm vi 10.
-                                </p>
-                                <a href="#portfolio" class="text-capitalize servgrid_link btn scroll">Vào học</a>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-                <a href="#lop2">
-                    <div class="col-lg-4">
-                        <div class="w3ls-servgrid card">
-                            <div class="card-header">
-                                <span class="sub-line">Lớp 2</span>
-                                <!--                             <h4 class="serv-title">
-                                                                Lớp
-                                                            </h4> -->
-                            </div>
-                            <div class="card-block">
-                                <p class="card-title servgrid-title">
-                                    Cung cấp kiến thức về bảng cửu chương, cộng trừ nhân chia trong phạm vi 100.
-                                </p>
-                                <a href="#portfolio" class="text-capitalize servgrid_link btn scroll">Vào học</a>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-                <a href="#lop3">
-                    <div class="col-lg-4">
-                        <div class="w3ls-servgrid card">
-                            <div class="card-header">
-                                <span class="sub-line">Lớp 3</span>
-                                <!--                             <h4 class="serv-title">
-                                                                Lớp
-                                                            </h4> -->
-                            </div>
-                            <div class="card-block">
-                                <p class="card-title servgrid-title">
-                                    Cung cấp kiến thức về bảng cửu chương, cộng trừ nhân chia trong phạm vi 10.
-                                </p>
-                                <a href="#portfolio" class="text-capitalize servgrid_link btn scroll">Vào học</a>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            </div>
-        </div>
-        <div class="container" style="margin-bottom: 20px">
-            <div class="row">
-                <a href="#lop4">
-                    <div class="col-lg-6">
-                        <div class="w3ls-servgrid card">
-                            <div class="card-header">
-                                <span class="sub-line">Lớp 4</span>
-                                <!--                             <h4 class="serv-title">
-                                                                Lớp
-                                                            </h4> -->
-                            </div>
-                            <div class="card-block">
-                                <p class="card-title servgrid-title">
-                                    Cung cấp kiến thức về bảng cửu chương, cộng trừ nhân chia trong phạm vi 10.
-                                </p>
-                                <a href="#portfolio" class="text-capitalize servgrid_link btn scroll">Vào học</a>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-                <a href="#lop5">
-                    <div class="col-lg-6">
-                        <div class="w3ls-servgrid card">
-                            <div class="card-header">
-                                <span class="sub-line">Lớp 5</span>
-                                <!--                             <h4 class="serv-title">
-                                                                Lớp
-                                                            </h4> -->
-                            </div>
-                            <div class="card-block">
-                                <p class="card-title servgrid-title">
-                                    Cung cấp kiến thức về bảng cửu chương, cộng trừ nhân chia trong phạm vi 10.
-                                </p>
-                                <a href="#portfolio" class="text-capitalize servgrid_link btn scroll">Vào học</a>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            </div>
-        </div>
-    </div>
-    <div class="card-body">
-        <h5 class="blog-title card-title font-weight-bold">
-            <a href="#exampleModal4" data-toggle="modal" aria-pressed="false" data-target="#exampleModal4"
-               role="button" class="text-theme3">Cras ultricies ligula sed.</a>
-        </h5>
-        <p>At vero eos et accusam et justo duo dolores et ea rebum. Lorem ipsum dolor sit
-            ametLorem ipsum dolor sit amet,sed diam nonumy.</p>
-        <button type="button" class="btn blog-btn wthree-bnr-btn mt-3 w3_pvt-link-bnr" data-toggle="modal"
-                aria-pressed="false" data-target="#exampleModal4">
-            Read more
-        </button>
-    </div>
-</div>
-</div>
-<!-- testimonials -->
-<div class="testimonials-wthree py-lg-5 py-4 text-center" id="testimonials">
-    <div class="container">
-        <div class="sec-main text-left">
-            <span class="sub-line text-white">Bình luận của phụ huynh</span>
-            <h3 class="wthree-title text-theme2">Hãy xem các phụ huynh nói gi?</h3>
-        </div>
-        <div class="row">
-            <div class="col-lg-12 mx-auto slide-left-wthree">
-                <div class="card mt-md-3">
-                    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel"
-                         data-interval="100000">
-                        <div class="w-100 carousel-inner" role="listbox">
-                            <div class="carousel-item active">
-                                <div class="carousel-caption">
-                                    <div class="row">
-                                        <div class="col-md-2 col-sm-4">
-                                            <div class="testi-img">
-                                                <img src="images/t1.jpg" alt="" class="rounded-circle img-fluid"/>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-10 col-sm-8 mt-sm-0 mt-4">
-                                            <h3>Cho con của tôi cơ hội</h3>
-                                            <p class="my-3">Trước khi biết tới trang web, con tôi học rất kém và sợ
-                                                môn toán, sau khi biết đến trang web cháu đã thích thú với môn toán
-                                                hơn rất nhiều.</p>
-                                            <p class="text-theme">- Phạm Văn Minh</p>
-                                        </div>
-                                    </div>
+            <div class="container" style="margin-bottom:  20px">
+                <div class="row">
+                    <a href="http://vutienthanh.com/khoa-hoc">
+                        <div class="col-lg-4">
+                            <div class="w3ls-servgrid card">
+                                <div class="card-header">
+                                    <span class="sub-line">Lớp 1</span>
+                                    <!--                             <h4 class="serv-title">
+                                                                                Lớp
+                                                                            </h4> -->
                                 </div>
-                            </div>
-                            <div class="carousel-item">
-                                <div class="carousel-caption">
-                                    <div class="row">
-                                        <div class="col-md-2 col-sm-4">
-                                            <div class="testi-img">
-                                                <img src="images/t2.jpg" alt="" class="rounded-circle img-fluid">
-                                            </div>
-                                        </div>
-                                        <div class="col-md-10 col-sm-8 mt-sm-0 mt-4">
-                                            <h3>Tôi yêu trang web này.</h3>
-                                            <p class="my-3">Trước khi biết tới trang web, con tôi học rất kém và sợ
-                                                môn toán, sau khi biết đến trang web cháu đã thích thú với môn toán
-                                                hơn rất nhiều.</p>
-                                            <p class="text-theme">- Phạm Văn Minh</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="carousel-item">
-                                <div class="carousel-caption">
-                                    <div class="row">
-                                        <div class="col-md-2 col-sm-4">
-                                            <div class="testi-img">
-                                                <img src="images/t3.jpg" alt="" class="rounded-circle img-fluid">
-                                            </div>
-                                        </div>
-                                        <div class="col-md-10 col-sm-8 mt-sm-0 mt-4">
-                                            <h3>Thật tuyệt vời!</h3>
-                                            <p class="my-3">Trước khi biết tới trang web, con tôi học rất kém và sợ
-                                                môn toán, sau khi biết đến trang web cháu đã thích thú với môn toán
-                                                hơn rất nhiều.</p>
-                                            <p class="text-theme">- Phạm Văn Minh</p>
-                                        </div>
-                                    </div>
+                                <div class="card-block">
+                                    <p class="card-title servgrid-title">
+                                        Thông tin: Khóa học thuộc bản quyền của vutienthanh.com
+                                    </p>
+                                    <a href="" class="text-capitalize servgrid_link btn scroll"></a>
                                 </div>
                             </div>
                         </div>
-                        <div class="float-right navi">
-                            <a class="" href="#carouselExampleControls" role="button" data-slide="prev">
-                                <span class="carousel-control-prev-icon ico" aria-hidden="true"></span>
-                                <span class="sr-only">Trước</span>
-                            </a>
-                            <a class="" href="#carouselExampleControls" role="button" data-slide="next">
-                                <span class="carousel-control-next-icon ico" aria-hidden="true"></span>
-                                <span class="sr-only">Sau</span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- //testimonials -->
-<!-- contact -->
-<div class="contact-wthree pt-lg-5" id="contact">
-    <div class="container py-sm-5 py-4">
-        <div class="sec-main">
-            <span class="sub-line">Thông tin Liên lạc</span>
-            <h3 class="wthree-title">Gọi chúng tôi</h3>
-        </div>
-        <div class="row py-md-4">
-            <div class="col-lg-12 px-lg-0">
-                <div class="w3_pvt-contact-top">
-                    <ul class="d-flex header-w3pvt pt-0 flex-column">
-                        <li>
-                            <span class="fa fa-home"></span>
-                            <p class="d-inline">Số 26, ngách 241/61, ngõ chợ Khâm Thiên, Đống Đa, Hà Nội.</p>
-                        </li>
-                        <li class="my-3">
-                            <span class="fa fa-envelope-open"></span>
-                            <a href="mailto:example@email.com" class="text-secondary">info@example.com</a>
-                        </li>
-                        <li>
-                            <span class="fa fa-phone"></span>
-                            <p class="d-inline">0987654321</p>
-                        </li>
-                    </ul>
-                </div>
-                <div class="col-lg-12 mt-4 px-0">
-                    <!-- register form grid -->
-                    <div class="contact-form">
-                        <h4>Góp ý với chúng tôi</h4>
-                        <form action="#" method="post" class="register-wthree">
-                            <div class="form-group">
-                                <div class="row">
-                                    <div class="col-lg-4">
-                                        <label>
-                                            Họ tên
-                                        </label>
-                                        <input class="form-control" type="text" placeholder="Họ tên" name="email"
-                                               required="">
-                                    </div>
-                                    <div class="col-lg-4 my-lg-0 my-4">
-                                        <label>
-                                            Email
-                                        </label>
-                                        <input class="form-control" type="email" placeholder="example@email.com"
-                                               name="email" required="">
-                                    </div>
-                                    <div class="col-lg-4">
-                                        <label>
-                                            Số điện thoại
-                                        </label>
-                                        <input class="form-control" type="text" placeholder="xxxx xxxxxx"
-                                               name="email"
-                                               required="">
-                                    </div>
-                                    <div class="offset-lg-3">
-                                    </div>
-                                </div>
-                                <div class="row mt-4">
-                                    <div class="col-md-8">
-                                        <label>
-                                            Lời nhắn của bạn
-                                        </label>
-                                        <textarea placeholder="Nhập lời nhắn của bạn vào đây"
-                                                  class="form-control"></textarea>
-                                    </div>
-
-                                    <div class="col-md-4 d-flex mt-4">
-                                        <button type="submit"
-                                                class="btn btn-w3_pvt btn-block w-100 text-white font-weight-bold text-uppercase bg-theme1">
-                                            Gửi lời nhắn
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- //contact -->
-<!-- map -->
-<div class="map p-2">
-    <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3023.9503398796587!2d-73.9940307!3d40.719109700000004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25a27e2f24131%3A0x64ffc98d24069f02!2sCANADA!5e0!3m2!1sen!2sin!4v1441710758555"
-        allowfullscreen></iframe>
-</div>
-<!--// map-->
-<!-- footer -->
-<footer class="footer py-md-5 pt-md-3 pb-sm-5">
-    <div class="container-fluid">
-        <div class="row p-sm-4 px-3 py-5">
-            <div class="col-lg-4 col-md-6 footer-top mt-md-0 mt-sm-5">
-                <h2>
-                    <a class="navbar-brand" href="index.html">
-                        <img src="images/logo-3.png" style="height: 200px">
                     </a>
-                </h2>
-                <!--                     <p class="my-3 text-white">Donec consequat sam libero tempore, cum soluta nobis est eligendi optio
-                                        cumque
-                                        nihil impedit quo minus</p>
-                                    <p class="text-white">
-                                        Id quod possimusapien ut leo cursus rhoncus. Nullam dui mi, vulputate ac metus at, semper
-                                        varius
-                                        orci.
-                                    </p> -->
-            </div>
-            <div class="col-lg-2  col-md-6 mt-md-0 mt-5">
-                <div class=".footerv2-w3ls">
-                    <h3 class="mb-3 w3f_title">Menu</h3>
-                    <hr>
-                    <ul class="list-w3pvtits">
-                        <li>
-                            <a href="index.html">
-                                Trang chủ
-                            </a>
-                        </li>
-                        <li class="my-2">
-                            <a href="#about" class="scroll">
-                                Giới thiệu
-                            </a>
-                        </li>
-                        <li class="my-2">
-                            <a href="#portfolio" class="scroll">
-                                Tài liệu
-                            </a>
-                        </li>
-                        <li class="mb-2">
-                            <a href="#services" class="scroll">
-                                Góc phụ huynh
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#contact" class="scroll">
-                                Liên hệ
-                            </a>
-                        </li>
-                    </ul>
+                    <a href="http://vutienthanh.com/khoa-hoc">
+                        <div class="col-lg-4">
+                            <div class="w3ls-servgrid card">
+                                <div class="card-header">
+                                    <span class="sub-line">Lớp 2</span>
+                                    <!--                             <h4 class="serv-title">
+                                                                                Lớp
+                                                                            </h4> -->
+                                </div>
+                                <div class="card-block">
+                                    <p class="card-title servgrid-title">
+                                        Thông tin: Khóa học thuộc bản quyền của vutienthanh.com
+                                    </p>
+                                    <a href="" class="text-capitalize servgrid_link btn scroll"></a>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="http://vutienthanh.com/khoa-hoc">
+                        <div class="col-lg-4">
+                            <div class="w3ls-servgrid card">
+                                <div class="card-header">
+                                    <span class="sub-line">Lớp 3</span>
+                                    <!--                             <h4 class="serv-title">
+                                                                                Lớp
+                                                                            </h4> -->
+                                </div>
+                                <div class="card-block">
+                                    <p class="card-title servgrid-title">
+                                        Thông tin: Khóa học thuộc bản quyền của vutienthanh.com
+                                    </p>
+                                    <a href="" class="text-capitalize servgrid_link btn scroll"></a>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="http://vutienthanh.com/khoa-hoc">
+                        <div class="col-lg-6">
+                            <div class="w3ls-servgrid card">
+                                <div class="card-header">
+                                    <span class="sub-line">Lớp 4</span>
+                                    <!--                             <h4 class="serv-title">
+                                                                                Lớp
+                                                                            </h4> -->
+                                </div>
+                                <div class="card-block">
+                                    <p class="card-title servgrid-title">
+                                        Thông tin: Khóa học thuộc bản quyền của vutienthanh.com
+                                    </p>
+                                    <a href="" class="text-capitalize servgrid_link btn scroll"></a>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="http://vutienthanh.com/khoa-hoc">
+                        <div class="col-lg-6">
+                            <div class="w3ls-servgrid card">
+                                <div class="card-header">
+                                    <span class="sub-line">Lớp 5</span>
+                                    <!--                             <h4 class="serv-title">
+                                                                                Lớp
+                                                                            </h4> -->
+                                </div>
+                                <div class="card-block">
+                                    <p class="card-title servgrid-title">
+                                        Thông tin: Khóa học thuộc bản quyền của vutienthanh.com
+                                    </p>
+                                    <a href="" class="text-capitalize servgrid_link btn scroll"></a>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
                 </div>
             </div>
-            <div class="col-lg-3 col-md-6 mt-lg-0 mt-5">
-                <div class="footerv2-w3ls">
-                    <h3 class="mb-3 w3f_title">Khóa học</h3>
-                    <hr>
-                    <ul class="list-w3pvtits">
-                        <li>
-                            <a href="index.html">
-                                Lớp 1
-                            </a>
-                        </li>
-                        <li class="my-2">
-                            <a href="#posts" class="scroll">
-                                Lớp 2
-                            </a>
-                        </li>
-                        <li class="my-2">
-                            <a href="#stat" class="scroll">
-                                Lớp 3
-                            </a>
-                        </li>
-                        <li class="mb-2">
-                            <a href="#contact" class="scroll">
-                                Lớp 4
-                            </a>
-                        </li>
-                        <li>
-                            <a href="index.html">
-                                Lớp 5
-                            </a>
-                        </li>
-                    </ul>
+        </div>
+    </div>
+    <!-- testimonials -->
+    <div class="testimonials-wthree py-lg-5 py-4 text-center" id="testimonials">
+        <div class="container">
+            <div class="sec-main text-left">
+                <span class="sub-line text-white">Cảm nhận phụ huynh</span>
+            </div>
+            <div class="row">
+                <div class="col-lg-12 mx-auto slide-left-wthree">
+                    <div class="card mt-md-3">
+                        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel" data-interval="10000">
+                            <div class="w-100 carousel-inner" role="listbox">
+                                <div class="carousel-item active">
+                                    <div class="carousel-caption">
+                                        <div class="row">
+                                            <div class="col-md-2 col-sm-4">
+                                                <div class="testi-img">
+                                                    <img src="http://vutienthanh.com/web/images/t1.jpg" alt="" class="rounded-circle img-fluid" />
+                                                </div>
+                                            </div>
+                                            <div class="col-md-10 col-sm-8 mt-sm-0 mt-4">
+                                                <h3>Cho con của tôi cơ hội</h3>
+                                                <p class="my-3">Trước khi biết tới trang web, con tôi học rất kém và sợ môn toán, sau khi biết đến trang web cháu đã thích thú với môn toán hơn rất nhiều.</p>
+                                                <p class="text-theme">- Phạm Văn Minh</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <div class="carousel-caption">
+                                        <div class="row">
+                                            <div class="col-md-2 col-sm-4">
+                                                <div class="testi-img">
+                                                    <img src="http://vutienthanh.com/web/images/t2.jpg" alt="" class="rounded-circle img-fluid">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-10 col-sm-8 mt-sm-0 mt-4">
+                                                <h3>Tôi yêu trang web này.</h3>
+                                                <p class="my-3">Trước khi biết tới trang web, con tôi học rất kém và sợ môn toán, sau khi biết đến trang web cháu đã thích thú với môn toán hơn rất nhiều.</p>
+                                                <p class="text-theme">- Phạm Văn Minh</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="carousel-item">
+                                    <div class="carousel-caption">
+                                        <div class="row">
+                                            <div class="col-md-2 col-sm-4">
+                                                <div class="testi-img">
+                                                    <img src="http://vutienthanh.com/web/images/t3.jpg" alt="" class="rounded-circle img-fluid">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-10 col-sm-8 mt-sm-0 mt-4">
+                                                <h3>Thật tuyệt vời!</h3>
+                                                <p class="my-3">Trước khi biết tới trang web, con tôi học rất kém và sợ môn toán, sau khi biết đến trang web cháu đã thích thú với môn toán hơn rất nhiều.</p>
+                                                <p class="text-theme">- Phạm Văn Minh</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="float-right navi">
+                                <a class="" href="#carouselExampleControls" role="button" data-slide="prev">
+                                    <span class="carousel-control-prev-icon ico" aria-hidden="true"></span>
+                                    <span class="sr-only">Trước</span>
+                                </a>
+                                <a class="" href="#carouselExampleControls" role="button" data-slide="next">
+                                    <span class="carousel-control-next-icon ico" aria-hidden="true"></span>
+                                    <span class="sr-only">Sau</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="col-lg-3 col-md-6 mt-lg-0 mt-5">
-                <div class="footerv2-w3ls">
-                    <h3 class="mb-3 w3f_title">Thông tin liên lạc</h3>
-                    <hr>
-                    <div class="fv3-contact">
-                        <p>
-                            <a href="mailto:example@email.com">info@example.com</a>
-                        </p>
-                    </div>
-                    <div class="fv3-contact my-2">
-                        <p>0987654321</p>
-                    </div>
-                    <div class="fv3-contact">
-                        <p>Số 45/65 ngõ chợ Khâm Thiên
-                            <br>Đống Đa, Hà Nội.</p>
+        </div>
+    </div>
+    <!-- //testimonials -->
+    <!-- contact -->
+    <div class="contact-wthree pt-lg-5" id="contact">
+        <div class="container py-sm-5 py-4">
+            <div class="sec-main">
+                <span class="sub-line">Thông tin Liên lạc</span>
+                <h3 class="wthree-title">Gọi chúng tôi</h3>
+            </div>
+            <div class="row py-md-4">
+                <div class="col-lg-12 px-lg-0">
+                    <div class="w3_pvt-contact-top">
+                        <ul class="d-flex header-w3pvt pt-0 flex-column">
+                            <li>
+                                <span class="fa fa-home" style="font-size: 25px;"></span>
+                                <p class="d-inline" style="color: #1b1e21">Tòa CT1B - Khu đô thị Tân Tây Đô, Đan Phượng, Hà Nội.</p>
+                            </li>
+                            <li class="my-3">
+                                <span class="fa fa-envelope-open" style="font-size: 23px;"></span>
+                                <a href="mailto:vutienthanh248@gmail.com" class="text-secondary" style="color: #1b1e21">vutienthanh248@gmail.com</a>
+                            </li>
+                            <li>
+                                <span class="fa fa-phone" style="font-size: 25px;"></span>
+                                <a href="tel:0358954666" class="d-inline" style="color: #1b1e21">0358954666</a>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>
 
         </div>
     </div>
-    <!-- //footer bottom -->
-</footer>
-<div class="cpy-right">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-lg-6">
-                <div class="wthree-social">
-                    <ul>
-                        <li>
-                            <a href="#">
-                                <span class="fa fa-facebook-f icon_facebook"></span>
-                            </a>
-                        </li>
-                        <!--                             <li>
-                                                        <a href="#">
-                                                            <span class="fa fa-twitter icon_twitter"></span>
-                                                        </a>
-                                                    </li> -->
-                        <!--                             <li>
-                                                        <a href="#">
-                                                            <span class="fa fa-dribbble icon_dribbble"></span>
-                                                        </a>
-                                                    </li> -->
-                        <li>
-                            <a href="#">
-                                <span class="fa fa-youtube icon_youtube"></span>
-                            </a>
-                        </li>
-                    </ul>
+    <!-- //contact -->
+    <div class="testimonials-wthree py-lg-5 py-4 text-center" id="testimonials">
+        <div class="container py-sm-5 py-4">
+            <div class="col-lg-12 mt-4 px-0">
+                <!-- register form grid -->
+                <div class="contact-form" style="text-align:left !important;">
+                    <div class="sec-main">
+                        <span class="sub-line text-white">Nhận Thông Tin Tư Vấn</span>
+                    </div>
+                    <form action="http://vutienthanh.com/gop-y" method="post" class="register-wthree">
+                        <input type="hidden" name="_token" value="YxGqpl5nElXZguxN3MDHlKUyyTZc9gWNReqhXiQZ">
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col-lg-4">
+                                    <label style="color: white">
+                                        Họ tên phụ huynh
+                                    </label>
+                                    <input class="form-control" type="text" placeholder="Họ tên phụ huynh" name="name" required="">
+                                </div>
+                                <div class="col-lg-4 my-lg-0 my-4">
+                                    <label style="color: white">
+                                        Năm sinh của con
+                                    </label>
+                                    <input class="form-control" type="text" placeholder="Năm sinh của con" name="age" required="">
+                                </div>
+                                <div class="col-lg-4 my-lg-0 my-4">
+                                    <label style="color: white">
+                                        Học lực của con
+                                    </label>
+                                    <input class="form-control" type="text" placeholder="Học lực của con" name="type" required="">
+                                </div>
+                            </div>
+                            <div class="row mt-4">
+                                <div class="col-lg-6">
+                                    <label style="color: white">
+                                        Số điện thoại
+                                    </label>
+                                    <input class="form-control" type="text" placeholder="Số điện thoại" name="mobile" required="">
+                                </div>
+                                <div class="col-md-6 d-flex mt-4">
+                                    <button type="submit" class="btn btn-w3_pvt btn-block w-100 text-white font-weight-bold text-uppercase bg-theme1" style="background-color: #0f6eaa !important;">
+                                        Gửi thông tin
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
                 </div>
             </div>
-            <div class="col-lg-6 text-lg-right mt-lg-0 mt-4">
-                <!--                     <p>© 2018 Alphabet. All rights reserved | Design by
-                                        <a href="http://w3layouts.com"> W3layouts.</a>
-                                    </p> -->
+        </div>
+    </div>
+    <div class="contact-wthree pt-lg-5" id="contact">
+        <div class="container py-sm-5 py-4">
+            <div class="sec-main">
+                <span class="sub-line">Tham gia nhóm học tập trên Facebook</span>
+            </div>
+            <h4 style="color: brown;">Bạn hãy tham gia vào Group học tập để nhận được nhiều sự hỗ trợ của thầy cô và các bạn.</h4>
+            <div class="row py-md-4">
+                <div class="col-lg-12 px-lg-0">
+                    <div class="w3_pvt-contact-top" style="text-align: center">
+                        <a href="https://www.facebook.com/groups/245844622797391/">
+                            <button type="button" class="btn btn-large btn-block btn-primary fa fa-facebook" style="padding-bottom: 15px;padding-top: 15px; width: 40%; min-width: 300px"><span style="font-family: Roboto">&nbsp;&nbsp;Hãy click ngay vào đây.</span>
+                            </button>
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-</div>
-<!-- //footer -->
-<!-- login  -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-     aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content modal-bg">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Đăng nhập</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <form action="#" method="post" class="p-sm-3">
-                    <div class="form-group">
-                        <label for="password" class="col-form-label">Số điện thoại</label>
-                        <input type="text" class="form-control" placeholder="Số điện thoại" name=" name"
-                               id="recipient-name"
-                               required="">
-                    </div>
-                    <div class="form-group">
-                        <label for="password" class="col-form-label">Mật khẩu</label>
-                        <input type="password" class="form-control" placeholder="Mật khẩu" name="Password"
-                               id="password"
-                               required="">
-                    </div>
-                    <div class="right-w3l">
-                        <input type="submit" class="form-control bg-theme1" value="Đăng nhập">
-                    </div>
-                    <div class="row sub-w3l my-3">
-                        <div class="col-sm-6 sub-w3_pvt">
-                            <input type="checkbox" id="brand1" value="">
-                            <label for="brand1" class="text-dark">
-                                <span></span>Ghi nhớ đăng nhập?</label>
-                        </div>
-                        <div class="col-sm-6 forgot-w3l text-sm-right">
-                            <a href="#" class="text-secondary" data-toggle="modal" data-target="#exampleModal2"
-                               data-dismiss="modal">Quên mật khẩu?</a>
-                        </div>
-                    </div>
-                    <p class="text-center">Bạn chưa có tài khoản?
-                        <a href="#" data-toggle="modal" data-target="#exampleModal1" class="text-secondary"
-                           data-dismiss="modal">
-                            Đăng ký ngay</a>
+    <!-- map -->
+    <div class="map p-2">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d930.7406871604132!2d105.700204712978!3d21.074149986921544!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x784cffcfc82c13b!2zS2h1IMSQw7QgVGjhu4s!5e0!3m2!1svi!2s!4v1560619347723!5m2!1svi!2s" allowfullscreen></iframe>
+    </div>
 
-                    </p>
-                </form>
+    <style type="text/css">
+        .w3ls-servgrid {
+            margin-bottom: 2em;
+        }
+    </style>
+    <footer class="footer py-md-5 pt-md-3 pb-sm-5">
+        <div class="container-fluid">
+            <div class="row p-sm-4 px-3 py-5">
+                <div class="col-lg-3 col-md-6 footer-top mt-md-0 mt-sm-5">
+                    <a class="navbar-brand" href="http://vutienthanh.com" style="display: block;text-align: center;">
+                        <img src="http://vutienthanh.com/web/images/logo-3.png" style="height: 150px; margin-bottom: 10px;">
+                    </a>
+                    <h4 style="font-size: 22px; color: white; text-align: center;">Tri thức - Chắp cánh - Thành công</h4>
+                </div>
+                <div class="col-lg-3  col-md-6 mt-md-0 mt-5">
+                    <div class=".footerv2-w3ls">
+                        <h3 class="mb-3 w3f_title">Menu</h3>
+                        <hr>
+                        <ul class="list-w3pvtits">
+                            <li>
+                                <a href="http://vutienthanh.com">
+                            Trang chủ
+                        </a>
+                            </li>
+                            <li class="my-2">
+                                <a href="http://vutienthanh.com/gioi-thieu">
+                            Giới thiệu
+                        </a>
+                            </li>
+                            <li class="my-2">
+                                <a href="http://vutienthanh.com/tai-lieu">
+                            Tài liệu
+                        </a>
+                            </li>
+                            <li class="mb-2">
+                                <a href="http://vutienthanh.com/goc-phu-huynh">
+                            Cảm nhận phụ huynh
+                        </a>
+                            </li>
+                            <li>
+                                <a href="#contact" class="scroll">
+                            Liên hệ
+                        </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mt-lg-0 mt-5">
+                    <div class="footerv2-w3ls">
+                        <h3 class="mb-3 w3f_title">Khóa học</h3>
+                        <hr>
+                        <ul class="list-w3pvtits">
+                            <li>
+                                <a href="http://vutienthanh.com/khoa-hoc">
+                            Lớp 1
+                        </a>
+                            </li>
+                            <li class="my-2">
+                                <a href="http://vutienthanh.com/khoa-hoc">
+                            Lớp 2
+                        </a>
+                            </li>
+                            <li class="my-2">
+                                <a href="http://vutienthanh.com/khoa-hoc">
+                            Lớp 3
+                        </a>
+                            </li>
+                            <li class="mb-2">
+                                <a href="http://vutienthanh.com/khoa-hoc">
+                            Lớp 4
+                        </a>
+                            </li>
+                            <li>
+                                <a href="http://vutienthanh.com/khoa-hoc">
+                            Lớp 5
+                        </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mt-lg-0 mt-5">
+                    <div class="footerv2-w3ls">
+                        <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fvutienthanh912%2F&tabs=timeline&width=340&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=2189958024560160" width="100%" height="250" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!-- //footer bottom -->
+    </footer>
+    <div class="cpy-right">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="wthree-social">
+                        <ul>
+                            <li>
+                                <a href="https://www.facebook.com/vutienthanh912/">
+                                    <span class="fa fa-facebook-f icon_facebook"></span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.youtube.com/channel/UCZiP8UeW2vRUDz7M0JsN0Xg/featured?sub_confirmation=1">
+                                    <span class="fa fa-youtube icon_youtube"></span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="tel:0358954666">
+                                    <span class="fa fa-phone icon_twitter"></span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="mailto:vutienthanh248@gmail.com">
+                                    <span class="fa fa-envelope-open icon_dribbble"></span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-6 text-lg-right mt-lg-0 mt-4">
+                </div>
             </div>
         </div>
     </div>
-</div>
-<!-- //login -->
-<!-- register -->
-<div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel1"
-     aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel1">Đăng ký tài khoản</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body modal-bg">
-                <form action="#" method="post" class="p-sm-3">
-                    <div class="form-group">
-                        <label for="recipient-name" class="col-form-label">Họ tên con</label>
-                        <input type="text" class="form-control" placeholder="Họ tên con" name=" name"
-                               id="recipient-rname"
-                               required="">
-                    </div>
-                    <div class="form-group">
-                        <label for="recipient-name" class="col-form-label">Số điện thoại phụ huynh</label>
-                        <input type="text" class="form-control" placeholder="Số điện thoại phụ huynh" name=" name"
-                               id="recipient-rname"
-                               required="">
-                    </div>
-                    <div class="form-group">
-                        <label for="password1" class="col-form-label">Mật khẩu</label>
-                        <input type="password" class="form-control" placeholder="Mật khẩu" name="Password"
-                               id="password1"
-                               required="">
-                    </div>
-                    <div class="form-group">
-                        <label for="password2" class="col-form-label">Nhập lại mật khẩu</label>
-                        <input type="password" class="form-control" placeholder="Nhập lại mật khẩu"
-                               name="Confirm Password" id="password2"
-                               required="">
-                    </div>
-                    <div class="form-group">
-                        <label for="recipient-email" class="col-form-label">Email của phụ huynh</label>
-                        <input type="email" class="form-control" placeholder="Email của phụ huynh" name="Email"
-                               id="recipient-email"
-                               required="">
-                    </div>
-                    <div class="sub-w3l">
-                        <div class="sub-w3_pvt">
-                            <input type="checkbox" id="brand2" value="">
-                            <label for="brand2" class="mb-3 text-dark">
-                                <span></span>Tôi đồng ý với điều khoản của trang web</label>
-                        </div>
-                    </div>
-                    <div class="right-w3l">
-                        <input type="submit" class="form-control bg-theme1" value="Đăng ký">
-                    </div>
-                </form>
+    <!-- register -->
+    <div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel1" style="display: none;">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel1">ÄÄƒng kÃ½ tÃ i khoáº£n</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body modal-bg" id="modal_content">
+                </div>
             </div>
         </div>
     </div>
-</div>
-<!-- // register -->
-<!-- reset password -->
-<div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel1"
-     aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel1">Quên mật khẩu</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body modal-bg">
-                <form action="#" method="post" class="p-sm-3">
-                    <div class="form-group">
-                        <label for="recipient-email" class="col-form-label">Email của phụ huynh</label>
-                        <input type="email" class="form-control" placeholder="Email của phụ huynh" name="Email"
-                               id="recipient-email"
-                               required="">
-                    </div>
-                    <div class="right-w3l">
-                        <input type="submit" class="form-control bg-theme1" value="Xác nhận">
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- // reset password -->
-<!-- blog modal1 -->
-<!-- js -->
-<script src="js/jquery-2.2.3.min.js"></script>
+
+</body>
+<script src="http://vutienthanh.com/web/js/jquery-2.2.3.min.js"></script>
 <!-- //js -->
 <!-- script for password match -->
 <script>
-    window.onload = function () {
-        document.getElementById("password1").onchange = validatePassword;
-        document.getElementById("password2").onchange = validatePassword;
-    }
-
-    function validatePassword() {
-        var pass2 = document.getElementById("password2").value;
-        var pass1 = document.getElementById("password1").value;
-        if (pass1 != pass2)
-            document.getElementById("password2").setCustomValidity("Passwords Don't Match");
-        else
-            document.getElementById("password2").setCustomValidity('');
-        //empty string means no validation error
-    }
 </script>
 <!-- script for password match -->
 <!-- Banner  Responsiveslides -->
-<script src="js/responsiveslides.min.js"></script>
+<script src="http://vutienthanh.com/web/js/responsiveslides.min.js"></script>
 <script>
     // You can also use"$(window).load(function() {"
-    $(function () {
+    $(function() {
         // Slideshow 4
         $("#slider3").responsiveSlides({
             auto: true,
@@ -871,10 +712,10 @@
             nav: false,
             speed: 500,
             namespace: "callbacks",
-            before: function () {
+            before: function() {
                 $('.events').append("<li>before event fired.</li>");
             },
-            after: function () {
+            after: function() {
                 $('.events').append("<li>after event fired.</li>");
             }
         });
@@ -883,15 +724,15 @@
 </script>
 <!-- //Banner  Responsiveslides -->
 <!-- gallery -->
-<script src="js/jquery.picEyes.js"></script>
-<script src="js/counter.js"></script>
+<script src="http://vutienthanh.com/web/js/jquery.picEyes.js"></script>
+<script src="http://vutienthanh.com/web/js/counter.js"></script>
 <!-- //stats -->
 <!-- start-smooth-scrolling -->
-<script src="js/move-top.js"></script>
-<script src="js/easing.js"></script>
+<script src="http://vutienthanh.com/web/js/move-top.js"></script>
+<script src="http://vutienthanh.com/web/js/easing.js"></script>
 <script>
-    jQuery(document).ready(function ($) {
-        $(".scroll").click(function (event) {
+    jQuery(document).ready(function($) {
+        $(".scroll").click(function(event) {
             event.preventDefault();
 
             $('html,body').animate({
@@ -901,15 +742,52 @@
     });
 </script>
 <script>
-    $(document).ready(function () {
+    $(document).ready(function() {
         $().UItoTop({
             easingType: 'easeOutQuart'
         });
 
     });
 </script>
-<script src="js/SmoothScroll.min.js"></script>
-<script src="js/bootstrap.js"></script>
-</body>
+<script src="http://vutienthanh.com/web/js/bootstrap.js"></script>
+<script src="http://vutienthanh.com/js/init.js"></script>
+<script src="http://vutienthanh.com/waitMe/waitMe.js"></script>
+<script src="http://vutienthanh.com/js/toastr.min.js"></script>
+
+<script type="text/javascript">
+    function onSubmitProject() {
+            if ($('#checkbox').is(":checked")) {
+                $("#message").html("");
+                btn_loading.loading("form-register");
+                formHelper.postFormJson('form-register', function(result) {
+                    if (result.result == 1) {
+                        toastr.success(result.message, {
+                            timeOut: 5000
+                        });
+                        dialog.close();
+                        btn_loading.loading("body");
+                        window.location.reload();
+                    } else {
+                        btn_loading.hide("form-register");
+                        var str = "<div class=\"alert alert-danger\">";
+                        for (var key in result.message) {
+                            str += result.message[key];
+                            str += "<br/>";
+                        };
+
+                        str += "</div>";
+                        $("#register-message").append(str);
+                    }
+                });
+            } else {
+                toastr.warning("Hãy đồng ý điều khoản trước khi đăng kí", {
+                    timeOut: 5000
+                });
+            }
+
+        }
+        //document.ready(function () {
+        //});
+</script>
 
 </html>

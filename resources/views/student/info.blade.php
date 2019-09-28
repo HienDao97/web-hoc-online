@@ -44,6 +44,9 @@
                             <hr>
                             <p><i class="fa fa-envelope fa-fw w3-margin-right w3-large w3-text-teal"></i>{{ $student->email }}</p>
                             <p><i class="fa fa-phone fa-fw w3-margin-right w3-large w3-text-teal"></i>{{ $student->mobile }}</p>
+                            <p><i class="fa fa-birthday-cake fa-fw w3-margin-right w3-large w3-text-teal"></i>{{ $student->birthday }}</p>
+                            <p><i class="fa fa-map fa-fw w3-margin-right w3-large w3-text-teal"></i>{{ $student->province_name . ", ". $student->district_name . ", ".$student->commune_name }}</p>
+                            <p><i class="fa fas fa-book-open fa-fw w3-margin-right w3-large w3-text-teal"></i> Trường : {{ $student->school }}</p>
 
                             <hr>
 

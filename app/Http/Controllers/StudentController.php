@@ -26,7 +26,12 @@ class StudentController extends Controller
     public function index($id)
     {
         if(Auth::user()->id == $id){
-            $student = Student::where('id', $id)->first();
+            $student = Student::select("students.id", "students.mobile", "students.birthday", "students.school", "students.email", "students.name", "provine.name as province_name", "district.name as district_name", "commune.name as commune_name")
+                ->where('students.id', $id)
+                ->join("provine", "provine.id", "=", "students.province_id")
+                ->join("district", "district.id", "=", "students.district_id")
+                ->join("commune", "commune.id", "=", "students.commune_id")
+                ->first();
             $studentClass = StudentClass::select("student_classrooms.*", "courses.name as course_name", "class_rooms.class_name as classroom_name")
                 ->where('student_classrooms.student_id', $id)
                 ->join('courses', 'courses.id', '=', 'student_classrooms.course_id')
@@ -126,6 +131,7 @@ class StudentController extends Controller
     /**
      * @param Request $request
      * @return \Illuminate\Http\JsonResponse
+     * @throws \Throwable
      */
     public function answer(Request $request)
     {
@@ -209,7 +215,7 @@ class StudentController extends Controller
             $params = $request->only("content", "parent_name");
 
             $validatorArray = [
-                'content'=>'required|max:200',
+                'content'=>'required|max:4000',
                 'parent_name' => 'required'
             ];
             $result = new KMsg();

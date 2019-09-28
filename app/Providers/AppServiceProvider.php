@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Models\Banners;
 use App\Models\Course;
 use App\Models\Slide;
 use Illuminate\Support\ServiceProvider;
@@ -64,14 +65,14 @@ class AppServiceProvider extends ServiceProvider
                 'scroll' => 0
                 //'param' => ""
             ],
-            [
-                'name' => 'Cảm nhận phụ huynh',
-                'root_route' => 'home.goc.phu.huynh',
-                'route_name' => ['home.goc.phu.huynh'],
-                'sub' => [],
-                'scroll' => 0
-                //'param' => ""
-            ],
+//            [
+//                'name' => 'Cảm nhận phụ huynh',
+//                'root_route' => 'home.goc.phu.huynh',
+//                'route_name' => ['home.goc.phu.huynh'],
+//                'sub' => [],
+//                'scroll' => 0
+//                //'param' => ""
+//            ],
             [
                 'name' => 'Liên hệ',
                 'route_name' => '',
@@ -79,11 +80,21 @@ class AppServiceProvider extends ServiceProvider
                 'scroll' => 1,
                 'id' => 'contact'
                 //'param' => (!empty(Auth::guard('apartners')->user()->id)) ? Auth::guard('apartners')->user()->id : ""
+            ],
+            [
+                'name' => 'Tin tức',
+                'root_route' => 'home.news',
+                'route_name' => ['home.news', 'home.news.detail'],
+                'sub' => [],
+                'scroll' => 0
+                //'param' => (!empty(Auth::guard('apartners')->user()->id)) ? Auth::guard('apartners')->user()->id : ""
             ]
         ];
         $slides = Slide::all();
+        $banner = Banners::whereNull('deleted_at')->first();
         View::share('course_menus', $courses);
         View::share('backend_menus', $menus);
         View::share('slides', $slides);
+        View::share('banner', $banner);
     }
 }

@@ -2,7 +2,7 @@
     <div class="header-main">
         <div class="d-sm-flex justify-content-between">
             <a href=""><img src="{{ asset('web/images/logo.png') }}" style="height: 100px"></a>
-            <h4 class="sologan">Tri thức - Chắp cánh - Thành công</h4>
+            <img class="sologan" src="{{ env("ADMIN_APP_URL") . "/img/banner/{$banner->images}" }}">
             <div class="hearder-right-w3_pvt d-flex justify-content-sm-end align-items-center  mt-sm-0 mt-4 login-row">
                 <ul class="d-flex header-w3_pvt">
 

@@ -14,13 +14,18 @@ Route::group(['middleware' => ['web']], function() {
 
     Route::get('/', 'HomeController@index')->name('home.index');
     Route::get('/login', 'HomeController@login')->name('home.login');
+    Route::get('/filter', 'HomeController@filter')->name('home.filter');
     Route::any('/register', 'HomeController@register')->name('home.register');
     Route::any('/login', 'HomeController@login')->name('home.login');
     Route::any('/forgot-password', 'HomeController@forgotPassword')->name('home.forgotPassword');
     Route::post('/register-post', 'HomeController@loginPost')->name('home.register.post');
-
+    Route::post('/gop-y/', 'HomeController@gopY')->name('gop.y');
     //goc phu huynh
     Route::get('/goc-phu-huynh', 'CommentController@index')->name('home.goc.phu.huynh');
+
+    //tin tuc
+    Route::get('/tin-tuc', 'NewsController@index')->name('home.news');
+    Route::get('/tin-tuc/{slug}', 'NewsController@info')->name('home.news.detail');
     //
     Route::get('gioi-thieu', 'IntroduceController@index')->name('home.introduce.index');
     //tai lieu
