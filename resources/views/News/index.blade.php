@@ -2,6 +2,8 @@
 @section('title', 'Tin tức')
 @section('content')
     <link href="{{ asset('web/css/tin-tuc.css') }}" type="text/css" rel="stylesheet" media="all">
+    <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+    <script src="{{ asset('web/js/tintuc.js') }}"></script>      
     <div class="portfolio-wthree py-lg-5" id="portfolio" style="background-color: #eee">
         <div class="container" style="max-width: 80%">
             <div class="row" style="margin-top: 1em">

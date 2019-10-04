@@ -36,6 +36,8 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
     <!-- //online-fonts -->
     <link rel="icon" href="{{ asset('web/images/logo-3.png') }}" type="image/x-icon"/>
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    <link rel='stylesheet' href='http://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css'>
 
 </head>
 
@@ -112,29 +114,7 @@
 <script>
 </script>
 <!-- script for password match -->
-<!-- Banner  Responsiveslides -->
-<script src="{{ asset('web/js/responsiveslides.min.js') }}"></script>
-<script>
-    // You can also use"$(window).load(function() {"
-    $(function () {
-        // Slideshow 4
-        $("#slider3").responsiveSlides({
-            auto: true,
-            pager: true,
-            nav: false,
-            speed: 500,
-            namespace: "callbacks",
-            before: function () {
-                $('.events').append("<li>before event fired.</li>");
-            },
-            after: function () {
-                $('.events').append("<li>after event fired.</li>");
-            }
-        });
 
-    });
-</script>
-<!-- //Banner  Responsiveslides -->
 <!-- gallery -->
 <script src="{{ asset('web/js/jquery.picEyes.js') }}"></script>
 <script src="{{ asset('web/js/counter.js') }}"></script>
@@ -169,6 +149,41 @@
 <script src="{{ asset('js/moment-with-locales.min.js') }}"></script>
 <script src="{{ asset('js/bootstrap-datetimepicker.min.js') }}"></script>
 <script src="{{ asset('select2/select2.js') }}"></script>
+<script src='http://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.js'></script>
+<script src="{{ asset('js/script.js') }}"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+       $('.main-slider').find('button').html('');
+       var buttons = $($('.main-slider').children()[1]).children();
+       let i = 0;
+       var slide_interval = timeout(i, buttons);
+       $(".item").on("mouseenter", function(){
+        // console.log(1);
+            clearInterval(slide_interval);
+       })
+       $(".item").on("mouseleave", function(){
+            slide_interval = timeout(i, buttons);
+       })
+       $(buttons).click(function(){
+            id = $(this).parent().context.id;
+            // var regex = new RegExp('id="(.+?)"');
+            // const id = ($(this).parent().context).match(regex)[1];
+            // console.log(id);
+            i = parseInt(id.replace("slick-slide0", ""));
+            clearInterval(slide_interval);
+            slide_interval = timeout(i, buttons);
+       })
+    });
+
+    function timeout(i, buttons){
+        return setInterval(function(){
+            i = i + 1;
+            if(i >= buttons.length) i = 0;
+            $(buttons[i]).click();
+       }, 50000);
+    }
+    
+</script>
 
 
 @yield('scripts')

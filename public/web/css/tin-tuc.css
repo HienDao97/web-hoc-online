@@ -32,7 +32,7 @@ body {
   opacity: 0.6;
 }
 .post-module .thumbnail {
-  background: #000000;
+  background: white;
   height: 400px;
   overflow: hidden;
 }
