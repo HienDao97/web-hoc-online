@@ -2,39 +2,28 @@
 @section('title', 'Trang chủ')
 @section('content')
     <section class="container wthree-row  w3-about position-relative" id="about">
-        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="1000">
-          <ol class="carousel-indicators">
-              @php
-                  $index = 0;
-              @endphp
-              @foreach($slides as $slide)
-                  <li data-target="#carouselExampleIndicators" data-slide-to="{{ $index }}" class="{{ ($index == 0) ? "active" : "" }}" style="border-radius:50%; height: 10px; width: 10px"></li>
-                  @php
-                      $index = $index + 1;
-                  @endphp
-              @endforeach
-          </ol>
-          <div class="carousel-inner">
-              @php
-                  $index = 0;
-              @endphp
-              @foreach($slides as $slide)
-
-                  <div class="carousel-item {{ ($index == 0) ? "active" : "" }}">
-                      <img class="d-block s-500-750" src="http://127.0.0.1:8000/img/slide/{{ $slide->images }}" alt="First slide">
-                  </div>
-                  @php
-                      $index = $index + 1;
-                  @endphp
-              @endforeach
-          </div>
-          <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-            <span class="sr-only">Previous</span>
-          </a>
-          <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-            <span class="sr-only">Next</span>
-          </a>
-        </div>
+	<div class="main-slider">
+		<div class="item image">
+			<figure>
+			  <div class="slide-image slide-media" style="background-image:url('http://admin.vutienthanh.com/img/slide/Anh dang website 2.jpg');">
+			    <img data-lazy="http://admin.vutienthanh.com/img/slide/Anh dang website 2.jpg" class="image-entity" />
+			  </div>
+			</figure>
+		</div>
+		<div class="item image">
+			<figure>
+				<div class="slide-image slide-media" style="background-image:url('http://admin.vutienthanh.com/img/slide/Anh website.jpg');">
+					<img data-lazy="http://admin.vutienthanh.com/img/slide/Anh website.jpg" class="image-entity" />
+				</div>
+			</figure>
+		</div>
+		<div class="item youtube">
+			<iframe class="embed-player slide-media" width="750" height="500" src="https://www.youtube.com/embed/BA4FDlSsY1c" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" frameborder="0" allowfullscreen></iframe>
+		</div>
+		<div class="item youtube">
+			<iframe class="embed-player slide-media" width="750" height="500" src="https://www.youtube.com/embed/XqbA4ffnNnc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" frameborder="0" allowfullscreen></iframe>
+		</div>
+	</div>
         <div class="abt-pos register-form" style="top: -50px;">
             <h4 style="font-weight: bold;">Tin tức mới nhất</h4>
             <div class="contcat-form">
@@ -415,6 +404,8 @@
             toastr.success("{{session('messages')}}", {timeOut: 5000});
             @endif
         //});
+
+
 
     </script>
 @endsection

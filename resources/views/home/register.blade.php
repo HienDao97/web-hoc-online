@@ -44,11 +44,6 @@
                required="">
     </div>
     <div class="form-group">
-        <label for="datetimepicker1" class="col-form-label">Trường học (*)</label>
-        <input type="text" id="" autocomplete="off" class="form-control" placeholder="Trường học" name="school"
-               required="">
-    </div>
-    <div class="form-group">
         <label for="password1" class="col-form-label">Mật khẩu (*)</label>
         <input type="password" autocomplete="off" class="form-control" placeholder="Mật khẩu" name="password"
                id="password1"
@@ -68,7 +63,7 @@
     </div>
     <div class="form-group">
         <label for="province" class="col-form-label">Thành phố, tỉnh (*)</label>
-        <select class="select2 form-control" id="province" name="province" onchange="return filterArea($(this).val(), 'district')">
+        <select class="select2 form-control" id="province" name="province" onchange="return filterArea($(this).val(), 'district')" style="width: 100%">
             <option value="">-- Chọn thành phố --</option>
             @foreach($provinces as $province)
                 <option value="{{ $province->id }}">{{ $province->name }}</option>
@@ -77,16 +72,21 @@
     </div>
     <div class="form-group">
         <label for="district" class="col-form-label">Quận, huyện </label>
-        <select class="select2 form-control" id="district" name="district" onchange="return filterArea($(this).val(), 'commune')">
+        <select class="select2 form-control" id="district" name="district" onchange="return filterArea($(this).val(), 'commune')"  style="width: 100%">
             <option value="">-- Chọn quận --</option>
         </select>
     </div>
     <div class="form-group">
         <label for="commune" class="col-form-label">Phường, xã</label>
-        <select class="select2 form-control" name="commune" id="commune">
+        <select class="select2 form-control" name="commune" id="commune"  style="width: 100%">
             <option value="">-- Chọn phường --</option>
         </select>
     </div>
+    <div class="form-group">
+        <label for="datetimepicker1" class="col-form-label">Trường học (*)</label>
+        <input type="text" id="" autocomplete="off" class="form-control" placeholder="Trường học" name="school"
+               required="">
+    </div>    
     <div class="sub-w3l">
         <div class="sub-w3_pvt">
             <input type="checkbox" id="brand2" value="">

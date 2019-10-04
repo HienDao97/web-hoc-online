@@ -5,7 +5,7 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav  text-center">
+            <ul class="navbar-nav  text-center" style="z-index: 999">
                 @php
                     $currentRouteName = request()->route()->getName();
                     //dd($backend_menus)
